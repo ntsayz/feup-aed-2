@@ -18,8 +18,8 @@ const std::string &Airport::getCountry() const {
     return country;
 }
 
-const std::string &Airport::getIata() const {
-    return IATA;
+const std::string &Airport::getCode() const {
+    return code;
 }
 
 const std::string &Airport::getName() const {

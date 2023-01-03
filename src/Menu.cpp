@@ -25,7 +25,7 @@ int Menu::Search(bool departure){
     Utility::header("SkyPlanner");
     Utility::header("Flight Search");
     Utility::body(d,
-    {"1. Search by city/country name","2. Search by airport IATA code","3. Search by geographical coordinates"});
+    {"1. Search by city/country name","2. Search by airport code code","3. Search by geographical coordinates"});
     Utility::footer();
     std::cin >> choice;
     Utility::clear_screen();

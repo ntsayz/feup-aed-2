@@ -12,7 +12,7 @@
 
 class Airport {
 private:
-    std::string IATA;
+    std::string code;
     std::string name;
     std::string city;
     std::string country;
@@ -20,9 +20,9 @@ private:
     double longitude;
 public:
     Airport();
-    Airport(std::string IATA) : IATA(std::move(IATA)) {}
+    Airport(std::string IATA) : code(std::move(IATA)) {}
     Airport(std::string code, std::string name, std::string city, std::string country, double latitude, double longitude) :
-            IATA(std::move(code)), name(std::move(name)), city(std::move(city)), country(std::move(country)), latitude(latitude), longitude(longitude) {}
+            code(std::move(code)), name(std::move(name)), city(std::move(city)), country(std::move(country)), latitude(latitude), longitude(longitude) {}
 
     static Airport fromCSVLine(std::istringstream& iss) {
         std::string code, name, city, country;
@@ -45,7 +45,7 @@ public:
 
     const std::string &getCountry() const;
 
-    const std::string &getIata() const;
+    const std::string &getCode() const;
 
     const std::string &getName() const;
 

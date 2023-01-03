@@ -200,12 +200,12 @@ void Manager::search_flights(std::vector<Airport> departures_airports, std::vect
     Utility::body("This is one of the shortest possible routes",{""});
     std::cout << "FROM:\n" << departures_airports.front().getCity() << ", " << departures_airports.front().getCountry() << "\n";
     for(const auto& air: departures_airports){
-        std::cout << air.getName() << "- "  <<air.getIata() << "\n";
+        std::cout << air.getName() << "- " << air.getCode() << "\n";
     }
     std::cout << "TO:\n";
     std::cout << arrival_airports.front().getCity() << ", " << arrival_airports.front().getCountry() << "\n";
     for(const auto& air: arrival_airports){
-        std::cout << air.getName() << "- "  <<air.getIata() << "\n";
+        std::cout << air.getName() << "- " << air.getCode() << "\n";
     }
     std::cout << "\n";
      int i;
@@ -262,11 +262,13 @@ void Manager::show_flight_info(const std::vector<Airport>& departures_airports,
                 std::cout << std::setw(11) << i << " | ";
 
                 // Print departure airport information
-                std::cout << std::setw(29) << airports.at(flight.getDeparture()).getCity() + " (" + airports.at(flight.getDeparture()).getIata() + ")";
+                std::cout << std::setw(29) << airports.at(flight.getDeparture()).getCity() + " (" +
+                        airports.at(flight.getDeparture()).getCode() + ")";
                 std::cout << " | ";
 
                 // Print arrival airport information
-                std::cout << std::setw(29) << airports.at(flight.getArrival()).getCity() + " (" + airports.at(flight.getArrival()).getIata() + ")";
+                std::cout << std::setw(29) << airports.at(flight.getArrival()).getCity() + " (" +
+                        airports.at(flight.getArrival()).getCode() + ")";
                 std::cout << " | ";
 
                 // Print airline information
@@ -301,7 +303,7 @@ bool Manager::loadData(const std::string& fname1, const std::string& fname2, con
     }
 
     for(const auto& airport: airportsVEC){
-        airports.emplace(airport.getIata(),airport);
+        airports.emplace(airport.getCode(), airport);
         cities[airport.getCity() + ", " + airport.getCountry()].push_back(airport);
         flight_network.addAirport(airport);
     }
@@ -336,8 +338,8 @@ void Manager::testing() {
     graph.addAirport(airport1);
     graph.addAirport(airport2);
 
-    airports.emplace(airport1.getIata(),airport1);
-    airports.emplace(airport2.getIata(),airport2);
+    airports.emplace(airport1.getCode(), airport1);
+    airports.emplace(airport2.getCode(), airport2);
 
     graph.addFlight(cgd_jfk);
 

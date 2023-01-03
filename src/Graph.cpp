@@ -12,10 +12,10 @@ void Graph::addFlight(const Flight &flight) {
 
 // Adds an airport to the graph
 void Graph::addAirport(const Airport &airport) {
-    airports[airport.getIata()] = airport;
+    airports[airport.getCode()] = airport;
 }
 
-// Returns a list of airports within a certain distance of a given latitude and longitude
+// Returns a list of airports within a certain distance of a given latitude and longitude , distance in km
 std::vector<Airport> Graph::GetAirportsWithinDistance(double latitude, double longitude, double max_distance) const {
     std::vector<Airport> nearby_airports;
 
@@ -33,7 +33,7 @@ std::vector<Airport> Graph::GetAirportsWithinDistance(double latitude, double lo
 
 // Returns the number of flights from a given airport
 int Graph::getNumFlightsFromAirport(const Airport &airport) const {
-    return adjacency_list.count(airport.getIata()) ? adjacency_list.at(airport.getIata()).size() : 0;
+    return adjacency_list.count(airport.getCode()) ? adjacency_list.at(airport.getCode()).size() : 0;
 }
 
 std::vector<std::vector<Flight>> Graph::FindShortestRoutes(const Airport &departure, const Airport &arrival) const {
@@ -54,7 +54,7 @@ std::vector<std::vector<Flight>> Graph::FindShortestRoutes(const Airport &depart
         queue.pop();
 
         // If we have reached the destination airport, return the route
-        if (airport.getIata() == arrival.getIata()) {
+        if (airport.getCode() == arrival.getCode()) {
             if (route.size() < min_flights) {
                 shortest_routes.clear();
                 min_flights = route.size();
@@ -66,11 +66,11 @@ std::vector<std::vector<Flight>> Graph::FindShortestRoutes(const Airport &depart
         }
 
         // Mark the airport as visited
-        visited.insert(airport.getIata());
+        visited.insert(airport.getCode());
 
         // Add all the flights from this airport to the queue
-        if (adjacency_list.count(airport.getIata()) > 0) {
-            for (const auto &flight: adjacency_list.at(airport.getIata())) {
+        if (adjacency_list.count(airport.getCode()) > 0) {
+            for (const auto &flight: adjacency_list.at(airport.getCode())) {
                 if (visited.count(flight.getArrival()) == 0) {
                     // Create a new route by adding the current flight to the existing route
                     auto new_route = route;
@@ -101,7 +101,7 @@ std::vector<Flight> Graph::FindShortestRoute(const Airport &departure, const Air
         queue.pop();
 
         // If we have reached the destination airport, return the route
-        if (airport.getIata() == arrival.getIata()) {
+        if (airport.getCode() == arrival.getCode()) {
             if (route.size() < min_flights) {
                 min_flights = route.size();
                 return route;
@@ -109,11 +109,11 @@ std::vector<Flight> Graph::FindShortestRoute(const Airport &departure, const Air
         }
 
         // Mark the airport as visited
-        visited.insert(airport.getIata());
+        visited.insert(airport.getCode());
 
         // Add all the flights from this airport to the queue
-        if (adjacency_list.count(airport.getIata()) > 0) {
-            for (const auto &flight: adjacency_list.at(airport.getIata())) {
+        if (adjacency_list.count(airport.getCode()) > 0) {
+            for (const auto &flight: adjacency_list.at(airport.getCode())) {
                 if (visited.count(flight.getArrival()) == 0) {
                     // Create a new route by adding the current flight to the existing route
                     auto new_route = route;
@@ -160,7 +160,7 @@ std::vector<std::vector<Flight>> Graph::GetPathsWithOneAirline(const Airport &de
 
     // Use a set to store the airports we have already visited in our search
     std::unordered_set<std::string> visited;
-    visited.insert(departure.getIata());
+    visited.insert(departure.getCode());
 
     while (!queue.empty()) {
         // Get the next path from the queue
@@ -168,10 +168,10 @@ std::vector<std::vector<Flight>> Graph::GetPathsWithOneAirline(const Airport &de
         queue.pop();
 
         // Get the current airport from the end of the path
-        auto current_airport = current_path.empty() ? departure.getIata() : current_path.back().getArrival();
+        auto current_airport = current_path.empty() ? departure.getCode() : current_path.back().getArrival();
 
         // If we have reached the destination airport, add the path to the list of paths
-        if (current_airport == arrival.getIata()) {
+        if (current_airport == arrival.getCode()) {
             paths.push_back(current_path);
             continue;
         }

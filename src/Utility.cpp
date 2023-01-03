@@ -91,8 +91,8 @@ std::string Utility::getAirportCode(){
     while (true){
         Utility::clear_screen();
         Utility::header("SkyPlanner");
-        Utility::header("Flight Search - Airport IATA Code");
-        Utility::body("Write the IATA code",{"It should have 3 letters","eg:.MPM"});
+        Utility::header("Flight Search - Airport code Code");
+        Utility::body("Write the code code",{"It should have 3 letters","eg:.MPM"});
         Utility::footer();
         std::cout << "-->";
         std::getline(std::cin,stringin);
