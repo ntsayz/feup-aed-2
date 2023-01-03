@@ -1,0 +1,20 @@
+//
+// Created by ntsayz on 12/21/22.
+//
+
+#ifndef FEUP_AED2_MENU_H
+#define FEUP_AED2_MENU_H
+
+
+class Menu {
+private:
+public:
+    static int Main();
+
+    static int Search(bool departure);
+
+    static int Search_CC();
+};
+
+
+#endif //FEUP_AED2_MENU_H
