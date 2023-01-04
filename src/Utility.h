@@ -6,6 +6,7 @@
 #include <iomanip>
 #include <iostream>
 #include <fstream>
+#include <limits>
 
 #ifndef FEUP_AED2_UTILITY_H
 #define FEUP_AED2_UTILITY_H
