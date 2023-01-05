@@ -19,7 +19,7 @@ void Graph::addAirport(const Airport &airport) {
 std::vector<Airport> Graph::GetAirportsWithinDistance(double latitude, double longitude, double max_distance) const {
     std::vector<Airport> nearby_airports;
 
-    for (const auto &[name, airport] : airports) {
+    for (const auto &[code, airport] : airports) {
         Airport airport1;
         airport1.setLatitude(latitude);
         airport1.setLongitude(longitude);

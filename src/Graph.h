@@ -32,14 +32,14 @@ public:
     std::vector<Flight> FindShortestRoute(const Airport &departure, const Airport &arrival) const;
     //std::vector<std::vector<Flight>> GetFlightsFromAirportToAirport(const Airport &departure, const Airport &arrival) const;
     std::vector<std::vector<Flight>> GetPathsWithOneAirline(const Airport &departure, const Airport &arrival, const std::string &airline) const;
-
+    double getDistance(const Airport &airport1, const Airport &airport2) const;
     private:
     // Adjacency list representation of the graph
     std::unordered_map<std::string, std::vector<Flight>> adjacency_list;
     // Map from airport names to airport objects
     std::unordered_map<std::string, Airport> airports;
 
-    double getDistance(const Airport &airport1, const Airport &airport2) const;
+
 };
 
 

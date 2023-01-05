@@ -45,28 +45,28 @@ public:
     void search_flights(std::vector<Airport> departures_airports, std::vector<Airport> arrival_airports);
     ///
     /// \return list of Airports
-    std::vector<Airport> getAirportsCityCountry();
+    std::vector<Airport> get_airports_by_city_country();
     ///
     /// \return
-    Airport getAirportByCode();
+    Airport get_airports_by_code();
     ///
     /// \return
-    std::vector<Airport> getAirportsByCoordinates();
+    std::vector<Airport> get_airports_by_coordinates();
     ///
     /// \param departures_airports
     /// \param arrival_airports
-    /// \param route
-    void show_flight_info(const std::vector<Airport>& departures_airports, const std::vector<Airport>& arrival_airports,
-                          const std::vector<Flight>& route);
+    void show_multiple_routes(const std::vector<Airport> &departures_airports, const std::vector<Airport> &arrival_airports);
 
-    void show_eq_routes(const std::vector<Airport> &departures_airports, const std::vector<Airport> &arrival_airports);
+    void search_one_airline(const std::vector<Airport> &departures_airports, const std::vector<Airport> &arrival_airports);
+
+    void show_flight_info(const std::vector<Airport> &departures_airports, const std::vector<Airport> &arrival_airports);
 };
 
 
 #endif //FEUP_AED2_MANAGER_H
 
 
-/*! \mainpage My Personal Index Page
+/*! \mainpage SkyPlanner - 2nd AED Project (FEUP)
  *
  * \section intro_sec Introduction
  *
