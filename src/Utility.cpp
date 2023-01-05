@@ -11,6 +11,8 @@
 #endif
 
 
+
+
 int  Utility::getInput(int choice, int min, int max)  {
     while(true){
         if(choice == 9) return choice;
@@ -28,6 +30,11 @@ int  Utility::getInput(int choice, int min, int max)  {
 }
 
 void Utility::clear_screen() {
+#ifdef __cplusplus__
+#include <cstdlib>
+#else
+#include <cstdlib>
+#endif
 #ifdef WINDOWS
     std::system("cls");
 #else
