@@ -5,6 +5,14 @@
 
 
 #include "Utility.h"
+#ifdef __cplusplus__
+#include <cstdlib>
+#else
+#include <cstdlib>
+#endif
+
+
+
 
 int  Utility::getInput(int choice, int min, int max)  {
     while(true){
