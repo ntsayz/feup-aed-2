@@ -1,0 +1,49 @@
+\hypertarget{_manager_8h_source}{}\doxysection{Manager.\+h}
+\label{_manager_8h_source}\index{src/Manager.h@{src/Manager.h}}
+\mbox{\hyperlink{_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by ntsayz on 12/20/22.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_graph_8h}{Graph.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_airlines_8h}{Airlines.h}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_menu_8h}{Menu.h}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_utility_8h}{Utility.h}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <openssl/sha.h>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef FEUP\_AED2\_MANAGER\_H}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define FEUP\_AED2\_MANAGER\_H}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{class_manager}{Manager}} \{}
+\DoxyCodeLine{16 \textcolor{keyword}{private}:}
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} option, choice;}
+\DoxyCodeLine{18     \textcolor{keywordtype}{bool} globalSession = \textcolor{keyword}{false};}
+\DoxyCodeLine{19     \textcolor{keywordtype}{bool} localSession = \textcolor{keyword}{false};}
+\DoxyCodeLine{20     std::unordered\_map<std::string,Airline> airlines;}
+\DoxyCodeLine{21     std::unordered\_map<std::string,Airport> airports;}
+\DoxyCodeLine{22     std::unordered\_map<std::string,std::vector<Airport>> cities;}
+\DoxyCodeLine{23     \mbox{\hyperlink{class_graph}{Graph}} flight\_network;}
+\DoxyCodeLine{24     std::vector<Airport> departuresAirports,arrivalAirports;}
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26     \mbox{\hyperlink{class_manager_a51c8f271f79b1c6590e9bc4ae6343bc0}{Manager}}()= \textcolor{keywordflow}{default};}
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_manager_af8c67c221068e4e3ccccf1d5f70ba8ee}{run}}();}
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_manager_a3ce44a229c819433a1b88323f4654730}{testing}}();}
+\DoxyCodeLine{35     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_manager_a65b83f021fffd2ab08532622953b3ac6}{loadData}}(\textcolor{keyword}{const} std::string\& fname1, \textcolor{keyword}{const} std::string\& fname2, \textcolor{keyword}{const} std::string\& fname3);}
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_manager_aa12b4fb7796df3df0a91382becd4585b}{main\_menu}}();}
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_manager_aa41d7b86c289e4b6e2c47b7cf9360f12}{search\_flights\_menu}}(\textcolor{keywordtype}{bool} notARecursiveCall);}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_manager_a0c1aa1d3b0a3ee68eb955ff705fd5b5f}{search\_flights}}(std::vector<Airport> departures\_airports, std::vector<Airport> arrival\_airports);}
+\DoxyCodeLine{47     std::vector<Airport> \mbox{\hyperlink{class_manager_a752b6eefd0655f11a828359d39c5d1ff}{getAirportsCityCountry}}();}
+\DoxyCodeLine{50     \mbox{\hyperlink{class_airport}{Airport}} \mbox{\hyperlink{class_manager_a18a8eb47b168b42800479e2075e3e60c}{getAirportByCode}}();}
+\DoxyCodeLine{53     std::vector<Airport> \mbox{\hyperlink{class_manager_a68ce9013e439b9f73bdffbe7b881836a}{getAirportsByCoordinates}}();}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_manager_a2f0c147a0091c8a55e25c3337ee6e1d9}{show\_flight\_info}}(\textcolor{keyword}{const} std::vector<Airport>\& departures\_airports, \textcolor{keyword}{const} std::vector<Airport>\& arrival\_airports,}
+\DoxyCodeLine{59                           \textcolor{keyword}{const} std::vector<Flight>\& route);}
+\DoxyCodeLine{60 \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//FEUP\_AED2\_MANAGER\_H}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 }
+
+\end{DoxyCode}

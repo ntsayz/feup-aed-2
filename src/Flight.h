@@ -18,6 +18,7 @@ private:
     std::string departure;
     std::string arrival;
     std::string airline;
+    double distance;
 public:
 
     Flight(std::string source, std::string target, std::string airline) :
@@ -32,12 +33,18 @@ public:
 
         return {source, target, airline};
     }
+    void setDistance(double distance);
 
     const std::string &getDeparture() const;
 
     const std::string &getArrival() const;
 
     const std::string &getAirline() const;
+
+    double getDistance() const;
+    bool operator<(Flight f2){
+        return this->distance < f2.distance;
+    }
 };
 
 

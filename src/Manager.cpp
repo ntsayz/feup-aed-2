@@ -26,7 +26,6 @@ void Manager::main_menu(){
                 globalSession = false;
         }
     }
-
 }
 void Manager::search_flights_menu(bool notARecursiveCall){
     localSession = true;
@@ -193,7 +192,7 @@ std::vector<Airport> Manager::getAirportsCityCountry(){
 }
 
 void Manager::search_flights(std::vector<Airport> departures_airports, std::vector<Airport> arrival_airports){
-    std::vector<std::vector<Flight>> routes;
+
     std::vector<Flight> route;
     Utility::clear_screen();
     Utility::header("SkyPlanner");
@@ -220,16 +219,67 @@ void Manager::search_flights(std::vector<Airport> departures_airports, std::vect
         }
         std::cout << "\n";
     }
-    Utility::body("",{"1. Show detailed route information","2. Show all possible routes with the same amount of flights","3. Search for a route using one airline"});
+    Utility::body("",{"1. Show detailed route information","2. Show all routes with the same amount of flights","3. Search for a route using one airline"});
     Utility::footer();
     std::cout << "-->";
     std::cin >> i;
     switch (i) {
         case 1:
             show_flight_info(departures_airports,arrival_airports,route);
+            break;
+        case 2:
+            show_eq_routes(departures_airports,arrival_airports);
         case 9:
             return;
     }
+}
+void Manager::show_eq_routes(const std::vector<Airport>& departures_airports,
+                             const std::vector<Airport>& arrival_airports){
+    Utility::clear_screen();
+    std::vector<std::vector<Flight>> routes;
+    int i = 1, option;
+    Utility::header("SkyPlanner");
+    Utility::body("Routes with the same number of flights",{"this may take a few seconds"});
+
+    // ---
+
+    for(auto const& depAir: departures_airports) {
+        for (auto const &arrAir: arrival_airports) { //TODO
+            routes = flight_network.FindShortestRoutes(depAir, arrAir);
+            for (const auto &route: routes) {
+                std::cout << "Option :" << i << "\n";
+                for(const auto &flight : route){
+                    std::cout << flight.getDeparture() << " -> " << flight.getArrival() << " (" << flight.getAirline()
+                              << ") - " << airlines.at(flight.getAirline()).getName() << std::endl;
+                }
+                i++;
+                std::cout << "\n";
+            }
+        }
+        std::cout << "\n";
+    }
+    Utility::body("Choose a flight to show detailed info about it",{""});
+    Utility::footer();
+    std::cout << "-->";
+    std::cin >> option;
+    if(option == 9)return; // serious bug -- option 9 coincides with back
+    i = 1;
+    for(auto const& depAir: departures_airports) {
+        for (auto const &arrAir: arrival_airports) { //TODO
+            routes = flight_network.FindShortestRoutes(depAir, arrAir);
+            for (const auto &route: routes) {
+                if(i == option){
+                    show_flight_info(departures_airports,arrival_airports,std::vector<Flight>{});
+                    return;
+                }
+                i++;
+            }
+        }
+    }
+
+    // ---
+
+
 }
 void Manager::show_flight_info(const std::vector<Airport>& departures_airports,
                                const std::vector<Airport>& arrival_airports,
@@ -241,11 +291,8 @@ void Manager::show_flight_info(const std::vector<Airport>& departures_airports,
     Utility::header("SkyPlanner");
     Utility::body("Route Information", {  "("+  departures_airports.front().getCountry()  + ") " +departures_airports.front().getCity() + " ---> " + arrival_airports.front().getCity() + " (" + arrival_airports.front().getCountry() +")", ""});
 
-    // Print column headers
-
-
     for (auto const& depAir : departures_airports) {
-        if(arrival_airports.size()!=1){
+        if(departures_airports.size()!=1){
             std::cout << "FROM: " << depAir.getName() << " Airport\n";
         }
         i = 1;

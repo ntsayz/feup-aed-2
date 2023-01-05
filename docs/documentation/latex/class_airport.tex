@@ -1,0 +1,120 @@
+\hypertarget{class_airport}{}\doxysection{Airport Class Reference}
+\label{class_airport}\index{Airport@{Airport}}
+
+
+{\ttfamily \#include $<$Airport.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_airport_a2fc0f2402c94225b9deaf76176bb887f}{Airport}} ()
+\item 
+\mbox{\hyperlink{class_airport_afdf7742dd2322e4530879f788cf8bb77}{Airport}} (std\+::string IATA)
+\item 
+\mbox{\hyperlink{class_airport_ad832d1feec4889ca2950213bcad345a0}{Airport}} (std\+::string code, std\+::string name, std\+::string city, std\+::string country, double latitude, double longitude)
+\item 
+const std\+::string \& \mbox{\hyperlink{class_airport_aad0a9be7a85e90b7090be9007de855b8}{get\+Country}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{class_airport_a78dcc4385c4ddfc18fb49b642fb04196}{get\+Code}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{class_airport_aa5be38443c1de176e52c4f5f5252c956}{get\+Name}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{class_airport_a1a4c025d8d747398108356bf42d74eee}{get\+City}} () const
+\item 
+double \mbox{\hyperlink{class_airport_aed71ba4592b2a1401eb182931f2d3f06}{get\+Latitude}} () const
+\item 
+double \mbox{\hyperlink{class_airport_ad8cd931389b14d63e5933a1658b653a3}{get\+Longitude}} () const
+\item 
+void \mbox{\hyperlink{class_airport_aa6fa7f50efbc47c1013af7d7d3ce1a95}{set\+Latitude}} (double latitude)
+\item 
+void \mbox{\hyperlink{class_airport_a8595da4216165ea42ad2157480573548}{set\+Longitude}} (double longitude)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_airport}{Airport}} \mbox{\hyperlink{class_airport_a8a518a9e9a4f2d8eb4c3c78b87d7e28d}{from\+CSVLine}} (std\+::istringstream \&iss)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_airport_a2fc0f2402c94225b9deaf76176bb887f}\label{class_airport_a2fc0f2402c94225b9deaf76176bb887f}} 
+\index{Airport@{Airport}!Airport@{Airport}}
+\index{Airport@{Airport}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{Airport()}{Airport()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Airport\+::\+Airport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_airport_afdf7742dd2322e4530879f788cf8bb77}\label{class_airport_afdf7742dd2322e4530879f788cf8bb77}} 
+\index{Airport@{Airport}!Airport@{Airport}}
+\index{Airport@{Airport}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{Airport()}{Airport()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Airport\+::\+Airport (\begin{DoxyParamCaption}\item[{std\+::string}]{IATA }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_airport_ad832d1feec4889ca2950213bcad345a0}\label{class_airport_ad832d1feec4889ca2950213bcad345a0}} 
+\index{Airport@{Airport}!Airport@{Airport}}
+\index{Airport@{Airport}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{Airport()}{Airport()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Airport\+::\+Airport (\begin{DoxyParamCaption}\item[{std\+::string}]{code,  }\item[{std\+::string}]{name,  }\item[{std\+::string}]{city,  }\item[{std\+::string}]{country,  }\item[{double}]{latitude,  }\item[{double}]{longitude }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_airport_a8a518a9e9a4f2d8eb4c3c78b87d7e28d}\label{class_airport_a8a518a9e9a4f2d8eb4c3c78b87d7e28d}} 
+\index{Airport@{Airport}!fromCSVLine@{fromCSVLine}}
+\index{fromCSVLine@{fromCSVLine}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{fromCSVLine()}{fromCSVLine()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_airport}{Airport}} Airport\+::from\+CSVLine (\begin{DoxyParamCaption}\item[{std\+::istringstream \&}]{iss }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_airport_a1a4c025d8d747398108356bf42d74eee}\label{class_airport_a1a4c025d8d747398108356bf42d74eee}} 
+\index{Airport@{Airport}!getCity@{getCity}}
+\index{getCity@{getCity}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{getCity()}{getCity()}}
+{\footnotesize\ttfamily const std\+::string \& Airport\+::get\+City (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_airport_a78dcc4385c4ddfc18fb49b642fb04196}\label{class_airport_a78dcc4385c4ddfc18fb49b642fb04196}} 
+\index{Airport@{Airport}!getCode@{getCode}}
+\index{getCode@{getCode}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{getCode()}{getCode()}}
+{\footnotesize\ttfamily const std\+::string \& Airport\+::get\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_airport_aad0a9be7a85e90b7090be9007de855b8}\label{class_airport_aad0a9be7a85e90b7090be9007de855b8}} 
+\index{Airport@{Airport}!getCountry@{getCountry}}
+\index{getCountry@{getCountry}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{getCountry()}{getCountry()}}
+{\footnotesize\ttfamily const std\+::string \& Airport\+::get\+Country (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_airport_aed71ba4592b2a1401eb182931f2d3f06}\label{class_airport_aed71ba4592b2a1401eb182931f2d3f06}} 
+\index{Airport@{Airport}!getLatitude@{getLatitude}}
+\index{getLatitude@{getLatitude}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{getLatitude()}{getLatitude()}}
+{\footnotesize\ttfamily double Airport\+::get\+Latitude (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_airport_ad8cd931389b14d63e5933a1658b653a3}\label{class_airport_ad8cd931389b14d63e5933a1658b653a3}} 
+\index{Airport@{Airport}!getLongitude@{getLongitude}}
+\index{getLongitude@{getLongitude}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{getLongitude()}{getLongitude()}}
+{\footnotesize\ttfamily double Airport\+::get\+Longitude (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_airport_aa5be38443c1de176e52c4f5f5252c956}\label{class_airport_aa5be38443c1de176e52c4f5f5252c956}} 
+\index{Airport@{Airport}!getName@{getName}}
+\index{getName@{getName}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily const std\+::string \& Airport\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_airport_aa6fa7f50efbc47c1013af7d7d3ce1a95}\label{class_airport_aa6fa7f50efbc47c1013af7d7d3ce1a95}} 
+\index{Airport@{Airport}!setLatitude@{setLatitude}}
+\index{setLatitude@{setLatitude}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{setLatitude()}{setLatitude()}}
+{\footnotesize\ttfamily void Airport\+::set\+Latitude (\begin{DoxyParamCaption}\item[{double}]{latitude }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_airport_a8595da4216165ea42ad2157480573548}\label{class_airport_a8595da4216165ea42ad2157480573548}} 
+\index{Airport@{Airport}!setLongitude@{setLongitude}}
+\index{setLongitude@{setLongitude}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{setLongitude()}{setLongitude()}}
+{\footnotesize\ttfamily void Airport\+::set\+Longitude (\begin{DoxyParamCaption}\item[{double}]{longitude }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_airport_8h}{Airport.\+h}}\item 
+src/\mbox{\hyperlink{_airport_8cpp}{Airport.\+cpp}}\end{DoxyCompactItemize}

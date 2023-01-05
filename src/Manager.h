@@ -22,6 +22,7 @@ private:
     std::unordered_map<std::string,std::vector<Airport>> cities;
     Graph flight_network;
     std::vector<Airport> departuresAirports,arrivalAirports;
+    std::priority_queue<std::vector<Flight>,std::vector<std::vector<Flight>>, std::greater<>> flights_eq_weight;
 public:
     Manager()= default;
     ///
@@ -57,6 +58,8 @@ public:
     /// \param route
     void show_flight_info(const std::vector<Airport>& departures_airports, const std::vector<Airport>& arrival_airports,
                           const std::vector<Flight>& route);
+
+    void show_eq_routes(const std::vector<Airport> &departures_airports, const std::vector<Airport> &arrival_airports);
 };
 
 

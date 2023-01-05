@@ -1,0 +1,50 @@
+\hypertarget{_flight_8h_source}{}\doxysection{Flight.\+h}
+\label{_flight_8h_source}\index{src/Flight.h@{src/Flight.h}}
+\mbox{\hyperlink{_flight_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by ntsayz on 12/20/22.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef FEUP\_AED2\_FLIGHT\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define FEUP\_AED2\_FLIGHT\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <utility>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{class_flight}{Flight}} \{}
+\DoxyCodeLine{17 \textcolor{keyword}{private}:}
+\DoxyCodeLine{18     std::string departure;}
+\DoxyCodeLine{19     std::string arrival;}
+\DoxyCodeLine{20     std::string airline;}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \mbox{\hyperlink{class_flight_ae80089791cbb9fcc67c2d3f3345c9e30}{Flight}}(std::string source, std::string target, std::string airline) :}
+\DoxyCodeLine{24             departure(std::move(source)), arrival(std::move(target)), airline(std::move(airline)) \{\}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{keyword}{static} \mbox{\hyperlink{class_flight}{Flight}} \mbox{\hyperlink{class_flight_a0b03986834dc2a4ebda19d3437b91b4d}{fromCSVLine}}(std::istringstream\& iss) \{}
+\DoxyCodeLine{27         std::string source, target, airline;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         std::getline(iss, source, \textcolor{charliteral}{','});}
+\DoxyCodeLine{30         std::getline(iss, target, \textcolor{charliteral}{','});}
+\DoxyCodeLine{31         std::getline(iss, airline);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         \textcolor{keywordflow}{return} \{source, target, airline\};}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_flight_aa87243c5309a487f01f414de39e1e9a5}{getDeparture}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_flight_a299cffc4908a2193c67f3cbd2715374f}{getArrival}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_flight_add83f59d0f4039fbda078711e687c779}{getAirline}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//FEUP\_AED2\_FLIGHT\_H}}
+
+\end{DoxyCode}

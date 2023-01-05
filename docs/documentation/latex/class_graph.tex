@@ -1,0 +1,79 @@
+\hypertarget{class_graph}{}\doxysection{Graph Class Reference}
+\label{class_graph}\index{Graph@{Graph}}
+
+
+{\ttfamily \#include $<$Graph.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_graph_abb9f88da52722ec72e3b9b1d11b38f6f}{add\+Flight}} (const \mbox{\hyperlink{class_flight}{Flight}} \&flight)
+\item 
+void \mbox{\hyperlink{class_graph_a8781123f274d460cba1c7c91ee168ac0}{add\+Airport}} (const \mbox{\hyperlink{class_airport}{Airport}} \&airport)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ \mbox{\hyperlink{class_graph_a36c54aac661600b0101b8c027baf6eac}{Get\+Airports\+Within\+Distance}} (double latitude, double longitude, double max\+\_\+distance) const
+\item 
+int \mbox{\hyperlink{class_graph_a4f2c44215cc4f0f272ff29f798b30e0f}{get\+Num\+Flights\+From\+Airport}} (const \mbox{\hyperlink{class_airport}{Airport}} \&airport) const
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_flight}{Flight}} $>$ $>$ \mbox{\hyperlink{class_graph_ab24a95aa6dd8834d68097dac534d5ecd}{Find\+Shortest\+Routes}} (const \mbox{\hyperlink{class_airport}{Airport}} \&departure, const \mbox{\hyperlink{class_airport}{Airport}} \&arrival) const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_flight}{Flight}} $>$ \mbox{\hyperlink{class_graph_ac73447df4127080148861bdb59a5cf92}{Find\+Shortest\+Route}} (const \mbox{\hyperlink{class_airport}{Airport}} \&departure, const \mbox{\hyperlink{class_airport}{Airport}} \&arrival) const
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_flight}{Flight}} $>$ $>$ \mbox{\hyperlink{class_graph_aeec0d37ced4e3e6ca943da18063608c4}{Get\+Paths\+With\+One\+Airline}} (const \mbox{\hyperlink{class_airport}{Airport}} \&departure, const \mbox{\hyperlink{class_airport}{Airport}} \&arrival, const std\+::string \&airline) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_graph_a8781123f274d460cba1c7c91ee168ac0}\label{class_graph_a8781123f274d460cba1c7c91ee168ac0}} 
+\index{Graph@{Graph}!addAirport@{addAirport}}
+\index{addAirport@{addAirport}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{addAirport()}{addAirport()}}
+{\footnotesize\ttfamily void Graph\+::add\+Airport (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_airport}{Airport}} \&}]{airport }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_graph_abb9f88da52722ec72e3b9b1d11b38f6f}\label{class_graph_abb9f88da52722ec72e3b9b1d11b38f6f}} 
+\index{Graph@{Graph}!addFlight@{addFlight}}
+\index{addFlight@{addFlight}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{addFlight()}{addFlight()}}
+{\footnotesize\ttfamily void Graph\+::add\+Flight (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_flight}{Flight}} \&}]{flight }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em flight} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_graph_ac73447df4127080148861bdb59a5cf92}\label{class_graph_ac73447df4127080148861bdb59a5cf92}} 
+\index{Graph@{Graph}!FindShortestRoute@{FindShortestRoute}}
+\index{FindShortestRoute@{FindShortestRoute}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{FindShortestRoute()}{FindShortestRoute()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_flight}{Flight}} $>$ Graph\+::\+Find\+Shortest\+Route (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_airport}{Airport}} \&}]{departure,  }\item[{const \mbox{\hyperlink{class_airport}{Airport}} \&}]{arrival }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_graph_ab24a95aa6dd8834d68097dac534d5ecd}\label{class_graph_ab24a95aa6dd8834d68097dac534d5ecd}} 
+\index{Graph@{Graph}!FindShortestRoutes@{FindShortestRoutes}}
+\index{FindShortestRoutes@{FindShortestRoutes}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{FindShortestRoutes()}{FindShortestRoutes()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_flight}{Flight}} $>$ $>$ Graph\+::\+Find\+Shortest\+Routes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_airport}{Airport}} \&}]{departure,  }\item[{const \mbox{\hyperlink{class_airport}{Airport}} \&}]{arrival }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_graph_a36c54aac661600b0101b8c027baf6eac}\label{class_graph_a36c54aac661600b0101b8c027baf6eac}} 
+\index{Graph@{Graph}!GetAirportsWithinDistance@{GetAirportsWithinDistance}}
+\index{GetAirportsWithinDistance@{GetAirportsWithinDistance}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{GetAirportsWithinDistance()}{GetAirportsWithinDistance()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ Graph\+::\+Get\+Airports\+Within\+Distance (\begin{DoxyParamCaption}\item[{double}]{latitude,  }\item[{double}]{longitude,  }\item[{double}]{max\+\_\+distance }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_graph_a4f2c44215cc4f0f272ff29f798b30e0f}\label{class_graph_a4f2c44215cc4f0f272ff29f798b30e0f}} 
+\index{Graph@{Graph}!getNumFlightsFromAirport@{getNumFlightsFromAirport}}
+\index{getNumFlightsFromAirport@{getNumFlightsFromAirport}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getNumFlightsFromAirport()}{getNumFlightsFromAirport()}}
+{\footnotesize\ttfamily int Graph\+::get\+Num\+Flights\+From\+Airport (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_airport}{Airport}} \&}]{airport }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_graph_aeec0d37ced4e3e6ca943da18063608c4}\label{class_graph_aeec0d37ced4e3e6ca943da18063608c4}} 
+\index{Graph@{Graph}!GetPathsWithOneAirline@{GetPathsWithOneAirline}}
+\index{GetPathsWithOneAirline@{GetPathsWithOneAirline}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{GetPathsWithOneAirline()}{GetPathsWithOneAirline()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_flight}{Flight}} $>$ $>$ Graph\+::\+Get\+Paths\+With\+One\+Airline (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_airport}{Airport}} \&}]{departure,  }\item[{const \mbox{\hyperlink{class_airport}{Airport}} \&}]{arrival,  }\item[{const std\+::string \&}]{airline }\end{DoxyParamCaption}) const}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_graph_8h}{Graph.\+h}}\item 
+src/\mbox{\hyperlink{_graph_8cpp}{Graph.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,58 @@
+\hypertarget{_utility_8h_source}{}\doxysection{Utility.\+h}
+\label{_utility_8h_source}\index{src/Utility.h@{src/Utility.h}}
+\mbox{\hyperlink{_utility_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by ntsayz on 12/20/22.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef FEUP\_AED2\_UTILITY\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define FEUP\_AED2\_UTILITY\_H}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_utility}{Utility}} \{}
+\DoxyCodeLine{15 \textcolor{keyword}{public}:}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_utility_a39d5d7fb64b8e2ef2cec09ad21019d93}{getInput}}(\textcolor{keywordtype}{int} choice, \textcolor{keywordtype}{int} min, \textcolor{keywordtype}{int} max);}
+\DoxyCodeLine{19     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_utility_a29edc4ede26ae1888f1c764fe4ff6be2}{getCode}}(\textcolor{keywordtype}{int} code);}
+\DoxyCodeLine{21     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_utility_a34f05bd315eda43a811774d7f9d9ec07}{clear\_screen}}();}
+\DoxyCodeLine{23     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_utility_a8d34a4c10ae4de754372ab8f6aa8f031}{footer}}();}
+\DoxyCodeLine{25     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_utility_a5ca2bdb48ec616350a96753978ec2a70}{header}}(\textcolor{keyword}{const} std::string\& title);}
+\DoxyCodeLine{27     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_utility_ae62c4dbbcf6fbbdc2f513c74fb3436d7}{body}}(\textcolor{keyword}{const} std::string\& description, std::vector<std::string> options);}
+\DoxyCodeLine{28     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_utility_afb97f93021d82bda76e9e906e4eeec78}{isSubstring}}(std::string str, std::string sub);}
+\DoxyCodeLine{29     \textcolor{keyword}{static} std::string \mbox{\hyperlink{class_utility_aa75377c1f78bdc4302fb1f057ef0a89c}{getCity}}();}
+\DoxyCodeLine{30     \textcolor{keyword}{static} std::string \mbox{\hyperlink{class_utility_a7ebdb1935d7a6c59be26afa251d87f21}{getAirportCode}}();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{33     \textcolor{keyword}{static} std::vector<T> \mbox{\hyperlink{class_utility_abf9bdd5ca46c2ec635832c4eeffbac40}{loadDataFromCSV}}(std::string filename) \{}
+\DoxyCodeLine{34         std::vector<T> data;}
+\DoxyCodeLine{35         std::ifstream file(filename);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         \textcolor{keywordflow}{if} (!file.is\_open()) \{}
+\DoxyCodeLine{38             std::cerr << \textcolor{stringliteral}{"{}Error: Could not open file "{}} << filename << std::endl;}
+\DoxyCodeLine{39             \textcolor{keywordflow}{return} data;}
+\DoxyCodeLine{40         \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42         std::string line;}
+\DoxyCodeLine{43         \textcolor{keywordflow}{while} (std::getline(file, line)) \{}
+\DoxyCodeLine{44             std::istringstream iss(line);}
+\DoxyCodeLine{45             T \textcolor{keywordtype}{object} = T::fromCSVLine(iss);}
+\DoxyCodeLine{46             data.push\_back(\textcolor{keywordtype}{object});}
+\DoxyCodeLine{47         \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \textcolor{keywordflow}{return} data;}
+\DoxyCodeLine{50     \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//FEUP\_AED2\_UTILITY\_H}}
+
+\end{DoxyCode}

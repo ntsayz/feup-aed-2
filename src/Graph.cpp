@@ -62,6 +62,9 @@ std::vector<std::vector<Flight>> Graph::FindShortestRoutes(const Airport &depart
             // If the number of flights in this route is equal to the minimum, add it to the list of the shortest routes
             if (route.size() == min_flights) {
                 shortest_routes.push_back(route);
+                if(shortest_routes.size() == 50){ // this is capped bc it was taking too long to run
+                    return shortest_routes;
+                }
             }
         }
 
@@ -81,7 +84,6 @@ std::vector<std::vector<Flight>> Graph::FindShortestRoutes(const Airport &depart
         }
     }
 
-    // If we reach here, it means no route was found
     return shortest_routes;
 }
 
