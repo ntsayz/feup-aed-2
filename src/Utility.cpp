@@ -30,11 +30,6 @@ int  Utility::getInput(int choice, int min, int max)  {
 }
 
 void Utility::clear_screen() {
-#ifdef __cplusplus__
-#include <cstdlib>
-#else
-#include <cstdlib>
-#endif
 #ifdef WINDOWS
     std::system("cls");
 #else
