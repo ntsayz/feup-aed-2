@@ -16,7 +16,7 @@ void Graph::addAirport(const Airport &airport) {
 }
 
 // Returns a list of airports within a certain distance of a given latitude and longitude , distance in km
-std::vector<Airport> Graph::GetAirportsWithinDistance(double latitude, double longitude, double max_distance) const {
+std::vector<Airport> Graph::getAirportsWithinDistance(double latitude, double longitude, double max_distance) const {
     std::vector<Airport> nearby_airports;
 
     for (const auto &[code, airport] : airports) {
@@ -36,7 +36,7 @@ int Graph::getNumFlightsFromAirport(const Airport &airport) const {
     return adjacency_list.count(airport.getCode()) ? adjacency_list.at(airport.getCode()).size() : 0;
 }
 
-std::vector<std::vector<Flight>> Graph::FindShortestRoutes(const Airport &departure, const Airport &arrival) const {
+std::vector<std::vector<Flight>> Graph::findShortestRoutes(const Airport &departure, const Airport &arrival) const {
     // Use an unordered_set to keep track of visited airports
     std::unordered_set<std::string> visited;
 
@@ -87,7 +87,7 @@ std::vector<std::vector<Flight>> Graph::FindShortestRoutes(const Airport &depart
     return shortest_routes;
 }
 
-std::vector<Flight> Graph::FindShortestRoute(const Airport &departure, const Airport &arrival) const {
+std::vector<Flight> Graph::findShortestRoute(const Airport &departure, const Airport &arrival) const {
     // Use an unordered_set to keep track of visited airports
     std::unordered_set<std::string> visited;
 
@@ -152,7 +152,7 @@ double Graph::getDistance(const Airport &airport1, const Airport &airport2) cons
 }
 
 
-std::vector<std::vector<Flight>> Graph::GetPathsWithOneAirline(const Airport &departure, const Airport &arrival, const std::string &airline) const {
+std::vector<std::vector<Flight>> Graph::getPathsWithOneAirline(const Airport &departure, const Airport &arrival, const std::string &airline) const {
     std::vector<std::vector<Flight>> paths;
 
     // Use a queue to store the paths we are currently exploring

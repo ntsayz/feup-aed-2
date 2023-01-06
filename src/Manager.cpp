@@ -125,7 +125,7 @@ std::vector<Airport> Manager::get_airports_by_coordinates(){
         }
         std::cout << "Airports within " << max_distance << " kilometers of (" << latitude << ", " << longitude << "):\n";
         localSession = false;
-        return flight_network.GetAirportsWithinDistance(latitude,longitude,max_distance);
+        return flight_network.getAirportsWithinDistance(latitude, longitude, max_distance);
     }
 }
 
@@ -210,7 +210,7 @@ void Manager::search_flights(std::vector<Airport> departures_airports, std::vect
 
     for(auto const& depAir: departures_airports) {
         for (auto const &arrAir: arrival_airports) { //TODO
-            route = flight_network.FindShortestRoute(depAir, arrAir);
+            route = flight_network.findShortestRoute(depAir, arrAir);
             for (const auto &flight: route) {
                     std::cout << flight.getDeparture() << " -> " << flight.getArrival() << " (" << flight.getAirline()
                               << ") - " << airlines.at(flight.getAirline()).getName() << std::endl;
@@ -248,7 +248,7 @@ void Manager::show_multiple_routes(const std::vector<Airport>& departures_airpor
 
     for(auto const& depAir: departures_airports) {
         for (auto const &arrAir: arrival_airports) { //TODO
-            routes = flight_network.FindShortestRoutes(depAir, arrAir);
+            routes = flight_network.findShortestRoutes(depAir, arrAir);
             for (const auto &route: routes) {
                 std::cout << "Option :" << i << "\n";
                 distance = 0;
@@ -271,7 +271,7 @@ void Manager::show_multiple_routes(const std::vector<Airport>& departures_airpor
     i = 1;
     for(auto const& depAir: departures_airports) {
         for (auto const &arrAir: arrival_airports) { //TODO
-            routes = flight_network.FindShortestRoutes(depAir, arrAir);
+            routes = flight_network.findShortestRoutes(depAir, arrAir);
             for (const auto &route: routes) {
                 if(i == option){
                     show_flight_info(departures_airports,arrival_airports);
@@ -362,7 +362,7 @@ void Manager::search_one_airline(const std::vector<Airport> &departures_airports
             int i = 1;
             for(auto const& depAir: departures_airports) {
                 for (auto const &arrAir: arrival_airports) { //TODO
-                    routes = flight_network.GetPathsWithOneAirline(depAir,arrAir,airlineCode);
+                    routes = flight_network.getPathsWithOneAirline(depAir, arrAir, airlineCode);
                     if(routes.empty())std::cout << "No routes found: " << depAir.getCode() << " -> " << arrAir.getName() << " with " << airlineCode << "\n";
                     for (const auto &route: routes) {
                         std::cout << "Option :" << i << "\n";
@@ -384,7 +384,7 @@ void Manager::search_one_airline(const std::vector<Airport> &departures_airports
                 i = 1;
                 for(auto const& depAir: departures_airports) {
                     for (auto const &arrAir: arrival_airports) { //TODO
-                        routes = flight_network.GetPathsWithOneAirline(depAir, arrAir,airlineCode);
+                        routes = flight_network.getPathsWithOneAirline(depAir, arrAir, airlineCode);
                         for (const auto &route: routes) {
                             if(i == option){
                                 show_flight_info(departures_airports,arrival_airports);
@@ -422,7 +422,7 @@ void Manager::show_flight_info(const std::vector<Airport>& departures_airports, 
             std::cout << "|------------------------------------------------------------------------------------------------------------------|\n";
             std::cout << "|  Flight #  |        Departure Airport      |        Arrival Airport        |                Airline              |\n";
             std::cout << "|------------|-------------------------------|-------------------------------|-------------------------------------|\n";
-            newroute = flight_network.FindShortestRoute(depAir, arrAir);
+            newroute = flight_network.findShortestRoute(depAir, arrAir);
             if (countair != 0) i = 1;
             for (const auto& flight : newroute) {
                 std::cout << "|" <<std::setw(11) << i << " | ";
@@ -510,7 +510,7 @@ void Manager::testing() {
 
     graph.addFlight(cgd_jfk);
 
-    std::vector<std::vector<Flight>>  route = graph.FindShortestRoutes(airport1, airport2);
+    std::vector<std::vector<Flight>>  route = graph.findShortestRoutes(airport1, airport2);
     std::cout << "Shortest route from Lisbon to London:" << std::endl;
     int i =1;
     for (const auto& options : route) {
@@ -569,7 +569,7 @@ void Manager::testing() {
     graph.addFlight(porto_london);
 
     // Find the shortest route from Lisbon to London
-    std::vector<std::vector<Flight>>  route = graph.FindShortestRoutes(lisbon, london);
+    std::vector<std::vector<Flight>>  route = graph.findShortestRoutes(lisbon, london);
     std::cout << "Shortest route from Lisbon to London:" << std::endl;
     int i =1;
     for (const auto& options : route) {
@@ -581,7 +581,7 @@ void Manager::testing() {
     }
     i =1;
     std::cout << "\nAll possible flights from Lisbon to London using TAP:" << std::endl;
-    std::vector<std::vector<Flight>> flig = graph.GetPathsWithOneAirline(lisbon,london,"TAP");
+    std::vector<std::vector<Flight>> flig = graph.getPathsWithOneAirline(lisbon,london,"TAP");
     for (const auto& options : flig) {
         std::cout << "Option " << i << ":\n";
         for(const auto& flight: options){
@@ -604,7 +604,7 @@ void Manager::testing() {
 
 /*for(auto const& depAir: departures_airports){
         for(auto const& arrAir: arrival_airports){
-            route = flight_network.FindShortestRoutes(depAir, arrAir);
+            route = flight_network.findShortestRoutes(depAir, arrAir);
             int i =1;
             for (const auto& options : route) {
                 std::cout << "\nOption " << i << ":\n";

@@ -1,5 +1,10 @@
-\hypertarget{class_graph}{}\doxysection{Graph Class Reference}
+\doxysection{Graph Class Reference}
 \label{class_graph}\index{Graph@{Graph}}
+
+
+Represents a \doxyref{Graph}{p.}{class_graph} of airports and flights.  
+
+
 
 
 {\ttfamily \#include $<$Graph.\+h$>$}
@@ -7,81 +12,183 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_graph_abb9f88da52722ec72e3b9b1d11b38f6f}{add\+Flight}} (const \mbox{\hyperlink{class_flight}{Flight}} \&flight)
-\item 
-void \mbox{\hyperlink{class_graph_a8781123f274d460cba1c7c91ee168ac0}{add\+Airport}} (const \mbox{\hyperlink{class_airport}{Airport}} \&airport)
-\item 
-std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ \mbox{\hyperlink{class_graph_a36c54aac661600b0101b8c027baf6eac}{Get\+Airports\+Within\+Distance}} (double latitude, double longitude, double max\+\_\+distance) const
-\item 
-int \mbox{\hyperlink{class_graph_a4f2c44215cc4f0f272ff29f798b30e0f}{get\+Num\+Flights\+From\+Airport}} (const \mbox{\hyperlink{class_airport}{Airport}} \&airport) const
-\item 
-std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_flight}{Flight}} $>$ $>$ \mbox{\hyperlink{class_graph_ab24a95aa6dd8834d68097dac534d5ecd}{Find\+Shortest\+Routes}} (const \mbox{\hyperlink{class_airport}{Airport}} \&departure, const \mbox{\hyperlink{class_airport}{Airport}} \&arrival) const
-\item 
-std\+::vector$<$ \mbox{\hyperlink{class_flight}{Flight}} $>$ \mbox{\hyperlink{class_graph_ac73447df4127080148861bdb59a5cf92}{Find\+Shortest\+Route}} (const \mbox{\hyperlink{class_airport}{Airport}} \&departure, const \mbox{\hyperlink{class_airport}{Airport}} \&arrival) const
-\item 
-std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_flight}{Flight}} $>$ $>$ \mbox{\hyperlink{class_graph_aeec0d37ced4e3e6ca943da18063608c4}{Get\+Paths\+With\+One\+Airline}} (const \mbox{\hyperlink{class_airport}{Airport}} \&departure, const \mbox{\hyperlink{class_airport}{Airport}} \&arrival, const std\+::string \&airline) const
-\item 
-double \mbox{\hyperlink{class_graph_a3895bf29d9b6455b6e6c7633dd108b86}{get\+Distance}} (const \mbox{\hyperlink{class_airport}{Airport}} \&airport1, const \mbox{\hyperlink{class_airport}{Airport}} \&airport2) const
-\end{DoxyCompactItemize}
+void \textbf{ add\+Flight} (const \textbf{ Flight} \&flight)
+\begin{DoxyCompactList}\small\item\em Adds a flight to the graph. \end{DoxyCompactList}\item 
+void \textbf{ add\+Airport} (const \textbf{ Airport} \&airport)
+\begin{DoxyCompactList}\small\item\em Adds an airport to the graph. \end{DoxyCompactList}\item 
+std\+::vector$<$ \textbf{ Airport} $>$ \textbf{ get\+Airports\+Within\+Distance} (double latitude, double longitude, double max\+\_\+distance) const
+\begin{DoxyCompactList}\small\item\em Gets a list of airports within a certain distance of a given latitude and longitude. \end{DoxyCompactList}\item 
+int \textbf{ get\+Num\+Flights\+From\+Airport} (const \textbf{ Airport} \&airport) const
+\begin{DoxyCompactList}\small\item\em Gets the number of flights from a given airport. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \textbf{ Flight} $>$ $>$ \textbf{ find\+Shortest\+Routes} (const \textbf{ Airport} \&departure, const \textbf{ Airport} \&arrival) const
+\begin{DoxyCompactList}\small\item\em Finds all shortest routes between two airports using BFS. \end{DoxyCompactList}\item 
+std\+::vector$<$ \textbf{ Flight} $>$ \textbf{ find\+Shortest\+Route} (const \textbf{ Airport} \&departure, const \textbf{ Airport} \&arrival) const
+\begin{DoxyCompactList}\small\item\em Finds the shortest route between two airports using BFS. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \textbf{ Flight} $>$ $>$ \textbf{ get\+Paths\+With\+One\+Airline} (const \textbf{ Airport} \&departure, const \textbf{ Airport} \&arrival, const std\+::string \&airline) const
+\begin{DoxyCompactList}\small\item\em Finds all routes between two airports that use only flights from a given airline using BFS. \end{DoxyCompactList}\item 
+double \textbf{ get\+Distance} (const \textbf{ Airport} \&airport1, const \textbf{ Airport} \&airport2) const
+\begin{DoxyCompactList}\small\item\em Gets the distance between two airports using heaviside\textquotesingle{}s formula. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Represents a \doxyref{Graph}{p.}{class_graph} of airports and flights. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_graph_a8781123f274d460cba1c7c91ee168ac0}\label{class_graph_a8781123f274d460cba1c7c91ee168ac0}} 
+\mbox{\label{class_graph_a8781123f274d460cba1c7c91ee168ac0}} 
 \index{Graph@{Graph}!addAirport@{addAirport}}
 \index{addAirport@{addAirport}!Graph@{Graph}}
-\doxysubsubsection{\texorpdfstring{addAirport()}{addAirport()}}
-{\footnotesize\ttfamily void Graph\+::add\+Airport (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_airport}{Airport}} \&}]{airport }\end{DoxyParamCaption})}
+\doxysubsubsection{addAirport()}
+{\footnotesize\ttfamily void Graph\+::add\+Airport (\begin{DoxyParamCaption}\item[{const \textbf{ Airport} \&}]{airport }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_graph_abb9f88da52722ec72e3b9b1d11b38f6f}\label{class_graph_abb9f88da52722ec72e3b9b1d11b38f6f}} 
-\index{Graph@{Graph}!addFlight@{addFlight}}
-\index{addFlight@{addFlight}!Graph@{Graph}}
-\doxysubsubsection{\texorpdfstring{addFlight()}{addFlight()}}
-{\footnotesize\ttfamily void Graph\+::add\+Flight (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_flight}{Flight}} \&}]{flight }\end{DoxyParamCaption})}
+
+
+Adds an airport to the graph. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em flight} & \\
+{\em airport} & The airport to be added \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_graph_ac73447df4127080148861bdb59a5cf92}\label{class_graph_ac73447df4127080148861bdb59a5cf92}} 
-\index{Graph@{Graph}!FindShortestRoute@{FindShortestRoute}}
-\index{FindShortestRoute@{FindShortestRoute}!Graph@{Graph}}
-\doxysubsubsection{\texorpdfstring{FindShortestRoute()}{FindShortestRoute()}}
-{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_flight}{Flight}} $>$ Graph\+::\+Find\+Shortest\+Route (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_airport}{Airport}} \&}]{departure,  }\item[{const \mbox{\hyperlink{class_airport}{Airport}} \&}]{arrival }\end{DoxyParamCaption}) const}
+\mbox{\label{class_graph_abb9f88da52722ec72e3b9b1d11b38f6f}} 
+\index{Graph@{Graph}!addFlight@{addFlight}}
+\index{addFlight@{addFlight}!Graph@{Graph}}
+\doxysubsubsection{addFlight()}
+{\footnotesize\ttfamily void Graph\+::add\+Flight (\begin{DoxyParamCaption}\item[{const \textbf{ Flight} \&}]{flight }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_graph_ab24a95aa6dd8834d68097dac534d5ecd}\label{class_graph_ab24a95aa6dd8834d68097dac534d5ecd}} 
-\index{Graph@{Graph}!FindShortestRoutes@{FindShortestRoutes}}
-\index{FindShortestRoutes@{FindShortestRoutes}!Graph@{Graph}}
-\doxysubsubsection{\texorpdfstring{FindShortestRoutes()}{FindShortestRoutes()}}
-{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_flight}{Flight}} $>$ $>$ Graph\+::\+Find\+Shortest\+Routes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_airport}{Airport}} \&}]{departure,  }\item[{const \mbox{\hyperlink{class_airport}{Airport}} \&}]{arrival }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_graph_a36c54aac661600b0101b8c027baf6eac}\label{class_graph_a36c54aac661600b0101b8c027baf6eac}} 
-\index{Graph@{Graph}!GetAirportsWithinDistance@{GetAirportsWithinDistance}}
-\index{GetAirportsWithinDistance@{GetAirportsWithinDistance}!Graph@{Graph}}
-\doxysubsubsection{\texorpdfstring{GetAirportsWithinDistance()}{GetAirportsWithinDistance()}}
-{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ Graph\+::\+Get\+Airports\+Within\+Distance (\begin{DoxyParamCaption}\item[{double}]{latitude,  }\item[{double}]{longitude,  }\item[{double}]{max\+\_\+distance }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_graph_a3895bf29d9b6455b6e6c7633dd108b86}\label{class_graph_a3895bf29d9b6455b6e6c7633dd108b86}} 
+Adds a flight to the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flight} & The flight to be added \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_graph_a1508d800da2230ca5a22287000f04057}} 
+\index{Graph@{Graph}!findShortestRoute@{findShortestRoute}}
+\index{findShortestRoute@{findShortestRoute}!Graph@{Graph}}
+\doxysubsubsection{findShortestRoute()}
+{\footnotesize\ttfamily std\+::vector$<$ \textbf{ Flight} $>$ Graph\+::find\+Shortest\+Route (\begin{DoxyParamCaption}\item[{const \textbf{ Airport} \&}]{departure,  }\item[{const \textbf{ Airport} \&}]{arrival }\end{DoxyParamCaption}) const}
+
+
+
+Finds the shortest route between two airports using BFS. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em departure} & The airport of departure \\
+\hline
+{\em arrival} & The airport of arrival \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of flights representing the shortest route between the two airports 
+\end{DoxyReturn}
+\mbox{\label{class_graph_a5d6c754257d238091babe82863055a32}} 
+\index{Graph@{Graph}!findShortestRoutes@{findShortestRoutes}}
+\index{findShortestRoutes@{findShortestRoutes}!Graph@{Graph}}
+\doxysubsubsection{findShortestRoutes()}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ \textbf{ Flight} $>$ $>$ Graph\+::find\+Shortest\+Routes (\begin{DoxyParamCaption}\item[{const \textbf{ Airport} \&}]{departure,  }\item[{const \textbf{ Airport} \&}]{arrival }\end{DoxyParamCaption}) const}
+
+
+
+Finds all shortest routes between two airports using BFS. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em departure} & The airport of departure \\
+\hline
+{\em arrival} & The airport of arrival \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of vector of flights representing all shortest routes between the two airports 
+\end{DoxyReturn}
+\mbox{\label{class_graph_a0990f239d4648abdcf3993c804f01c31}} 
+\index{Graph@{Graph}!getAirportsWithinDistance@{getAirportsWithinDistance}}
+\index{getAirportsWithinDistance@{getAirportsWithinDistance}!Graph@{Graph}}
+\doxysubsubsection{getAirportsWithinDistance()}
+{\footnotesize\ttfamily std\+::vector$<$ \textbf{ Airport} $>$ Graph\+::get\+Airports\+Within\+Distance (\begin{DoxyParamCaption}\item[{double}]{latitude,  }\item[{double}]{longitude,  }\item[{double}]{max\+\_\+distance }\end{DoxyParamCaption}) const}
+
+
+
+Gets a list of airports within a certain distance of a given latitude and longitude. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em latitude} & The latitude of the reference point \\
+\hline
+{\em longitude} & The longitude of the reference point \\
+\hline
+{\em max\+\_\+distance} & The maximum distance from the reference point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of airports within the specified distance of the reference point 
+\end{DoxyReturn}
+\mbox{\label{class_graph_a3895bf29d9b6455b6e6c7633dd108b86}} 
 \index{Graph@{Graph}!getDistance@{getDistance}}
 \index{getDistance@{getDistance}!Graph@{Graph}}
-\doxysubsubsection{\texorpdfstring{getDistance()}{getDistance()}}
-{\footnotesize\ttfamily double Graph\+::get\+Distance (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_airport}{Airport}} \&}]{airport1,  }\item[{const \mbox{\hyperlink{class_airport}{Airport}} \&}]{airport2 }\end{DoxyParamCaption}) const}
+\doxysubsubsection{getDistance()}
+{\footnotesize\ttfamily double Graph\+::get\+Distance (\begin{DoxyParamCaption}\item[{const \textbf{ Airport} \&}]{airport1,  }\item[{const \textbf{ Airport} \&}]{airport2 }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_graph_a4f2c44215cc4f0f272ff29f798b30e0f}\label{class_graph_a4f2c44215cc4f0f272ff29f798b30e0f}} 
+
+
+Gets the distance between two airports using heaviside\textquotesingle{}s formula. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airport1} & The first airport \\
+\hline
+{\em airport2} & The second airport \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance between the two airports 
+\end{DoxyReturn}
+\mbox{\label{class_graph_a4f2c44215cc4f0f272ff29f798b30e0f}} 
 \index{Graph@{Graph}!getNumFlightsFromAirport@{getNumFlightsFromAirport}}
 \index{getNumFlightsFromAirport@{getNumFlightsFromAirport}!Graph@{Graph}}
-\doxysubsubsection{\texorpdfstring{getNumFlightsFromAirport()}{getNumFlightsFromAirport()}}
-{\footnotesize\ttfamily int Graph\+::get\+Num\+Flights\+From\+Airport (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_airport}{Airport}} \&}]{airport }\end{DoxyParamCaption}) const}
+\doxysubsubsection{getNumFlightsFromAirport()}
+{\footnotesize\ttfamily int Graph\+::get\+Num\+Flights\+From\+Airport (\begin{DoxyParamCaption}\item[{const \textbf{ Airport} \&}]{airport }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_graph_aeec0d37ced4e3e6ca943da18063608c4}\label{class_graph_aeec0d37ced4e3e6ca943da18063608c4}} 
-\index{Graph@{Graph}!GetPathsWithOneAirline@{GetPathsWithOneAirline}}
-\index{GetPathsWithOneAirline@{GetPathsWithOneAirline}!Graph@{Graph}}
-\doxysubsubsection{\texorpdfstring{GetPathsWithOneAirline()}{GetPathsWithOneAirline()}}
-{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_flight}{Flight}} $>$ $>$ Graph\+::\+Get\+Paths\+With\+One\+Airline (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_airport}{Airport}} \&}]{departure,  }\item[{const \mbox{\hyperlink{class_airport}{Airport}} \&}]{arrival,  }\item[{const std\+::string \&}]{airline }\end{DoxyParamCaption}) const}
 
+
+Gets the number of flights from a given airport. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airport} & The airport to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of flights from the given airport 
+\end{DoxyReturn}
+\mbox{\label{class_graph_a260a2c05f7dc657f3e1c9db92ac173bf}} 
+\index{Graph@{Graph}!getPathsWithOneAirline@{getPathsWithOneAirline}}
+\index{getPathsWithOneAirline@{getPathsWithOneAirline}!Graph@{Graph}}
+\doxysubsubsection{getPathsWithOneAirline()}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ \textbf{ Flight} $>$ $>$ Graph\+::get\+Paths\+With\+One\+Airline (\begin{DoxyParamCaption}\item[{const \textbf{ Airport} \&}]{departure,  }\item[{const \textbf{ Airport} \&}]{arrival,  }\item[{const std\+::string \&}]{airline }\end{DoxyParamCaption}) const}
+
+
+
+Finds all routes between two airports that use only flights from a given airline using BFS. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em departure} & The airport of departure \\
+\hline
+{\em arrival} & The airport of arrival \\
+\hline
+{\em airline} & The airline to use for all flights in the routes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of vector of flights representing all routes between the two airports that use only flights from the given airline 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/\mbox{\hyperlink{_graph_8h}{Graph.\+h}}\item 
-src/\mbox{\hyperlink{_graph_8cpp}{Graph.\+cpp}}\end{DoxyCompactItemize}
+src/\textbf{ Graph.\+h}\item 
+src/\textbf{ Graph.\+cpp}\end{DoxyCompactItemize}

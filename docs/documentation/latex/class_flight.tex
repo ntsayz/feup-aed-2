@@ -1,5 +1,10 @@
-\hypertarget{class_flight}{}\doxysection{Flight Class Reference}
+\doxysection{Flight Class Reference}
 \label{class_flight}\index{Flight@{Flight}}
+
+
+Represents a flight between two airports.  
+
+
 
 
 {\ttfamily \#include $<$Flight.\+h$>$}
@@ -7,82 +12,127 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_flight_ae80089791cbb9fcc67c2d3f3345c9e30}{Flight}} (std\+::string source, std\+::string target, std\+::string airline)
+\textbf{ Flight} (std\+::string source, std\+::string target, std\+::string airline)
 \item 
-void \mbox{\hyperlink{class_flight_a8f7a6d3cc04a2e6131a161e2d6b2062c}{set\+Distance}} (double distance)
+void \textbf{ set\+Distance} (double distance)
+\begin{DoxyCompactList}\small\item\em Sets the distance of the flight. \end{DoxyCompactList}\item 
+const std\+::string \& \textbf{ get\+Departure} () const
+\begin{DoxyCompactList}\small\item\em Gets the code of the airport where the flight departs from. \end{DoxyCompactList}\item 
+const std\+::string \& \textbf{ get\+Arrival} () const
+\begin{DoxyCompactList}\small\item\em Gets the code of the airport where the flight arrives at. \end{DoxyCompactList}\item 
+const std\+::string \& \textbf{ get\+Airline} () const
+\begin{DoxyCompactList}\small\item\em Gets the code of the airline operating the flight. \end{DoxyCompactList}\item 
+double \textbf{ get\+Distance} () const
 \item 
-const std\+::string \& \mbox{\hyperlink{class_flight_aa87243c5309a487f01f414de39e1e9a5}{get\+Departure}} () const
-\item 
-const std\+::string \& \mbox{\hyperlink{class_flight_a299cffc4908a2193c67f3cbd2715374f}{get\+Arrival}} () const
-\item 
-const std\+::string \& \mbox{\hyperlink{class_flight_add83f59d0f4039fbda078711e687c779}{get\+Airline}} () const
-\item 
-double \mbox{\hyperlink{class_flight_acfaf4cb3fb5eca8bea71b09973cb3a52}{get\+Distance}} () const
-\item 
-bool \mbox{\hyperlink{class_flight_aeb4d32aa5108467c6a85d6fc19dbc0c3}{operator$<$}} (\mbox{\hyperlink{class_flight}{Flight}} f2)
+bool \textbf{ operator$<$} (\textbf{ Flight} f2)
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \mbox{\hyperlink{class_flight}{Flight}} \mbox{\hyperlink{class_flight_a0b03986834dc2a4ebda19d3437b91b4d}{from\+CSVLine}} (std\+::istringstream \&iss)
-\end{DoxyCompactItemize}
+static \textbf{ Flight} \textbf{ from\+CSVLine} (std\+::istringstream \&iss)
+\begin{DoxyCompactList}\small\item\em Creates a \doxyref{Flight}{p.}{class_flight} object from a string in .csv format. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Represents a flight between two airports. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_flight_ae80089791cbb9fcc67c2d3f3345c9e30}\label{class_flight_ae80089791cbb9fcc67c2d3f3345c9e30}} 
+\mbox{\label{class_flight_ae80089791cbb9fcc67c2d3f3345c9e30}} 
 \index{Flight@{Flight}!Flight@{Flight}}
 \index{Flight@{Flight}!Flight@{Flight}}
-\doxysubsubsection{\texorpdfstring{Flight()}{Flight()}}
+\doxysubsubsection{Flight()}
 {\footnotesize\ttfamily Flight\+::\+Flight (\begin{DoxyParamCaption}\item[{std\+::string}]{source,  }\item[{std\+::string}]{target,  }\item[{std\+::string}]{airline }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_flight_a0b03986834dc2a4ebda19d3437b91b4d}\label{class_flight_a0b03986834dc2a4ebda19d3437b91b4d}} 
+\mbox{\label{class_flight_a0b03986834dc2a4ebda19d3437b91b4d}} 
 \index{Flight@{Flight}!fromCSVLine@{fromCSVLine}}
 \index{fromCSVLine@{fromCSVLine}!Flight@{Flight}}
-\doxysubsubsection{\texorpdfstring{fromCSVLine()}{fromCSVLine()}}
-{\footnotesize\ttfamily static \mbox{\hyperlink{class_flight}{Flight}} Flight\+::from\+CSVLine (\begin{DoxyParamCaption}\item[{std\+::istringstream \&}]{iss }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+\doxysubsubsection{fromCSVLine()}
+{\footnotesize\ttfamily static \textbf{ Flight} Flight\+::from\+CSVLine (\begin{DoxyParamCaption}\item[{std\+::istringstream \&}]{iss }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-\mbox{\Hypertarget{class_flight_add83f59d0f4039fbda078711e687c779}\label{class_flight_add83f59d0f4039fbda078711e687c779}} 
+
+
+Creates a \doxyref{Flight}{p.}{class_flight} object from a string in .csv format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iss} & An std\+::istringstream object containing the .csv string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The flight object 
+\end{DoxyReturn}
+\mbox{\label{class_flight_add83f59d0f4039fbda078711e687c779}} 
 \index{Flight@{Flight}!getAirline@{getAirline}}
 \index{getAirline@{getAirline}!Flight@{Flight}}
-\doxysubsubsection{\texorpdfstring{getAirline()}{getAirline()}}
+\doxysubsubsection{getAirline()}
 {\footnotesize\ttfamily const std\+::string \& Flight\+::get\+Airline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_flight_a299cffc4908a2193c67f3cbd2715374f}\label{class_flight_a299cffc4908a2193c67f3cbd2715374f}} 
+
+
+Gets the code of the airline operating the flight. 
+
+\begin{DoxyReturn}{Returns}
+The code of the airline operating the flight 
+\end{DoxyReturn}
+\mbox{\label{class_flight_a299cffc4908a2193c67f3cbd2715374f}} 
 \index{Flight@{Flight}!getArrival@{getArrival}}
 \index{getArrival@{getArrival}!Flight@{Flight}}
-\doxysubsubsection{\texorpdfstring{getArrival()}{getArrival()}}
+\doxysubsubsection{getArrival()}
 {\footnotesize\ttfamily const std\+::string \& Flight\+::get\+Arrival (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_flight_aa87243c5309a487f01f414de39e1e9a5}\label{class_flight_aa87243c5309a487f01f414de39e1e9a5}} 
+
+
+Gets the code of the airport where the flight arrives at. 
+
+\begin{DoxyReturn}{Returns}
+The code of the airport where the flight arrives at 
+\end{DoxyReturn}
+\mbox{\label{class_flight_aa87243c5309a487f01f414de39e1e9a5}} 
 \index{Flight@{Flight}!getDeparture@{getDeparture}}
 \index{getDeparture@{getDeparture}!Flight@{Flight}}
-\doxysubsubsection{\texorpdfstring{getDeparture()}{getDeparture()}}
+\doxysubsubsection{getDeparture()}
 {\footnotesize\ttfamily const std\+::string \& Flight\+::get\+Departure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_flight_acfaf4cb3fb5eca8bea71b09973cb3a52}\label{class_flight_acfaf4cb3fb5eca8bea71b09973cb3a52}} 
+
+
+Gets the code of the airport where the flight departs from. 
+
+\begin{DoxyReturn}{Returns}
+The code of the airport where the flight departs from 
+\end{DoxyReturn}
+\mbox{\label{class_flight_acfaf4cb3fb5eca8bea71b09973cb3a52}} 
 \index{Flight@{Flight}!getDistance@{getDistance}}
 \index{getDistance@{getDistance}!Flight@{Flight}}
-\doxysubsubsection{\texorpdfstring{getDistance()}{getDistance()}}
+\doxysubsubsection{getDistance()}
 {\footnotesize\ttfamily double Flight\+::get\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_flight_aeb4d32aa5108467c6a85d6fc19dbc0c3}\label{class_flight_aeb4d32aa5108467c6a85d6fc19dbc0c3}} 
+\mbox{\label{class_flight_aeb4d32aa5108467c6a85d6fc19dbc0c3}} 
 \index{Flight@{Flight}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!Flight@{Flight}}
-\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
-{\footnotesize\ttfamily bool Flight\+::operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_flight}{Flight}}}]{f2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\doxysubsubsection{operator$<$()}
+{\footnotesize\ttfamily bool Flight\+::operator$<$ (\begin{DoxyParamCaption}\item[{\textbf{ Flight}}]{f2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{class_flight_a8f7a6d3cc04a2e6131a161e2d6b2062c}\label{class_flight_a8f7a6d3cc04a2e6131a161e2d6b2062c}} 
+\mbox{\label{class_flight_a8f7a6d3cc04a2e6131a161e2d6b2062c}} 
 \index{Flight@{Flight}!setDistance@{setDistance}}
 \index{setDistance@{setDistance}!Flight@{Flight}}
-\doxysubsubsection{\texorpdfstring{setDistance()}{setDistance()}}
+\doxysubsubsection{setDistance()}
 {\footnotesize\ttfamily void Flight\+::set\+Distance (\begin{DoxyParamCaption}\item[{double}]{distance }\end{DoxyParamCaption})}
 
 
 
+Sets the distance of the flight. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em distance} & The new distance of the flight \\
+\hline
+\end{DoxyParams}
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/\mbox{\hyperlink{_flight_8h}{Flight.\+h}}\item 
-src/\mbox{\hyperlink{_flight_8cpp}{Flight.\+cpp}}\end{DoxyCompactItemize}
+src/\textbf{ Flight.\+h}\item 
+src/\textbf{ Flight.\+cpp}\end{DoxyCompactItemize}
