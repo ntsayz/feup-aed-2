@@ -99,8 +99,56 @@ std::string Utility::getAirportCode(){
     while (true){
         Utility::clear_screen();
         Utility::header("SkyPlanner");
-        Utility::header("Flight Search - Airport code Code");
-        Utility::body("Write the code code",{"It should have 3 letters","eg:.MPM"});
+        Utility::header("Flight Search - Airport Code");
+        Utility::body("Write the code",{"It should have 3 letters","eg:.MPM"});
+        Utility::footer();
+        std::cout << "-->";
+        std::getline(std::cin,stringin);
+        if(stringin.empty()){
+            continue;
+        }else if(stringin == "9" || stringin == "exit"){
+            return "exit";
+        }else if(stringin.size() < 3 || stringin.size() >3){
+            std::cerr << "That's not the correct format!";
+            continue;
+        }else{
+            return stringin;
+        }
+    }
+
+}
+
+std::string Utility::getAirline(){
+    std::string stringin;
+    while (true){
+        Utility::clear_screen();
+        Utility::header("SkyPlanner");
+        Utility::header("Flight Search - Airline");
+        Utility::body("Write the airline name",{""});
+        Utility::footer();
+        std::cout << "-->";
+        std::getline(std::cin,stringin);
+        if(stringin.empty()){
+            continue;
+        }else if(stringin == "9" || stringin == "exit"){
+            return "exit";
+        }else if(stringin.size() < 2){
+            std::cerr << "A bit longer please!";
+            continue;
+        }else{
+            return stringin;
+        }
+    }
+
+}
+
+std::string Utility::getAirlineCode(){
+    std::string stringin;
+    while (true){
+        Utility::clear_screen();
+        Utility::header("SkyPlanner");
+        Utility::header("Flight Search - Airline Code");
+        Utility::body("Write the code",{"It should have 3 letters","eg:.RYR"});
         Utility::footer();
         std::cout << "-->";
         std::getline(std::cin,stringin);

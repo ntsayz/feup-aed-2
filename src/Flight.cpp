@@ -15,3 +15,12 @@ const std::string &Flight::getArrival() const {
 const std::string &Flight::getAirline() const {
     return airline;
 }
+
+void Flight::setDistance(double distance) {
+    this->distance = distance;
+}
+
+double Flight::getDistance() const {
+    return distance;
+}
+

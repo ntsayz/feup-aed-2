@@ -1,0 +1,45 @@
+\doxysection{Graph.\+h}
+\label{_graph_8h_source}\index{src/Graph.h@{src/Graph.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by ntsayz on 12/20/22.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef FEUP\_AED2\_GRAPH\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define FEUP\_AED2\_GRAPH\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <unordered\_set>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <utility>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <limits>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <bits/stdc++.h>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}Airport.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}Flight.h"{}}}
+\DoxyCodeLine{24 \textcolor{keyword}{class }Graph \{}
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} addFlight(\textcolor{keyword}{const} Flight \&flight);}
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} addAirport(\textcolor{keyword}{const} Airport \&airport);}
+\DoxyCodeLine{43     std::vector<Airport> getAirportsWithinDistance(\textcolor{keywordtype}{double} latitude, \textcolor{keywordtype}{double} longitude, \textcolor{keywordtype}{double} max\_distance) \textcolor{keyword}{const};}
+\DoxyCodeLine{49     \textcolor{keywordtype}{int} getNumFlightsFromAirport(\textcolor{keyword}{const} Airport \&airport) \textcolor{keyword}{const};}
+\DoxyCodeLine{56     std::vector<std::vector<Flight>> findShortestRoutes(\textcolor{keyword}{const} Airport \&departure, \textcolor{keyword}{const} Airport \&arrival) \textcolor{keyword}{const};}
+\DoxyCodeLine{63     std::vector<Flight> findShortestRoute(\textcolor{keyword}{const} Airport \&departure, \textcolor{keyword}{const} Airport \&arrival) \textcolor{keyword}{const};}
+\DoxyCodeLine{71     std::vector<std::vector<Flight>> getPathsWithOneAirline(\textcolor{keyword}{const} Airport \&departure, \textcolor{keyword}{const} Airport \&arrival, \textcolor{keyword}{const} std::string \&airline) \textcolor{keyword}{const};}
+\DoxyCodeLine{78     \textcolor{keywordtype}{double} getDistance(\textcolor{keyword}{const} Airport \&airport1, \textcolor{keyword}{const} Airport \&airport2) \textcolor{keyword}{const};}
+\DoxyCodeLine{79     \textcolor{keyword}{private}:}
+\DoxyCodeLine{83     std::unordered\_map<std::string, std::vector<Flight>> adjacency\_list;}
+\DoxyCodeLine{87     std::unordered\_map<std::string, Airport> airports;}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//FEUP\_AED2\_GRAPH\_H}}
+
+\end{DoxyCode}

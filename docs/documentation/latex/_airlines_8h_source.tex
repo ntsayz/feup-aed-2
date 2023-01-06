@@ -1,0 +1,50 @@
+\doxysection{Airlines.\+h}
+\label{_airlines_8h_source}\index{src/Airlines.h@{src/Airlines.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by ntsayz on 12/20/22.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef FEUP\_AED2\_AIRLINES\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define FEUP\_AED2\_AIRLINES\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <utility>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{18 \textcolor{keyword}{class }Airline \{}
+\DoxyCodeLine{19 \textcolor{keyword}{private}:}
+\DoxyCodeLine{23     std::string code;}
+\DoxyCodeLine{27     std::string name;}
+\DoxyCodeLine{31     std::string callsign;}
+\DoxyCodeLine{35     std::string country;}
+\DoxyCodeLine{36 \textcolor{keyword}{public}:}
+\DoxyCodeLine{44     Airline(std::string code, std::string name, std::string callsign, std::string country) :}
+\DoxyCodeLine{45             code(std::move(code)), name(std::move(name)), callsign(std::move(callsign)), country(std::move(country)) \{\}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{52     \textcolor{keyword}{static} Airline fromCSVLine(std::istringstream\& iss) \{}
+\DoxyCodeLine{53         std::string code, name, callsign, country;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         std::getline(iss, code, \textcolor{charliteral}{','});}
+\DoxyCodeLine{56         std::getline(iss, name, \textcolor{charliteral}{','});}
+\DoxyCodeLine{57         std::getline(iss, callsign, \textcolor{charliteral}{','});}
+\DoxyCodeLine{58         std::getline(iss, country);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60         \textcolor{keywordflow}{return} \{code, name, callsign, country\};}
+\DoxyCodeLine{61     \}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{67     \textcolor{keyword}{const} std::string \&getCode() \textcolor{keyword}{const};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{73     \textcolor{keyword}{const} std::string \&getName() \textcolor{keyword}{const};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{79     \textcolor{keyword}{const} std::string \&getCallsign() \textcolor{keyword}{const};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{85     \textcolor{keyword}{const} std::string \&getCountry() \textcolor{keyword}{const};}
+\DoxyCodeLine{86 \};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//FEUP\_AED2\_AIRLINES\_H}}
+
+\end{DoxyCode}

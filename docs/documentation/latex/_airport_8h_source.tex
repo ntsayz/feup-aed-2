@@ -1,0 +1,68 @@
+\doxysection{Airport.\+h}
+\label{_airport_8h_source}\index{src/Airport.h@{src/Airport.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by ntsayz on 12/20/22.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#ifndef FEUP\_AED2\_AIRPORT\_H}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define FEUP\_AED2\_AIRPORT\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <utility>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{16 \textcolor{keyword}{class }Airport \{}
+\DoxyCodeLine{17 \textcolor{keyword}{private}:}
+\DoxyCodeLine{18 \textcolor{keyword}{private}:}
+\DoxyCodeLine{22     std::string code;}
+\DoxyCodeLine{26     std::string name;}
+\DoxyCodeLine{30     std::string city;}
+\DoxyCodeLine{34     std::string country;}
+\DoxyCodeLine{38     \textcolor{keywordtype}{double} latitude;}
+\DoxyCodeLine{42     \textcolor{keywordtype}{double} longitude;}
+\DoxyCodeLine{43 \textcolor{keyword}{public}:}
+\DoxyCodeLine{47     Airport();}
+\DoxyCodeLine{52     Airport(std::string IATA) : code(std::move(IATA)) \{\}}
+\DoxyCodeLine{62     Airport(std::string code, std::string name, std::string city, std::string country, \textcolor{keywordtype}{double} latitude, \textcolor{keywordtype}{double} longitude) :}
+\DoxyCodeLine{63             code(std::move(code)), name(std::move(name)), city(std::move(city)), country(std::move(country)), latitude(latitude), longitude(longitude) \{\}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{71     \textcolor{keyword}{static} Airport fromCSVLine(std::istringstream\& iss) \{}
+\DoxyCodeLine{72         std::string code, name, city, country;}
+\DoxyCodeLine{73         \textcolor{keywordtype}{double} latitude, longitude;}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75         std::getline(iss, code, \textcolor{charliteral}{','});}
+\DoxyCodeLine{76         std::getline(iss, name, \textcolor{charliteral}{','});}
+\DoxyCodeLine{77         std::getline(iss, city, \textcolor{charliteral}{','});}
+\DoxyCodeLine{78         std::getline(iss, country, \textcolor{charliteral}{','});}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80         std::string latitudeString, longitudeString;}
+\DoxyCodeLine{81         std::getline(iss, latitudeString, \textcolor{charliteral}{','});}
+\DoxyCodeLine{82         std::getline(iss, longitudeString);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84         std::stringstream(latitudeString) >> latitude;}
+\DoxyCodeLine{85         std::stringstream(longitudeString) >> longitude;}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87         \textcolor{keywordflow}{return} Airport(code, name, city, country,latitude,longitude);}
+\DoxyCodeLine{88     \}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{94     \textcolor{keyword}{const} std::string \&getCountry() \textcolor{keyword}{const};}
+\DoxyCodeLine{99     \textcolor{keyword}{const} std::string \&getCode() \textcolor{keyword}{const};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{105     \textcolor{keyword}{const} std::string \&getName() \textcolor{keyword}{const};}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{111     \textcolor{keyword}{const} std::string \&getCity() \textcolor{keyword}{const};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{117     \textcolor{keywordtype}{double} getLatitude() \textcolor{keyword}{const};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{123     \textcolor{keywordtype}{double} getLongitude() \textcolor{keyword}{const};}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{129     \textcolor{keywordtype}{void} setLatitude(\textcolor{keywordtype}{double} latitude);}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{135     \textcolor{keywordtype}{void} setLongitude(\textcolor{keywordtype}{double} longitude);}
+\DoxyCodeLine{136 \};}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//FEUP\_AED2\_AIRPORT\_H}}
+
+\end{DoxyCode}

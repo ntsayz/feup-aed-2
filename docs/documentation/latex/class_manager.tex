@@ -1,0 +1,210 @@
+\doxysection{Manager Class Reference}
+\label{class_manager}\index{Manager@{Manager}}
+
+
+Manages the application. Stores its most important data structures, manages the application state.  
+
+
+
+
+{\ttfamily \#include $<$Manager.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Manager} ()=default
+\begin{DoxyCompactList}\small\item\em \doxyref{Manager}{p.}{class_manager}\textquotesingle{}s constructor. \end{DoxyCompactList}\item 
+void \textbf{ run} ()
+\begin{DoxyCompactList}\small\item\em Function to start the application, called by the only instance of the manager function. \end{DoxyCompactList}\item 
+void \textbf{ testing} ()
+\item 
+bool \textbf{ load\+Data} (const std\+::string \&fname1, const std\+::string \&fname2, const std\+::string \&fname3)
+\item 
+void \textbf{ main\+\_\+menu} ()
+\begin{DoxyCompactList}\small\item\em Displays the main menu. \end{DoxyCompactList}\item 
+void \textbf{ search\+\_\+flights\+\_\+menu} (bool not\+ARecursive\+Call)
+\item 
+void \textbf{ search\+\_\+flights} (std\+::vector$<$ \textbf{ Airport} $>$ departures\+\_\+airports, std\+::vector$<$ \textbf{ Airport} $>$ arrival\+\_\+airports)
+\item 
+std\+::vector$<$ \textbf{ Airport} $>$ \textbf{ get\+\_\+airports\+\_\+by\+\_\+city\+\_\+country} ()
+\item 
+\textbf{ Airport} \textbf{ get\+\_\+airports\+\_\+by\+\_\+code} ()
+\item 
+std\+::vector$<$ \textbf{ Airport} $>$ \textbf{ get\+\_\+airports\+\_\+by\+\_\+coordinates} ()
+\item 
+void \textbf{ show\+\_\+multiple\+\_\+routes} (const std\+::vector$<$ \textbf{ Airport} $>$ \&departures\+\_\+airports, const std\+::vector$<$ \textbf{ Airport} $>$ \&arrival\+\_\+airports)
+\item 
+void \textbf{ search\+\_\+one\+\_\+airline} (const std\+::vector$<$ \textbf{ Airport} $>$ \&departures\+\_\+airports, const std\+::vector$<$ \textbf{ Airport} $>$ \&arrival\+\_\+airports)
+\item 
+void \textbf{ show\+\_\+flight\+\_\+info} (const std\+::vector$<$ \textbf{ Airport} $>$ \&departures\+\_\+airports, const std\+::vector$<$ \textbf{ Airport} $>$ \&arrival\+\_\+airports)
+\item 
+std\+::string \textbf{ get\+\_\+airline\+\_\+code} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the application. Stores its most important data structures, manages the application state. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_manager_a51c8f271f79b1c6590e9bc4ae6343bc0}} 
+\index{Manager@{Manager}!Manager@{Manager}}
+\index{Manager@{Manager}!Manager@{Manager}}
+\doxysubsubsection{Manager()}
+{\footnotesize\ttfamily Manager\+::\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxyref{Manager}{p.}{class_manager}\textquotesingle{}s constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_manager_acbaaedb449f56cec89ffce4993de472d}} 
+\index{Manager@{Manager}!get\_airline\_code@{get\_airline\_code}}
+\index{get\_airline\_code@{get\_airline\_code}!Manager@{Manager}}
+\doxysubsubsection{get\_airline\_code()}
+{\footnotesize\ttfamily std\+::string Manager\+::get\+\_\+airline\+\_\+code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Helper function to get airline code \begin{DoxyReturn}{Returns}
+IATA code of airline 
+\end{DoxyReturn}
+\mbox{\label{class_manager_a7d10f5aba93b3d10967b379572c8c7c2}} 
+\index{Manager@{Manager}!get\_airports\_by\_city\_country@{get\_airports\_by\_city\_country}}
+\index{get\_airports\_by\_city\_country@{get\_airports\_by\_city\_country}!Manager@{Manager}}
+\doxysubsubsection{get\_airports\_by\_city\_country()}
+{\footnotesize\ttfamily std\+::vector$<$ \textbf{ Airport} $>$ Manager\+::get\+\_\+airports\+\_\+by\+\_\+city\+\_\+country (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets a list of airports, prompting the user to write the name of the city or/and country of their origin \begin{DoxyReturn}{Returns}
+list of airports 
+\end{DoxyReturn}
+\mbox{\label{class_manager_a9de4649eebac11cf1f92174f39cbf9e1}} 
+\index{Manager@{Manager}!get\_airports\_by\_code@{get\_airports\_by\_code}}
+\index{get\_airports\_by\_code@{get\_airports\_by\_code}!Manager@{Manager}}
+\doxysubsubsection{get\_airports\_by\_code()}
+{\footnotesize\ttfamily \textbf{ Airport} Manager\+::get\+\_\+airports\+\_\+by\+\_\+code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets a list of airports, prompting the user to write their IATA code \begin{DoxyReturn}{Returns}
+list of airports 
+\end{DoxyReturn}
+\mbox{\label{class_manager_ad6b0e968d5a33f2ca5882fee2ade1329}} 
+\index{Manager@{Manager}!get\_airports\_by\_coordinates@{get\_airports\_by\_coordinates}}
+\index{get\_airports\_by\_coordinates@{get\_airports\_by\_coordinates}!Manager@{Manager}}
+\doxysubsubsection{get\_airports\_by\_coordinates()}
+{\footnotesize\ttfamily std\+::vector$<$ \textbf{ Airport} $>$ Manager\+::get\+\_\+airports\+\_\+by\+\_\+coordinates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets a list of airports, prompting the user to write coordinates for the desired location \begin{DoxyReturn}{Returns}
+list of airports 
+\end{DoxyReturn}
+\mbox{\label{class_manager_a65b83f021fffd2ab08532622953b3ac6}} 
+\index{Manager@{Manager}!loadData@{loadData}}
+\index{loadData@{loadData}!Manager@{Manager}}
+\doxysubsubsection{loadData()}
+{\footnotesize\ttfamily bool Manager\+::load\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fname1,  }\item[{const std\+::string \&}]{fname2,  }\item[{const std\+::string \&}]{fname3 }\end{DoxyParamCaption})}
+
+Function to load the data from the .csv files from the dataset. 
+\begin{DoxyParams}{Parameters}
+{\em fname1} & Path to \textquotesingle{}airlines.\+csv\textquotesingle{} \\
+\hline
+{\em fname2} & Path to \textquotesingle{}airports.\+csv\textquotesingle{} \\
+\hline
+{\em fname3} & Path to \textquotesingle{}flights.\+csv\textquotesingle{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+It compares the size of the data structures that the data was loaded into, to determine if they\textquotesingle{}re according to spec 
+\end{DoxyReturn}
+\mbox{\label{class_manager_aa12b4fb7796df3df0a91382becd4585b}} 
+\index{Manager@{Manager}!main\_menu@{main\_menu}}
+\index{main\_menu@{main\_menu}!Manager@{Manager}}
+\doxysubsubsection{main\_menu()}
+{\footnotesize\ttfamily void Manager\+::main\+\_\+menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the main menu. 
+
+\mbox{\label{class_manager_af8c67c221068e4e3ccccf1d5f70ba8ee}} 
+\index{Manager@{Manager}!run@{run}}
+\index{run@{run}!Manager@{Manager}}
+\doxysubsubsection{run()}
+{\footnotesize\ttfamily void Manager\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to start the application, called by the only instance of the manager function. 
+
+\mbox{\label{class_manager_a0c1aa1d3b0a3ee68eb955ff705fd5b5f}} 
+\index{Manager@{Manager}!search\_flights@{search\_flights}}
+\index{search\_flights@{search\_flights}!Manager@{Manager}}
+\doxysubsubsection{search\_flights()}
+{\footnotesize\ttfamily void Manager\+::search\+\_\+flights (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \textbf{ Airport} $>$}]{departures\+\_\+airports,  }\item[{std\+::vector$<$ \textbf{ Airport} $>$}]{arrival\+\_\+airports }\end{DoxyParamCaption})}
+
+Looks for flights given 
+\begin{DoxyParams}{Parameters}
+{\em departures\+\_\+airports} & List of airports in the city of departure \\
+\hline
+{\em arrival\+\_\+airports} & List of airports in the city of arrival \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_manager_aa41d7b86c289e4b6e2c47b7cf9360f12}} 
+\index{Manager@{Manager}!search\_flights\_menu@{search\_flights\_menu}}
+\index{search\_flights\_menu@{search\_flights\_menu}!Manager@{Manager}}
+\doxysubsubsection{search\_flights\_menu()}
+{\footnotesize\ttfamily void Manager\+::search\+\_\+flights\+\_\+menu (\begin{DoxyParamCaption}\item[{bool}]{not\+ARecursive\+Call }\end{DoxyParamCaption})}
+
+1st Option in the Main menu; Shows the \textquotesingle{}Search Flights\textquotesingle{} section 
+\begin{DoxyParams}{Parameters}
+{\em not\+ARecursive\+Call} & Since we need to use this function multiple times within the same call chain, it should be recursive. This was a way to handle recursion appropriately \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_manager_a38d9efb77a12d2b9e049df62e23bd06c}} 
+\index{Manager@{Manager}!search\_one\_airline@{search\_one\_airline}}
+\index{search\_one\_airline@{search\_one\_airline}!Manager@{Manager}}
+\doxysubsubsection{search\_one\_airline()}
+{\footnotesize\ttfamily void Manager\+::search\+\_\+one\+\_\+airline (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \textbf{ Airport} $>$ \&}]{departures\+\_\+airports,  }\item[{const std\+::vector$<$ \textbf{ Airport} $>$ \&}]{arrival\+\_\+airports }\end{DoxyParamCaption})}
+
+Searches for routes using only one requested airline 
+\begin{DoxyParams}{Parameters}
+{\em departures\+\_\+airports} & list of departure airports \\
+\hline
+{\em arrival\+\_\+airports} & list of arrival airports \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_manager_a43b04d4e1056f048e3680836809c52dd}} 
+\index{Manager@{Manager}!show\_flight\_info@{show\_flight\_info}}
+\index{show\_flight\_info@{show\_flight\_info}!Manager@{Manager}}
+\doxysubsubsection{show\_flight\_info()}
+{\footnotesize\ttfamily void Manager\+::show\+\_\+flight\+\_\+info (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \textbf{ Airport} $>$ \&}]{departures\+\_\+airports,  }\item[{const std\+::vector$<$ \textbf{ Airport} $>$ \&}]{arrival\+\_\+airports }\end{DoxyParamCaption})}
+
+Shows detailed route and flight information. 
+\begin{DoxyParams}{Parameters}
+{\em departures\+\_\+airports} & list of departure airports \\
+\hline
+{\em arrival\+\_\+airports} & list of arrival airports \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_manager_ad9cfa1890c9d32bcb39c9f832f4b2296}} 
+\index{Manager@{Manager}!show\_multiple\_routes@{show\_multiple\_routes}}
+\index{show\_multiple\_routes@{show\_multiple\_routes}!Manager@{Manager}}
+\doxysubsubsection{show\_multiple\_routes()}
+{\footnotesize\ttfamily void Manager\+::show\+\_\+multiple\+\_\+routes (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \textbf{ Airport} $>$ \&}]{departures\+\_\+airports,  }\item[{const std\+::vector$<$ \textbf{ Airport} $>$ \&}]{arrival\+\_\+airports }\end{DoxyParamCaption})}
+
+Shows multiple routes with same number of flights 
+\begin{DoxyParams}{Parameters}
+{\em departures\+\_\+airports} & list of departure airports \\
+\hline
+{\em arrival\+\_\+airports} & list of arrival airports \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_manager_a3ce44a229c819433a1b88323f4654730}} 
+\index{Manager@{Manager}!testing@{testing}}
+\index{testing@{testing}!Manager@{Manager}}
+\doxysubsubsection{testing()}
+{\footnotesize\ttfamily void Manager\+::testing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\textbf{ Manager.\+h}\item 
+src/\textbf{ Manager.\+cpp}\end{DoxyCompactItemize}
