@@ -28,6 +28,8 @@ public:
     static bool isSubstring(std::string str, std::string sub);
     static std::string getCity();
     static std::string getAirportCode();
+    static std::string getAirlineCode();
+    static std::string getAirline();
 
     template <typename T>
     static std::vector<T> loadDataFromCSV(std::string filename) {

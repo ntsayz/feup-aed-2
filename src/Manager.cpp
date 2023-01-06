@@ -286,6 +286,64 @@ void Manager::show_multiple_routes(const std::vector<Airport>& departures_airpor
 
 
 }
+
+std::string Manager::get_airline_code(){
+    localSession = true;
+    std::string airlinestr;
+    int i;
+    while(localSession) {
+        Utility::clear_screen();
+        Utility::header("SkyPlanner");
+        Utility::body("Routes with one airline - Airline", {"1. Name","2. Code"});
+        std::cin >> i;
+        switch (i) {
+            case 1:
+                airlinestr = Utility::getAirlineCode();
+                return airlinestr;
+                break;
+            case 2:
+                airlinestr = Utility::getAirline();
+                break;
+            default:
+                continue;
+        }
+        if(airlinestr == "exit" || airlinestr == "9"){
+            localSession = false;
+            return "exit";
+        }
+        option =1;
+        for(auto const& [code,airl]: airlines){
+            if(Utility::isSubstring(airl.getName(), airlinestr)){
+                std::cout  << option << ". " << airl.getName()<< "\n";
+                option++;
+            }
+        }
+        if(option < 2){
+            std::cerr << "I didn't find any airline with that name, try again!\n";
+            continue;
+        }
+        std::cout << "-->";
+        std::cin >> choice;
+        if(choice < 1 || choice >= option || std::cin.bad()){
+            std::cerr << "Invalid entry, try again!\n";
+            continue;
+        }
+        option=1;
+
+        for(auto const& [code,v]: airlines){
+            if(Utility::isSubstring(v.getName(), airlinestr)){
+                if(option == choice){
+                    std::cout << "You chose " << v.getName() << "\n";
+                    localSession = false;
+                    return code;
+                }
+                option++;
+            }
+
+        }
+    }
+
+}
 void Manager::search_one_airline(const std::vector<Airport> &departures_airports,const std::vector<Airport> &arrival_airports) {
     localSession = true;
     std::string airlineCode;
@@ -294,7 +352,7 @@ void Manager::search_one_airline(const std::vector<Airport> &departures_airports
         Utility::clear_screen();
         Utility::header("SkyPlanner");
         Utility::body("Routes with one airline",{""});
-        airlineCode = Utility::getAirportCode();
+        airlineCode = get_airline_code();
         if(airlineCode == "exit"){
             localSession = false;
             return;
@@ -305,7 +363,7 @@ void Manager::search_one_airline(const std::vector<Airport> &departures_airports
             for(auto const& depAir: departures_airports) {
                 for (auto const &arrAir: arrival_airports) { //TODO
                     routes = flight_network.GetPathsWithOneAirline(depAir,arrAir,airlineCode);
-                    if(routes.empty())std::cout << "No routes found!" << "\n";
+                    if(routes.empty())std::cout << "No routes found: " << depAir.getCode() << " -> " << arrAir.getName() << " with " << airlineCode << "\n";
                     for (const auto &route: routes) {
                         std::cout << "Option :" << i << "\n";
                         for(const auto &flight : route){
@@ -326,7 +384,7 @@ void Manager::search_one_airline(const std::vector<Airport> &departures_airports
                 i = 1;
                 for(auto const& depAir: departures_airports) {
                     for (auto const &arrAir: arrival_airports) { //TODO
-                        routes = flight_network.FindShortestRoutes(depAir, arrAir);
+                        routes = flight_network.GetPathsWithOneAirline(depAir, arrAir,airlineCode);
                         for (const auto &route: routes) {
                             if(i == option){
                                 show_flight_info(departures_airports,arrival_airports);
@@ -361,13 +419,13 @@ void Manager::show_flight_info(const std::vector<Airport>& departures_airports, 
             if(arrival_airports.size()!=1){
                 std::cout << "TO: " << arrAir.getName() << " Airport\n";
             }
-            std::cout << "------------------------------------------------------------------------------------------------------------------|\n";
-            std::cout << "Flight #    |        Departure Airport      |        Arrival Airport        |                Airline              |\n";
-            std::cout << "------------|-------------------------------|-------------------------------|-------------------------------------|\n";
+            std::cout << "|------------------------------------------------------------------------------------------------------------------|\n";
+            std::cout << "|  Flight #  |        Departure Airport      |        Arrival Airport        |                Airline              |\n";
+            std::cout << "|------------|-------------------------------|-------------------------------|-------------------------------------|\n";
             newroute = flight_network.FindShortestRoute(depAir, arrAir);
             if (countair != 0) i = 1;
             for (const auto& flight : newroute) {
-                std::cout << std::setw(11) << i << " | ";
+                std::cout << "|" <<std::setw(11) << i << " | ";
                 // Print departure airport information
                 std::cout << std::setw(29) << airports.at(flight.getDeparture()).getCity() + " (" +
                         airports.at(flight.getDeparture()).getCode() + ")";
@@ -387,6 +445,7 @@ void Manager::show_flight_info(const std::vector<Airport>& departures_airports, 
                 } else {
                     std::cout << "\n";
                 }
+                std::cout << "|------------------------------------------------------------------------------------------------------------------|\n";
                 i++;
             }
             countair++;

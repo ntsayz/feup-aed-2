@@ -60,6 +60,8 @@ public:
     void search_one_airline(const std::vector<Airport> &departures_airports, const std::vector<Airport> &arrival_airports);
 
     void show_flight_info(const std::vector<Airport> &departures_airports, const std::vector<Airport> &arrival_airports);
+
+    std::string  get_airline_code();
 };
 
 
