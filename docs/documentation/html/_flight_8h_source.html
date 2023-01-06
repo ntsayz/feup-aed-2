@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FEUP AED 2: src/Flight.h Source File</title>
+<title>SkyPlanner: src/Flight.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FEUP AED 2<span id="projectnumber">&#160;0.0.1</span>
+   <div id="projectname">SkyPlanner<span id="projectnumber">&#160;0.0.1</span>
    </div>
-   <div id="projectbrief">Proj</div>
+   <div id="projectbrief">Application to search for flights</div>
   </td>
  </tr>
  </tbody>
@@ -97,36 +97,46 @@ $(function() {
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    std::string departure;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    std::string arrival;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    std::string airline;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_flight.html#ae80089791cbb9fcc67c2d3f3345c9e30">   23</a></span>    <a class="code hl_function" href="class_flight.html#ae80089791cbb9fcc67c2d3f3345c9e30">Flight</a>(std::string source, std::string target, std::string airline) :</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            departure(std::move(source)), arrival(std::move(target)), airline(std::move(airline)) {}</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_flight.html#a0b03986834dc2a4ebda19d3437b91b4d">   26</a></span>    <span class="keyword">static</span> <a class="code hl_class" href="class_flight.html">Flight</a> <a class="code hl_function" href="class_flight.html#a0b03986834dc2a4ebda19d3437b91b4d">fromCSVLine</a>(std::istringstream&amp; iss) {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        std::string source, target, airline;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        std::getline(iss, source, <span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        std::getline(iss, target, <span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        std::getline(iss, airline);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">return</span> {source, target, airline};</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">const</span> std::string &amp;<a class="code hl_function" href="class_flight.html#aa87243c5309a487f01f414de39e1e9a5">getDeparture</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">double</span> distance;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_flight.html#ae80089791cbb9fcc67c2d3f3345c9e30">   24</a></span>    <a class="code hl_function" href="class_flight.html#ae80089791cbb9fcc67c2d3f3345c9e30">Flight</a>(std::string source, std::string target, std::string airline) :</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            departure(std::move(source)), arrival(std::move(target)), airline(std::move(airline)) {}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_flight.html#a0b03986834dc2a4ebda19d3437b91b4d">   27</a></span>    <span class="keyword">static</span> <a class="code hl_class" href="class_flight.html">Flight</a> <a class="code hl_function" href="class_flight.html#a0b03986834dc2a4ebda19d3437b91b4d">fromCSVLine</a>(std::istringstream&amp; iss) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        std::string source, target, airline;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        std::getline(iss, source, <span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        std::getline(iss, target, <span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        std::getline(iss, airline);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">return</span> {source, target, airline};</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_flight.html#a8f7a6d3cc04a2e6131a161e2d6b2062c">setDistance</a>(<span class="keywordtype">double</span> distance);</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">const</span> std::string &amp;<a class="code hl_function" href="class_flight.html#a299cffc4908a2193c67f3cbd2715374f">getArrival</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">const</span> std::string &amp;<a class="code hl_function" href="class_flight.html#aa87243c5309a487f01f414de39e1e9a5">getDeparture</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">const</span> std::string &amp;<a class="code hl_function" href="class_flight.html#add83f59d0f4039fbda078711e687c779">getAirline</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">const</span> std::string &amp;<a class="code hl_function" href="class_flight.html#a299cffc4908a2193c67f3cbd2715374f">getArrival</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">const</span> std::string &amp;<a class="code hl_function" href="class_flight.html#add83f59d0f4039fbda078711e687c779">getAirline</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif </span><span class="comment">//FEUP_AED2_FLIGHT_H</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_flight.html#acfaf4cb3fb5eca8bea71b09973cb3a52">getDistance</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_flight.html#aeb4d32aa5108467c6a85d6fc19dbc0c3">   45</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_flight.html#aeb4d32aa5108467c6a85d6fc19dbc0c3">operator&lt;</a>(<a class="code hl_class" href="class_flight.html">Flight</a> f2){</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">return</span> this-&gt;distance &lt; f2.distance;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#endif </span><span class="comment">//FEUP_AED2_FLIGHT_H</span></div>
 <div class="ttc" id="aclass_flight_html"><div class="ttname"><a href="class_flight.html">Flight</a></div><div class="ttdef"><b>Definition:</b> Flight.h:16</div></div>
-<div class="ttc" id="aclass_flight_html_a0b03986834dc2a4ebda19d3437b91b4d"><div class="ttname"><a href="class_flight.html#a0b03986834dc2a4ebda19d3437b91b4d">Flight::fromCSVLine</a></div><div class="ttdeci">static Flight fromCSVLine(std::istringstream &amp;iss)</div><div class="ttdef"><b>Definition:</b> Flight.h:26</div></div>
+<div class="ttc" id="aclass_flight_html_a0b03986834dc2a4ebda19d3437b91b4d"><div class="ttname"><a href="class_flight.html#a0b03986834dc2a4ebda19d3437b91b4d">Flight::fromCSVLine</a></div><div class="ttdeci">static Flight fromCSVLine(std::istringstream &amp;iss)</div><div class="ttdef"><b>Definition:</b> Flight.h:27</div></div>
 <div class="ttc" id="aclass_flight_html_a299cffc4908a2193c67f3cbd2715374f"><div class="ttname"><a href="class_flight.html#a299cffc4908a2193c67f3cbd2715374f">Flight::getArrival</a></div><div class="ttdeci">const std::string &amp; getArrival() const</div><div class="ttdef"><b>Definition:</b> Flight.cpp:11</div></div>
+<div class="ttc" id="aclass_flight_html_a8f7a6d3cc04a2e6131a161e2d6b2062c"><div class="ttname"><a href="class_flight.html#a8f7a6d3cc04a2e6131a161e2d6b2062c">Flight::setDistance</a></div><div class="ttdeci">void setDistance(double distance)</div><div class="ttdef"><b>Definition:</b> Flight.cpp:19</div></div>
 <div class="ttc" id="aclass_flight_html_aa87243c5309a487f01f414de39e1e9a5"><div class="ttname"><a href="class_flight.html#aa87243c5309a487f01f414de39e1e9a5">Flight::getDeparture</a></div><div class="ttdeci">const std::string &amp; getDeparture() const</div><div class="ttdef"><b>Definition:</b> Flight.cpp:7</div></div>
+<div class="ttc" id="aclass_flight_html_acfaf4cb3fb5eca8bea71b09973cb3a52"><div class="ttname"><a href="class_flight.html#acfaf4cb3fb5eca8bea71b09973cb3a52">Flight::getDistance</a></div><div class="ttdeci">double getDistance() const</div><div class="ttdef"><b>Definition:</b> Flight.cpp:23</div></div>
 <div class="ttc" id="aclass_flight_html_add83f59d0f4039fbda078711e687c779"><div class="ttname"><a href="class_flight.html#add83f59d0f4039fbda078711e687c779">Flight::getAirline</a></div><div class="ttdeci">const std::string &amp; getAirline() const</div><div class="ttdef"><b>Definition:</b> Flight.cpp:15</div></div>
-<div class="ttc" id="aclass_flight_html_ae80089791cbb9fcc67c2d3f3345c9e30"><div class="ttname"><a href="class_flight.html#ae80089791cbb9fcc67c2d3f3345c9e30">Flight::Flight</a></div><div class="ttdeci">Flight(std::string source, std::string target, std::string airline)</div><div class="ttdef"><b>Definition:</b> Flight.h:23</div></div>
+<div class="ttc" id="aclass_flight_html_ae80089791cbb9fcc67c2d3f3345c9e30"><div class="ttname"><a href="class_flight.html#ae80089791cbb9fcc67c2d3f3345c9e30">Flight::Flight</a></div><div class="ttdeci">Flight(std::string source, std::string target, std::string airline)</div><div class="ttdef"><b>Definition:</b> Flight.h:24</div></div>
+<div class="ttc" id="aclass_flight_html_aeb4d32aa5108467c6a85d6fc19dbc0c3"><div class="ttname"><a href="class_flight.html#aeb4d32aa5108467c6a85d6fc19dbc0c3">Flight::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(Flight f2)</div><div class="ttdef"><b>Definition:</b> Flight.h:45</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

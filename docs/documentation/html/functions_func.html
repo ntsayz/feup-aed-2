@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FEUP AED 2: Class Members - Functions</title>
+<title>SkyPlanner: Class Members - Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FEUP AED 2<span id="projectnumber">&#160;0.0.1</span>
+   <div id="projectname">SkyPlanner<span id="projectnumber">&#160;0.0.1</span>
    </div>
-   <div id="projectbrief">Proj</div>
+   <div id="projectbrief">Application to search for flights</div>
   </td>
  </tr>
  </tbody>
@@ -100,11 +100,13 @@ $(function() {
 
 
 <h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
-<li>getAirline()&#160;:&#160;<a class="el" href="class_flight.html#add83f59d0f4039fbda078711e687c779">Flight</a></li>
-<li>get_airports_by_code()&#160;:&#160;<a class="el" href="class_manager.html#a18a8eb47b168b42800479e2075e3e60c">Manager</a></li>
+<li>get_airline_code()&#160;:&#160;<a class="el" href="group___manager.html#gacbaaedb449f56cec89ffce4993de472d">Manager</a></li>
+<li>get_airports_by_city_country()&#160;:&#160;<a class="el" href="group___manager.html#ga7d10f5aba93b3d10967b379572c8c7c2">Manager</a></li>
+<li>get_airports_by_code()&#160;:&#160;<a class="el" href="group___manager.html#ga9de4649eebac11cf1f92174f39cbf9e1">Manager</a></li>
+<li>get_airports_by_coordinates()&#160;:&#160;<a class="el" href="group___manager.html#gad6b0e968d5a33f2ca5882fee2ade1329">Manager</a></li>
+<li>getAirline()&#160;:&#160;<a class="el" href="class_flight.html#add83f59d0f4039fbda078711e687c779">Flight</a>, <a class="el" href="class_utility.html#a234925cb51bae447e1b9e42d44417d90">Utility</a></li>
+<li>getAirlineCode()&#160;:&#160;<a class="el" href="class_utility.html#a8406501a8f9de3379d684c546ae26acf">Utility</a></li>
 <li>getAirportCode()&#160;:&#160;<a class="el" href="class_utility.html#a7ebdb1935d7a6c59be26afa251d87f21">Utility</a></li>
-<li>get_airports_by_coordinates()&#160;:&#160;<a class="el" href="class_manager.html#a68ce9013e439b9f73bdffbe7b881836a">Manager</a></li>
-<li>get_airports_by_city_country()&#160;:&#160;<a class="el" href="class_manager.html#a752b6eefd0655f11a828359d39c5d1ff">Manager</a></li>
 <li>GetAirportsWithinDistance()&#160;:&#160;<a class="el" href="class_graph.html#a36c54aac661600b0101b8c027baf6eac">Graph</a></li>
 <li>getArrival()&#160;:&#160;<a class="el" href="class_flight.html#a299cffc4908a2193c67f3cbd2715374f">Flight</a></li>
 <li>getCallsign()&#160;:&#160;<a class="el" href="class_airline.html#ac93b5709a55d169b51c0cd17f580e8ff">Airline</a></li>
@@ -112,6 +114,7 @@ $(function() {
 <li>getCode()&#160;:&#160;<a class="el" href="class_airline.html#a566c2237ebd2a1d9a8a3355c8695fbb9">Airline</a>, <a class="el" href="class_airport.html#a78dcc4385c4ddfc18fb49b642fb04196">Airport</a>, <a class="el" href="class_utility.html#a29edc4ede26ae1888f1c764fe4ff6be2">Utility</a></li>
 <li>getCountry()&#160;:&#160;<a class="el" href="class_airline.html#a8f2c86e0a385da168f8c694ed8d8a061">Airline</a>, <a class="el" href="class_airport.html#aad0a9be7a85e90b7090be9007de855b8">Airport</a></li>
 <li>getDeparture()&#160;:&#160;<a class="el" href="class_flight.html#aa87243c5309a487f01f414de39e1e9a5">Flight</a></li>
+<li>getDistance()&#160;:&#160;<a class="el" href="class_flight.html#acfaf4cb3fb5eca8bea71b09973cb3a52">Flight</a>, <a class="el" href="class_graph.html#a3895bf29d9b6455b6e6c7633dd108b86">Graph</a></li>
 <li>getInput()&#160;:&#160;<a class="el" href="class_utility.html#a39d5d7fb64b8e2ef2cec09ad21019d93">Utility</a></li>
 <li>getLatitude()&#160;:&#160;<a class="el" href="class_airport.html#aed71ba4592b2a1401eb182931f2d3f06">Airport</a></li>
 <li>getLongitude()&#160;:&#160;<a class="el" href="class_airport.html#ad8cd931389b14d63e5933a1658b653a3">Airport</a></li>
@@ -132,36 +135,44 @@ $(function() {
 
 
 <h3><a id="index_l" name="index_l"></a>- l -</h3><ul>
-<li>loadData()&#160;:&#160;<a class="el" href="class_manager.html#a65b83f021fffd2ab08532622953b3ac6">Manager</a></li>
+<li>loadData()&#160;:&#160;<a class="el" href="group___manager.html#ga65b83f021fffd2ab08532622953b3ac6">Manager</a></li>
 <li>loadDataFromCSV()&#160;:&#160;<a class="el" href="class_utility.html#abf9bdd5ca46c2ec635832c4eeffbac40">Utility</a></li>
 </ul>
 
 
 <h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
 <li>Main()&#160;:&#160;<a class="el" href="class_menu.html#a55a2ff9ce325e25f7e760de951bd1fe2">Menu</a></li>
-<li>main_menu()&#160;:&#160;<a class="el" href="class_manager.html#aa12b4fb7796df3df0a91382becd4585b">Manager</a></li>
-<li>Manager()&#160;:&#160;<a class="el" href="class_manager.html#a51c8f271f79b1c6590e9bc4ae6343bc0">Manager</a></li>
+<li>main_menu()&#160;:&#160;<a class="el" href="group___manager.html#gaa12b4fb7796df3df0a91382becd4585b">Manager</a></li>
+<li>Manager()&#160;:&#160;<a class="el" href="group___manager.html#ga51c8f271f79b1c6590e9bc4ae6343bc0">Manager</a></li>
+</ul>
+
+
+<h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
+<li>operator&lt;()&#160;:&#160;<a class="el" href="class_flight.html#aeb4d32aa5108467c6a85d6fc19dbc0c3">Flight</a></li>
 </ul>
 
 
 <h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
-<li>run()&#160;:&#160;<a class="el" href="class_manager.html#af8c67c221068e4e3ccccf1d5f70ba8ee">Manager</a></li>
+<li>run()&#160;:&#160;<a class="el" href="group___manager.html#gaf8c67c221068e4e3ccccf1d5f70ba8ee">Manager</a></li>
 </ul>
 
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
 <li>Search()&#160;:&#160;<a class="el" href="class_menu.html#af5080e1dc27cd5b5c0f975cb6c2ca792">Menu</a></li>
 <li>Search_CC()&#160;:&#160;<a class="el" href="class_menu.html#aaee678e7ab0da7e2939d232ac8f4f2d3">Menu</a></li>
-<li>search_flights()&#160;:&#160;<a class="el" href="class_manager.html#a0c1aa1d3b0a3ee68eb955ff705fd5b5f">Manager</a></li>
-<li>search_flights_menu()&#160;:&#160;<a class="el" href="class_manager.html#aa41d7b86c289e4b6e2c47b7cf9360f12">Manager</a></li>
+<li>search_flights()&#160;:&#160;<a class="el" href="group___manager.html#ga0c1aa1d3b0a3ee68eb955ff705fd5b5f">Manager</a></li>
+<li>search_flights_menu()&#160;:&#160;<a class="el" href="group___manager.html#gaa41d7b86c289e4b6e2c47b7cf9360f12">Manager</a></li>
+<li>search_one_airline()&#160;:&#160;<a class="el" href="group___manager.html#ga38d9efb77a12d2b9e049df62e23bd06c">Manager</a></li>
+<li>setDistance()&#160;:&#160;<a class="el" href="class_flight.html#a8f7a6d3cc04a2e6131a161e2d6b2062c">Flight</a></li>
 <li>setLatitude()&#160;:&#160;<a class="el" href="class_airport.html#aa6fa7f50efbc47c1013af7d7d3ce1a95">Airport</a></li>
 <li>setLongitude()&#160;:&#160;<a class="el" href="class_airport.html#a8595da4216165ea42ad2157480573548">Airport</a></li>
-<li>show_flight_info()&#160;:&#160;<a class="el" href="class_manager.html#a2f0c147a0091c8a55e25c3337ee6e1d9">Manager</a></li>
+<li>show_flight_info()&#160;:&#160;<a class="el" href="group___manager.html#ga43b04d4e1056f048e3680836809c52dd">Manager</a></li>
+<li>show_multiple_routes()&#160;:&#160;<a class="el" href="group___manager.html#gad9cfa1890c9d32bcb39c9f832f4b2296">Manager</a></li>
 </ul>
 
 
 <h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
-<li>testing()&#160;:&#160;<a class="el" href="class_manager.html#a3ce44a229c819433a1b88323f4654730">Manager</a></li>
+<li>testing()&#160;:&#160;<a class="el" href="group___manager.html#ga3ce44a229c819433a1b88323f4654730">Manager</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

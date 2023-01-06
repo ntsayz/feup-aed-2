@@ -22,29 +22,36 @@
 \DoxyCodeLine{18     std::string departure;}
 \DoxyCodeLine{19     std::string arrival;}
 \DoxyCodeLine{20     std::string airline;}
-\DoxyCodeLine{21 \textcolor{keyword}{public}:}
-\DoxyCodeLine{22 }
-\DoxyCodeLine{23     \mbox{\hyperlink{class_flight_ae80089791cbb9fcc67c2d3f3345c9e30}{Flight}}(std::string source, std::string target, std::string airline) :}
-\DoxyCodeLine{24             departure(std::move(source)), arrival(std::move(target)), airline(std::move(airline)) \{\}}
-\DoxyCodeLine{25 }
-\DoxyCodeLine{26     \textcolor{keyword}{static} \mbox{\hyperlink{class_flight}{Flight}} \mbox{\hyperlink{class_flight_a0b03986834dc2a4ebda19d3437b91b4d}{fromCSVLine}}(std::istringstream\& iss) \{}
-\DoxyCodeLine{27         std::string source, target, airline;}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{29         std::getline(iss, source, \textcolor{charliteral}{','});}
-\DoxyCodeLine{30         std::getline(iss, target, \textcolor{charliteral}{','});}
-\DoxyCodeLine{31         std::getline(iss, airline);}
-\DoxyCodeLine{32 }
-\DoxyCodeLine{33         \textcolor{keywordflow}{return} \{source, target, airline\};}
-\DoxyCodeLine{34     \}}
-\DoxyCodeLine{35 }
-\DoxyCodeLine{36     \textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_flight_aa87243c5309a487f01f414de39e1e9a5}{getDeparture}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{21     \textcolor{keywordtype}{double} distance;}
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \mbox{\hyperlink{class_flight_ae80089791cbb9fcc67c2d3f3345c9e30}{Flight}}(std::string source, std::string target, std::string airline) :}
+\DoxyCodeLine{25             departure(std::move(source)), arrival(std::move(target)), airline(std::move(airline)) \{\}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keyword}{static} \mbox{\hyperlink{class_flight}{Flight}} \mbox{\hyperlink{class_flight_a0b03986834dc2a4ebda19d3437b91b4d}{fromCSVLine}}(std::istringstream\& iss) \{}
+\DoxyCodeLine{28         std::string source, target, airline;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         std::getline(iss, source, \textcolor{charliteral}{','});}
+\DoxyCodeLine{31         std::getline(iss, target, \textcolor{charliteral}{','});}
+\DoxyCodeLine{32         std::getline(iss, airline);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34         \textcolor{keywordflow}{return} \{source, target, airline\};}
+\DoxyCodeLine{35     \}}
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_flight_a8f7a6d3cc04a2e6131a161e2d6b2062c}{setDistance}}(\textcolor{keywordtype}{double} distance);}
 \DoxyCodeLine{37 }
-\DoxyCodeLine{38     \textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_flight_a299cffc4908a2193c67f3cbd2715374f}{getArrival}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{38     \textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_flight_aa87243c5309a487f01f414de39e1e9a5}{getDeparture}}() \textcolor{keyword}{const};}
 \DoxyCodeLine{39 }
-\DoxyCodeLine{40     \textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_flight_add83f59d0f4039fbda078711e687c779}{getAirline}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{41 \};}
-\DoxyCodeLine{42 }
+\DoxyCodeLine{40     \textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_flight_a299cffc4908a2193c67f3cbd2715374f}{getArrival}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_flight_add83f59d0f4039fbda078711e687c779}{getAirline}}() \textcolor{keyword}{const};}
 \DoxyCodeLine{43 }
-\DoxyCodeLine{44 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//FEUP\_AED2\_FLIGHT\_H}}
+\DoxyCodeLine{44     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_flight_acfaf4cb3fb5eca8bea71b09973cb3a52}{getDistance}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{45     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_flight_aeb4d32aa5108467c6a85d6fc19dbc0c3}{operator<}}(\mbox{\hyperlink{class_flight}{Flight}} f2)\{}
+\DoxyCodeLine{46         \textcolor{keywordflow}{return} this-\/>distance < f2.distance;}
+\DoxyCodeLine{47     \}}
+\DoxyCodeLine{48 \};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//FEUP\_AED2\_FLIGHT\_H}}
 
 \end{DoxyCode}

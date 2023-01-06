@@ -7,142 +7,34 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_manager_a51c8f271f79b1c6590e9bc4ae6343bc0}{Manager}} ()=default
+\mbox{\hyperlink{group___manager_ga51c8f271f79b1c6590e9bc4ae6343bc0}{Manager}} ()=default
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_manager}{Manager}}\textquotesingle{}s constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___manager_gaf8c67c221068e4e3ccccf1d5f70ba8ee}{run}} ()
+\begin{DoxyCompactList}\small\item\em Function to start the application, called by the only instance of the manager function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___manager_ga3ce44a229c819433a1b88323f4654730}{testing}} ()
 \item 
-void \mbox{\hyperlink{class_manager_af8c67c221068e4e3ccccf1d5f70ba8ee}{run}} ()
+bool \mbox{\hyperlink{group___manager_ga65b83f021fffd2ab08532622953b3ac6}{load\+Data}} (const std\+::string \&fname1, const std\+::string \&fname2, const std\+::string \&fname3)
 \item 
-void \mbox{\hyperlink{class_manager_a3ce44a229c819433a1b88323f4654730}{testing}} ()
+void \mbox{\hyperlink{group___manager_gaa12b4fb7796df3df0a91382becd4585b}{main\+\_\+menu}} ()
+\begin{DoxyCompactList}\small\item\em Displays the main menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___manager_gaa41d7b86c289e4b6e2c47b7cf9360f12}{search\+\_\+flights\+\_\+menu}} (bool not\+ARecursive\+Call)
 \item 
-bool \mbox{\hyperlink{class_manager_a65b83f021fffd2ab08532622953b3ac6}{load\+Data}} (const std\+::string \&fname1, const std\+::string \&fname2, const std\+::string \&fname3)
+void \mbox{\hyperlink{group___manager_ga0c1aa1d3b0a3ee68eb955ff705fd5b5f}{search\+\_\+flights}} (std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ departures\+\_\+airports, std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ arrival\+\_\+airports)
 \item 
-void \mbox{\hyperlink{class_manager_aa12b4fb7796df3df0a91382becd4585b}{main\+\_\+menu}} ()
+std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ \mbox{\hyperlink{group___manager_ga7d10f5aba93b3d10967b379572c8c7c2}{get\+\_\+airports\+\_\+by\+\_\+city\+\_\+country}} ()
 \item 
-void \mbox{\hyperlink{class_manager_aa41d7b86c289e4b6e2c47b7cf9360f12}{search\+\_\+flights\+\_\+menu}} (bool not\+ARecursive\+Call)
+\mbox{\hyperlink{class_airport}{Airport}} \mbox{\hyperlink{group___manager_ga9de4649eebac11cf1f92174f39cbf9e1}{get\+\_\+airports\+\_\+by\+\_\+code}} ()
 \item 
-void \mbox{\hyperlink{class_manager_a0c1aa1d3b0a3ee68eb955ff705fd5b5f}{search\+\_\+flights}} (std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ departures\+\_\+airports, std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ arrival\+\_\+airports)
+std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ \mbox{\hyperlink{group___manager_gad6b0e968d5a33f2ca5882fee2ade1329}{get\+\_\+airports\+\_\+by\+\_\+coordinates}} ()
 \item 
-std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ \mbox{\hyperlink{class_manager_a752b6eefd0655f11a828359d39c5d1ff}{get\+Airports\+City\+Country}} ()
+void \mbox{\hyperlink{group___manager_gad9cfa1890c9d32bcb39c9f832f4b2296}{show\+\_\+multiple\+\_\+routes}} (const std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ \&departures\+\_\+airports, const std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ \&arrival\+\_\+airports)
 \item 
-\mbox{\hyperlink{class_airport}{Airport}} \mbox{\hyperlink{class_manager_a18a8eb47b168b42800479e2075e3e60c}{get\+Airport\+By\+Code}} ()
+void \mbox{\hyperlink{group___manager_ga38d9efb77a12d2b9e049df62e23bd06c}{search\+\_\+one\+\_\+airline}} (const std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ \&departures\+\_\+airports, const std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ \&arrival\+\_\+airports)
 \item 
-std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ \mbox{\hyperlink{class_manager_a68ce9013e439b9f73bdffbe7b881836a}{get\+Airports\+By\+Coordinates}} ()
+void \mbox{\hyperlink{group___manager_ga43b04d4e1056f048e3680836809c52dd}{show\+\_\+flight\+\_\+info}} (const std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ \&departures\+\_\+airports, const std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ \&arrival\+\_\+airports)
 \item 
-void \mbox{\hyperlink{class_manager_a2f0c147a0091c8a55e25c3337ee6e1d9}{show\+\_\+flight\+\_\+info}} (const std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ \&departures\+\_\+airports, const std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ \&arrival\+\_\+airports, const std\+::vector$<$ \mbox{\hyperlink{class_flight}{Flight}} $>$ \&route)
+std\+::string \mbox{\hyperlink{group___manager_gacbaaedb449f56cec89ffce4993de472d}{get\+\_\+airline\+\_\+code}} ()
 \end{DoxyCompactItemize}
-
-
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_manager_a51c8f271f79b1c6590e9bc4ae6343bc0}\label{class_manager_a51c8f271f79b1c6590e9bc4ae6343bc0}} 
-\index{Manager@{Manager}!Manager@{Manager}}
-\index{Manager@{Manager}!Manager@{Manager}}
-\doxysubsubsection{\texorpdfstring{Manager()}{Manager()}}
-{\footnotesize\ttfamily Manager\+::\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
-
-
-
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_manager_a18a8eb47b168b42800479e2075e3e60c}\label{class_manager_a18a8eb47b168b42800479e2075e3e60c}} 
-\index{Manager@{Manager}!getAirportByCode@{getAirportByCode}}
-\index{getAirportByCode@{getAirportByCode}!Manager@{Manager}}
-\doxysubsubsection{\texorpdfstring{getAirportByCode()}{get_airports_by_code()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_airport}{Airport}} Manager\+::get\+Airport\+By\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\begin{DoxyReturn}{Returns}
-
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_manager_a68ce9013e439b9f73bdffbe7b881836a}\label{class_manager_a68ce9013e439b9f73bdffbe7b881836a}} 
-\index{Manager@{Manager}!getAirportsByCoordinates@{getAirportsByCoordinates}}
-\index{getAirportsByCoordinates@{getAirportsByCoordinates}!Manager@{Manager}}
-\doxysubsubsection{\texorpdfstring{getAirportsByCoordinates()}{get_airports_by_coordinates()}}
-{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ Manager\+::get\+Airports\+By\+Coordinates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\begin{DoxyReturn}{Returns}
-
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_manager_a752b6eefd0655f11a828359d39c5d1ff}\label{class_manager_a752b6eefd0655f11a828359d39c5d1ff}} 
-\index{Manager@{Manager}!getAirportsCityCountry@{getAirportsCityCountry}}
-\index{getAirportsCityCountry@{getAirportsCityCountry}!Manager@{Manager}}
-\doxysubsubsection{\texorpdfstring{getAirportsCityCountry()}{get_airports_by_city_country()}}
-{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ Manager\+::get\+Airports\+City\+Country (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\begin{DoxyReturn}{Returns}
-list of Airports 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_manager_a65b83f021fffd2ab08532622953b3ac6}\label{class_manager_a65b83f021fffd2ab08532622953b3ac6}} 
-\index{Manager@{Manager}!loadData@{loadData}}
-\index{loadData@{loadData}!Manager@{Manager}}
-\doxysubsubsection{\texorpdfstring{loadData()}{loadData()}}
-{\footnotesize\ttfamily bool Manager\+::load\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fname1,  }\item[{const std\+::string \&}]{fname2,  }\item[{const std\+::string \&}]{fname3 }\end{DoxyParamCaption})}
-
-
-\begin{DoxyParams}{Parameters}
-{\em fname1} & \\
-\hline
-{\em fname2} & \\
-\hline
-{\em fname3} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-true if the vectors size is equivalent to the number of lines in the files 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_manager_aa12b4fb7796df3df0a91382becd4585b}\label{class_manager_aa12b4fb7796df3df0a91382becd4585b}} 
-\index{Manager@{Manager}!main\_menu@{main\_menu}}
-\index{main\_menu@{main\_menu}!Manager@{Manager}}
-\doxysubsubsection{\texorpdfstring{main\_menu()}{main\_menu()}}
-{\footnotesize\ttfamily void Manager\+::main\+\_\+menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{class_manager_af8c67c221068e4e3ccccf1d5f70ba8ee}\label{class_manager_af8c67c221068e4e3ccccf1d5f70ba8ee}} 
-\index{Manager@{Manager}!run@{run}}
-\index{run@{run}!Manager@{Manager}}
-\doxysubsubsection{\texorpdfstring{run()}{run()}}
-{\footnotesize\ttfamily void Manager\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{class_manager_a0c1aa1d3b0a3ee68eb955ff705fd5b5f}\label{class_manager_a0c1aa1d3b0a3ee68eb955ff705fd5b5f}} 
-\index{Manager@{Manager}!search\_flights@{search\_flights}}
-\index{search\_flights@{search\_flights}!Manager@{Manager}}
-\doxysubsubsection{\texorpdfstring{search\_flights()}{search\_flights()}}
-{\footnotesize\ttfamily void Manager\+::search\+\_\+flights (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$}]{departures\+\_\+airports,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$}]{arrival\+\_\+airports }\end{DoxyParamCaption})}
-
-
-\begin{DoxyParams}{Parameters}
-{\em departures\+\_\+airports} & \\
-\hline
-{\em arrival\+\_\+airports} & \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{class_manager_aa41d7b86c289e4b6e2c47b7cf9360f12}\label{class_manager_aa41d7b86c289e4b6e2c47b7cf9360f12}} 
-\index{Manager@{Manager}!search\_flights\_menu@{search\_flights\_menu}}
-\index{search\_flights\_menu@{search\_flights\_menu}!Manager@{Manager}}
-\doxysubsubsection{\texorpdfstring{search\_flights\_menu()}{search\_flights\_menu()}}
-{\footnotesize\ttfamily void Manager\+::search\+\_\+flights\+\_\+menu (\begin{DoxyParamCaption}\item[{bool}]{not\+ARecursive\+Call }\end{DoxyParamCaption})}
-
-
-\begin{DoxyParams}{Parameters}
-{\em not\+ARecursive\+Call} & \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{class_manager_a2f0c147a0091c8a55e25c3337ee6e1d9}\label{class_manager_a2f0c147a0091c8a55e25c3337ee6e1d9}} 
-\index{Manager@{Manager}!show\_flight\_info@{show\_flight\_info}}
-\index{show\_flight\_info@{show\_flight\_info}!Manager@{Manager}}
-\doxysubsubsection{\texorpdfstring{show\_flight\_info()}{show\_flight\_info()}}
-{\footnotesize\ttfamily void Manager\+::show\+\_\+flight\+\_\+info (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ \&}]{departures\+\_\+airports,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ \&}]{arrival\+\_\+airports,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_flight}{Flight}} $>$ \&}]{route }\end{DoxyParamCaption})}
-
-
-\begin{DoxyParams}{Parameters}
-{\em departures\+\_\+airports} & \\
-\hline
-{\em arrival\+\_\+airports} & \\
-\hline
-{\em route} & \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{class_manager_a3ce44a229c819433a1b88323f4654730}\label{class_manager_a3ce44a229c819433a1b88323f4654730}} 
-\index{Manager@{Manager}!testing@{testing}}
-\index{testing@{testing}!Manager@{Manager}}
-\doxysubsubsection{\texorpdfstring{testing()}{testing()}}
-{\footnotesize\ttfamily void Manager\+::testing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

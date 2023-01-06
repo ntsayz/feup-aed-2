@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FEUP AED 2: Graph Class Reference</title>
+<title>SkyPlanner: Graph Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">FEUP AED 2<span id="projectnumber">&#160;0.0.1</span>
+   <div id="projectname">SkyPlanner<span id="projectnumber">&#160;0.0.1</span>
    </div>
-   <div id="projectbrief">Proj</div>
+   <div id="projectbrief">Application to search for flights</div>
   </td>
  </tr>
  </tbody>
@@ -95,6 +95,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac73447df4127080148861bdb59a5cf92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeec0d37ced4e3e6ca943da18063608c4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; <a class="el" href="class_flight.html">Flight</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#aeec0d37ced4e3e6ca943da18063608c4">GetPathsWithOneAirline</a> (const <a class="el" href="class_airport.html">Airport</a> &amp;departure, const <a class="el" href="class_airport.html">Airport</a> &amp;arrival, const std::string &amp;airline) const</td></tr>
 <tr class="separator:aeec0d37ced4e3e6ca943da18063608c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3895bf29d9b6455b6e6c7633dd108b86"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a3895bf29d9b6455b6e6c7633dd108b86">getDistance</a> (const <a class="el" href="class_airport.html">Airport</a> &amp;airport1, const <a class="el" href="class_airport.html">Airport</a> &amp;airport2) const</td></tr>
+<tr class="separator:a3895bf29d9b6455b6e6c7633dd108b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a8781123f274d460cba1c7c91ee168ac0" name="a8781123f274d460cba1c7c91ee168ac0"></a>
@@ -218,6 +220,34 @@ Public Member Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>max_distance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3895bf29d9b6455b6e6c7633dd108b86" name="a3895bf29d9b6455b6e6c7633dd108b86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3895bf29d9b6455b6e6c7633dd108b86">&#9670;&#160;</a></span>getDistance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Graph::getDistance </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_airport.html">Airport</a> &amp;&#160;</td>
+          <td class="paramname"><em>airport1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_airport.html">Airport</a> &amp;&#160;</td>
+          <td class="paramname"><em>airport2</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

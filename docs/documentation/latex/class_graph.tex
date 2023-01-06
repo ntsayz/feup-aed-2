@@ -20,6 +20,8 @@ std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_flight}{Flight}} $>$ $>
 std\+::vector$<$ \mbox{\hyperlink{class_flight}{Flight}} $>$ \mbox{\hyperlink{class_graph_ac73447df4127080148861bdb59a5cf92}{Find\+Shortest\+Route}} (const \mbox{\hyperlink{class_airport}{Airport}} \&departure, const \mbox{\hyperlink{class_airport}{Airport}} \&arrival) const
 \item 
 std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_flight}{Flight}} $>$ $>$ \mbox{\hyperlink{class_graph_aeec0d37ced4e3e6ca943da18063608c4}{Get\+Paths\+With\+One\+Airline}} (const \mbox{\hyperlink{class_airport}{Airport}} \&departure, const \mbox{\hyperlink{class_airport}{Airport}} \&arrival, const std\+::string \&airline) const
+\item 
+double \mbox{\hyperlink{class_graph_a3895bf29d9b6455b6e6c7633dd108b86}{get\+Distance}} (const \mbox{\hyperlink{class_airport}{Airport}} \&airport1, const \mbox{\hyperlink{class_airport}{Airport}} \&airport2) const
 \end{DoxyCompactItemize}
 
 
@@ -58,6 +60,12 @@ std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_flight}{Flight}} $>$ $>
 \index{GetAirportsWithinDistance@{GetAirportsWithinDistance}!Graph@{Graph}}
 \doxysubsubsection{\texorpdfstring{GetAirportsWithinDistance()}{GetAirportsWithinDistance()}}
 {\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ Graph\+::\+Get\+Airports\+Within\+Distance (\begin{DoxyParamCaption}\item[{double}]{latitude,  }\item[{double}]{longitude,  }\item[{double}]{max\+\_\+distance }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_graph_a3895bf29d9b6455b6e6c7633dd108b86}\label{class_graph_a3895bf29d9b6455b6e6c7633dd108b86}} 
+\index{Graph@{Graph}!getDistance@{getDistance}}
+\index{getDistance@{getDistance}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getDistance()}{getDistance()}}
+{\footnotesize\ttfamily double Graph\+::get\+Distance (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_airport}{Airport}} \&}]{airport1,  }\item[{const \mbox{\hyperlink{class_airport}{Airport}} \&}]{airport2 }\end{DoxyParamCaption}) const}
 
 \mbox{\Hypertarget{class_graph_a4f2c44215cc4f0f272ff29f798b30e0f}\label{class_graph_a4f2c44215cc4f0f272ff29f798b30e0f}} 
 \index{Graph@{Graph}!getNumFlightsFromAirport@{getNumFlightsFromAirport}}
