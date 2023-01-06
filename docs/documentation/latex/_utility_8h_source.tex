@@ -1,6 +1,6 @@
-\hypertarget{_utility_8h_source}{}\doxysection{Utility.\+h}
+\doxysection{Utility.\+h}
 \label{_utility_8h_source}\index{src/Utility.h@{src/Utility.h}}
-\mbox{\hyperlink{_utility_8h}{Go to the documentation of this file.}}
+\textbf{ Go to the documentation of this file.}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{comment}{//}}
 \DoxyCodeLine{2 \textcolor{comment}{// Created by ntsayz on 12/20/22.}}
@@ -14,47 +14,44 @@
 \DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef FEUP\_AED2\_UTILITY\_H}}
 \DoxyCodeLine{11 \textcolor{preprocessor}{\#define FEUP\_AED2\_UTILITY\_H}}
 \DoxyCodeLine{12 }
-\DoxyCodeLine{13 }
-\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_utility}{Utility}} \{}
-\DoxyCodeLine{15 \textcolor{keyword}{public}:}
-\DoxyCodeLine{16 }
-\DoxyCodeLine{17     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_utility_a39d5d7fb64b8e2ef2cec09ad21019d93}{getInput}}(\textcolor{keywordtype}{int} choice, \textcolor{keywordtype}{int} min, \textcolor{keywordtype}{int} max);}
-\DoxyCodeLine{19     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_utility_a29edc4ede26ae1888f1c764fe4ff6be2}{getCode}}(\textcolor{keywordtype}{int} code);}
-\DoxyCodeLine{21     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_utility_a34f05bd315eda43a811774d7f9d9ec07}{clear\_screen}}();}
-\DoxyCodeLine{23     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_utility_a8d34a4c10ae4de754372ab8f6aa8f031}{footer}}();}
-\DoxyCodeLine{25     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_utility_a5ca2bdb48ec616350a96753978ec2a70}{header}}(\textcolor{keyword}{const} std::string\& title);}
-\DoxyCodeLine{27     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_utility_ae62c4dbbcf6fbbdc2f513c74fb3436d7}{body}}(\textcolor{keyword}{const} std::string\& description, std::vector<std::string> options);}
-\DoxyCodeLine{28     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_utility_afb97f93021d82bda76e9e906e4eeec78}{isSubstring}}(std::string str, std::string sub);}
-\DoxyCodeLine{29     \textcolor{keyword}{static} std::string \mbox{\hyperlink{class_utility_aa75377c1f78bdc4302fb1f057ef0a89c}{getCity}}();}
-\DoxyCodeLine{30     \textcolor{keyword}{static} std::string \mbox{\hyperlink{class_utility_a7ebdb1935d7a6c59be26afa251d87f21}{getAirportCode}}();}
-\DoxyCodeLine{31     \textcolor{keyword}{static} std::string \mbox{\hyperlink{class_utility_a8406501a8f9de3379d684c546ae26acf}{getAirlineCode}}();}
-\DoxyCodeLine{32     \textcolor{keyword}{static} std::string \mbox{\hyperlink{class_utility_a234925cb51bae447e1b9e42d44417d90}{getAirline}}();}
-\DoxyCodeLine{33 }
-\DoxyCodeLine{34     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{35     \textcolor{keyword}{static} std::vector<T> \mbox{\hyperlink{class_utility_abf9bdd5ca46c2ec635832c4eeffbac40}{loadDataFromCSV}}(std::string filename) \{}
-\DoxyCodeLine{36         std::vector<T> data;}
-\DoxyCodeLine{37         std::ifstream file(filename);}
-\DoxyCodeLine{38 }
-\DoxyCodeLine{39         \textcolor{keywordflow}{if} (!file.is\_open()) \{}
-\DoxyCodeLine{40             std::cerr << \textcolor{stringliteral}{"{}Error: Could not open file "{}} << filename << std::endl;}
-\DoxyCodeLine{41             \textcolor{keywordflow}{return} data;}
-\DoxyCodeLine{42         \}}
-\DoxyCodeLine{43 }
-\DoxyCodeLine{44         std::string line;}
-\DoxyCodeLine{45         \textcolor{keywordflow}{while} (std::getline(file, line)) \{}
-\DoxyCodeLine{46             std::istringstream iss(line);}
-\DoxyCodeLine{47             T \textcolor{keywordtype}{object} = T::fromCSVLine(iss);}
-\DoxyCodeLine{48             data.push\_back(\textcolor{keywordtype}{object});}
-\DoxyCodeLine{49         \}}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{51         \textcolor{keywordflow}{return} data;}
-\DoxyCodeLine{52     \}}
-\DoxyCodeLine{53 }
-\DoxyCodeLine{54 }
-\DoxyCodeLine{55 }
-\DoxyCodeLine{56 \};}
-\DoxyCodeLine{57 }
-\DoxyCodeLine{58 }
-\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//FEUP\_AED2\_UTILITY\_H}}
+\DoxyCodeLine{19 \textcolor{keyword}{class }Utility \{}
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26     \textcolor{keyword}{static} \textcolor{keywordtype}{int} getInput(\textcolor{keywordtype}{int} choice, \textcolor{keywordtype}{int} min, \textcolor{keywordtype}{int} max);}
+\DoxyCodeLine{30     \textcolor{keyword}{static} \textcolor{keywordtype}{int} getCode(\textcolor{keywordtype}{int} code);}
+\DoxyCodeLine{34     \textcolor{keyword}{static} \textcolor{keywordtype}{void} clear\_screen();}
+\DoxyCodeLine{38     \textcolor{keyword}{static} \textcolor{keywordtype}{void} footer();}
+\DoxyCodeLine{42     \textcolor{keyword}{static} \textcolor{keywordtype}{void} header(\textcolor{keyword}{const} std::string\& title);}
+\DoxyCodeLine{46     \textcolor{keyword}{static} \textcolor{keywordtype}{void} body(\textcolor{keyword}{const} std::string\& description, std::vector<std::string> options);}
+\DoxyCodeLine{51     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} isSubstring(std::string str, std::string sub);}
+\DoxyCodeLine{54     \textcolor{keyword}{static} std::string getCity();}
+\DoxyCodeLine{57     \textcolor{keyword}{static} std::string getAirportCode();}
+\DoxyCodeLine{60     \textcolor{keyword}{static} std::string getAirlineCode();}
+\DoxyCodeLine{63     \textcolor{keyword}{static} std::string getAirline();}
+\DoxyCodeLine{68     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{69     \textcolor{keyword}{static} std::vector<T> loadDataFromCSV(std::string filename) \{}
+\DoxyCodeLine{70         std::vector<T> data;}
+\DoxyCodeLine{71         std::ifstream file(filename);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73         \textcolor{keywordflow}{if} (!file.is\_open()) \{}
+\DoxyCodeLine{74             std::cerr << \textcolor{stringliteral}{"{}Error: Could not open file "{}} << filename << std::endl;}
+\DoxyCodeLine{75             \textcolor{keywordflow}{return} data;}
+\DoxyCodeLine{76         \}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78         std::string line;}
+\DoxyCodeLine{79         \textcolor{keywordflow}{while} (std::getline(file, line)) \{}
+\DoxyCodeLine{80             std::istringstream iss(line);}
+\DoxyCodeLine{81             T \textcolor{keywordtype}{object} = T::fromCSVLine(iss);}
+\DoxyCodeLine{82             data.push\_back(\textcolor{keywordtype}{object});}
+\DoxyCodeLine{83         \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85         \textcolor{keywordflow}{return} data;}
+\DoxyCodeLine{86     \}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//FEUP\_AED2\_UTILITY\_H}}
 
 \end{DoxyCode}

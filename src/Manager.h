@@ -1,11 +1,12 @@
 //
 // Created by ntsayz on 12/20/22.
 //
-/** @defgroup Manager
-* @{
-*
-* Manager class declaration
+/**
+    @class Manager
+    @brief Manages the application.
+    Stores its most important data structures, manages the application state.
 */
+
 #include <iostream>
 #include "Graph.h"
 #include "Airlines.h"
@@ -129,15 +130,21 @@ public:
 #endif //FEUP_AED2_MANAGER_H
 
 
-/*! \mainpage SkyPlanner - 2nd AED Project (FEUP)
- *
- * \section intro_sec Introduction
- *
- * This is the introduction.
- *
- * \section install_sec Installation
- *
- * \subsection step1 Step 1: Opening the box
- *
- *
- */
+/**
+
+    @mainpage SkyPlanner - Flight Search and Management Application
+    @section intro_sec Introduction
+    SkyPlanner is a flight search and management application that allows users to search for flights between airports, view detailed information about specific airports and airlines, and find the shortest route between two airports.
+    @section features_sec Features
+        - Search for flights between two airports
+        - View detailed information about specific airports and airlines
+        - Find the shortest route between two airports
+    @section data_sec Data
+    SkyPlanner uses data from several CSV files to populate its database of airports and flights. These files should be placed in the same directory as the executable. The required files are:
+        airlines.csv: Contains information about different airlines (code, name, callsign, country)
+        airports.csv: Contains information about different airports (code, name, city, country, latitude, longitude)
+        flights.csv: Contains information about flights between airports (departure airport code, arrival airport code, airline code)
+    @section usage_sec Usage
+    Once the SkyPlanner application is running, you can use the main menu to access the different features of the application. Follow the prompts to search for flights, view airport and airline information, or manage the database of airports and flights.
+
+*/

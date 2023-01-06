@@ -1,6 +1,6 @@
-\hypertarget{_airlines_8h_source}{}\doxysection{Airlines.\+h}
+\doxysection{Airlines.\+h}
 \label{_airlines_8h_source}\index{src/Airlines.h@{src/Airlines.h}}
-\mbox{\hyperlink{_airlines_8h}{Go to the documentation of this file.}}
+\textbf{ Go to the documentation of this file.}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{comment}{//}}
 \DoxyCodeLine{2 \textcolor{comment}{// Created by ntsayz on 12/20/22.}}
@@ -15,39 +15,36 @@
 \DoxyCodeLine{11 \textcolor{preprocessor}{\#include <utility>}}
 \DoxyCodeLine{12 \textcolor{preprocessor}{\#include <vector>}}
 \DoxyCodeLine{13 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{14 }
-\DoxyCodeLine{15 \textcolor{comment}{// Class to represent an airline}}
-\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{class_airline}{Airline}} \{}
-\DoxyCodeLine{17 \textcolor{keyword}{public}:}
-\DoxyCodeLine{18     std::string \mbox{\hyperlink{class_airline_a3f455dba792b185073e3cf5e5b6dacb3}{code}};}
-\DoxyCodeLine{19     std::string \mbox{\hyperlink{class_airline_a9407660216544b73034be6daf69d54f5}{name}};}
-\DoxyCodeLine{20     std::string \mbox{\hyperlink{class_airline_a75d64875fb3d2d586078a51f4995c7aa}{callsign}};}
-\DoxyCodeLine{21     std::string \mbox{\hyperlink{class_airline_a8da68cfac3035fc531dc9410ca46c0dc}{country}};}
-\DoxyCodeLine{22 }
-\DoxyCodeLine{23     \mbox{\hyperlink{class_airline_aeab28471086562d53f134c60a5d0a976}{Airline}}(std::string \mbox{\hyperlink{class_airline_a3f455dba792b185073e3cf5e5b6dacb3}{code}}, std::string \mbox{\hyperlink{class_airline_a9407660216544b73034be6daf69d54f5}{name}}, std::string \mbox{\hyperlink{class_airline_a75d64875fb3d2d586078a51f4995c7aa}{callsign}}, std::string \mbox{\hyperlink{class_airline_a8da68cfac3035fc531dc9410ca46c0dc}{country}}) :}
-\DoxyCodeLine{24             \mbox{\hyperlink{class_airline_a3f455dba792b185073e3cf5e5b6dacb3}{code}}(std::move(\mbox{\hyperlink{class_airline_a3f455dba792b185073e3cf5e5b6dacb3}{code}})), \mbox{\hyperlink{class_airline_a9407660216544b73034be6daf69d54f5}{name}}(std::move(\mbox{\hyperlink{class_airline_a9407660216544b73034be6daf69d54f5}{name}})), \mbox{\hyperlink{class_airline_a75d64875fb3d2d586078a51f4995c7aa}{callsign}}(std::move(\mbox{\hyperlink{class_airline_a75d64875fb3d2d586078a51f4995c7aa}{callsign}})), \mbox{\hyperlink{class_airline_a8da68cfac3035fc531dc9410ca46c0dc}{country}}(std::move(\mbox{\hyperlink{class_airline_a8da68cfac3035fc531dc9410ca46c0dc}{country}})) \{\}}
-\DoxyCodeLine{25 }
-\DoxyCodeLine{26 }
-\DoxyCodeLine{27     \textcolor{keyword}{static} \mbox{\hyperlink{class_airline}{Airline}} \mbox{\hyperlink{class_airline_a74456126a85da2d1a179013e4c72c6df}{fromCSVLine}}(std::istringstream\& iss) \{}
-\DoxyCodeLine{28         std::string \mbox{\hyperlink{class_airline_a3f455dba792b185073e3cf5e5b6dacb3}{code}}, \mbox{\hyperlink{class_airline_a9407660216544b73034be6daf69d54f5}{name}}, \mbox{\hyperlink{class_airline_a75d64875fb3d2d586078a51f4995c7aa}{callsign}}, \mbox{\hyperlink{class_airline_a8da68cfac3035fc531dc9410ca46c0dc}{country}};}
-\DoxyCodeLine{29 }
-\DoxyCodeLine{30         std::getline(iss, \mbox{\hyperlink{class_airline_a3f455dba792b185073e3cf5e5b6dacb3}{code}}, \textcolor{charliteral}{','});}
-\DoxyCodeLine{31         std::getline(iss, \mbox{\hyperlink{class_airline_a9407660216544b73034be6daf69d54f5}{name}}, \textcolor{charliteral}{','});}
-\DoxyCodeLine{32         std::getline(iss, \mbox{\hyperlink{class_airline_a75d64875fb3d2d586078a51f4995c7aa}{callsign}}, \textcolor{charliteral}{','});}
-\DoxyCodeLine{33         std::getline(iss, \mbox{\hyperlink{class_airline_a8da68cfac3035fc531dc9410ca46c0dc}{country}});}
-\DoxyCodeLine{34 }
-\DoxyCodeLine{35         \textcolor{keywordflow}{return} \{\mbox{\hyperlink{class_airline_a3f455dba792b185073e3cf5e5b6dacb3}{code}}, \mbox{\hyperlink{class_airline_a9407660216544b73034be6daf69d54f5}{name}}, \mbox{\hyperlink{class_airline_a75d64875fb3d2d586078a51f4995c7aa}{callsign}}, \mbox{\hyperlink{class_airline_a8da68cfac3035fc531dc9410ca46c0dc}{country}}\};}
-\DoxyCodeLine{36     \}}
-\DoxyCodeLine{37 }
-\DoxyCodeLine{38     \textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_airline_a566c2237ebd2a1d9a8a3355c8695fbb9}{getCode}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{39 }
-\DoxyCodeLine{40     \textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_airline_a1f7bb4dd93f040dcda30eaa607c9e139}{getName}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{42     \textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_airline_ac93b5709a55d169b51c0cd17f580e8ff}{getCallsign}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{43 }
-\DoxyCodeLine{44     \textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_airline_a8f2c86e0a385da168f8c694ed8d8a061}{getCountry}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{45 \};}
+\DoxyCodeLine{18 \textcolor{keyword}{class }Airline \{}
+\DoxyCodeLine{19 \textcolor{keyword}{private}:}
+\DoxyCodeLine{23     std::string code;}
+\DoxyCodeLine{27     std::string name;}
+\DoxyCodeLine{31     std::string callsign;}
+\DoxyCodeLine{35     std::string country;}
+\DoxyCodeLine{36 \textcolor{keyword}{public}:}
+\DoxyCodeLine{44     Airline(std::string code, std::string name, std::string callsign, std::string country) :}
+\DoxyCodeLine{45             code(std::move(code)), name(std::move(name)), callsign(std::move(callsign)), country(std::move(country)) \{\}}
 \DoxyCodeLine{46 }
-\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//FEUP\_AED2\_AIRLINES\_H}}
+\DoxyCodeLine{52     \textcolor{keyword}{static} Airline fromCSVLine(std::istringstream\& iss) \{}
+\DoxyCodeLine{53         std::string code, name, callsign, country;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         std::getline(iss, code, \textcolor{charliteral}{','});}
+\DoxyCodeLine{56         std::getline(iss, name, \textcolor{charliteral}{','});}
+\DoxyCodeLine{57         std::getline(iss, callsign, \textcolor{charliteral}{','});}
+\DoxyCodeLine{58         std::getline(iss, country);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60         \textcolor{keywordflow}{return} \{code, name, callsign, country\};}
+\DoxyCodeLine{61     \}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{67     \textcolor{keyword}{const} std::string \&getCode() \textcolor{keyword}{const};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{73     \textcolor{keyword}{const} std::string \&getName() \textcolor{keyword}{const};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{79     \textcolor{keyword}{const} std::string \&getCallsign() \textcolor{keyword}{const};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{85     \textcolor{keyword}{const} std::string \&getCountry() \textcolor{keyword}{const};}
+\DoxyCodeLine{86 \};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//FEUP\_AED2\_AIRLINES\_H}}
 
 \end{DoxyCode}

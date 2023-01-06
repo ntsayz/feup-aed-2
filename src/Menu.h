@@ -5,7 +5,10 @@
 #ifndef FEUP_AED2_MENU_H
 #define FEUP_AED2_MENU_H
 
-
+/**
+    @class Menu
+    @brief Prints the menu and avoids bloating the Manager class
+*/
 class Menu {
 private:
 public:

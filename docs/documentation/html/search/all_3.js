@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['findshortestroute_0',['FindShortestRoute',['../class_graph.html#ac73447df4127080148861bdb59a5cf92',1,'Graph']]],
-  ['findshortestroutes_1',['FindShortestRoutes',['../class_graph.html#ab24a95aa6dd8834d68097dac534d5ecd',1,'Graph']]],
+  ['findshortestroute_0',['findShortestRoute',['../class_graph.html#a1508d800da2230ca5a22287000f04057',1,'Graph']]],
+  ['findshortestroutes_1',['findShortestRoutes',['../class_graph.html#a5d6c754257d238091babe82863055a32',1,'Graph']]],
   ['flight_2',['Flight',['../class_flight.html',1,'Flight'],['../class_flight.html#ae80089791cbb9fcc67c2d3f3345c9e30',1,'Flight::Flight()']]],
   ['flight_2ecpp_3',['Flight.cpp',['../_flight_8cpp.html',1,'']]],
   ['flight_2eh_4',['Flight.h',['../_flight_8h.html',1,'']]],
