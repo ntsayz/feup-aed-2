@@ -12,7 +12,7 @@
 #include "Airlines.h"
 #include "Menu.h"
 #include "Utility.h"
-#include <openssl/sha.h>
+//#include <openssl/sha.h>
 
 #ifndef FEUP_AED2_MANAGER_H
 #define FEUP_AED2_MANAGER_H
