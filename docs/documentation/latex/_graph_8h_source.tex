@@ -1,6 +1,6 @@
-\doxysection{Graph.\+h}
+\hypertarget{_graph_8h_source}{}\doxysection{Graph.\+h}
 \label{_graph_8h_source}\index{src/Graph.h@{src/Graph.h}}
-\textbf{ Go to the documentation of this file.}
+\mbox{\hyperlink{_graph_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{comment}{//}}
 \DoxyCodeLine{2 \textcolor{comment}{// Created by ntsayz on 12/20/22.}}
@@ -18,18 +18,18 @@
 \DoxyCodeLine{14 \textcolor{preprocessor}{\#include <cmath>}}
 \DoxyCodeLine{15 \textcolor{preprocessor}{\#include <iostream>}}
 \DoxyCodeLine{16 \textcolor{preprocessor}{\#include <bits/stdc++.h>}}
-\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}Airport.h"{}}}
-\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}Flight.h"{}}}
-\DoxyCodeLine{24 \textcolor{keyword}{class }Graph \{}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_airport_8h}{Airport.h}}"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_flight_8h}{Flight.h}}"{}}}
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{class_graph}{Graph}} \{}
 \DoxyCodeLine{25 \textcolor{keyword}{public}:}
-\DoxyCodeLine{30     \textcolor{keywordtype}{void} addFlight(\textcolor{keyword}{const} Flight \&flight);}
-\DoxyCodeLine{35     \textcolor{keywordtype}{void} addAirport(\textcolor{keyword}{const} Airport \&airport);}
-\DoxyCodeLine{43     std::vector<Airport> getAirportsWithinDistance(\textcolor{keywordtype}{double} latitude, \textcolor{keywordtype}{double} longitude, \textcolor{keywordtype}{double} max\_distance) \textcolor{keyword}{const};}
-\DoxyCodeLine{49     \textcolor{keywordtype}{int} getNumFlightsFromAirport(\textcolor{keyword}{const} Airport \&airport) \textcolor{keyword}{const};}
-\DoxyCodeLine{56     std::vector<std::vector<Flight>> findShortestRoutes(\textcolor{keyword}{const} Airport \&departure, \textcolor{keyword}{const} Airport \&arrival) \textcolor{keyword}{const};}
-\DoxyCodeLine{63     std::vector<Flight> findShortestRoute(\textcolor{keyword}{const} Airport \&departure, \textcolor{keyword}{const} Airport \&arrival) \textcolor{keyword}{const};}
-\DoxyCodeLine{71     std::vector<std::vector<Flight>> getPathsWithOneAirline(\textcolor{keyword}{const} Airport \&departure, \textcolor{keyword}{const} Airport \&arrival, \textcolor{keyword}{const} std::string \&airline) \textcolor{keyword}{const};}
-\DoxyCodeLine{78     \textcolor{keywordtype}{double} getDistance(\textcolor{keyword}{const} Airport \&airport1, \textcolor{keyword}{const} Airport \&airport2) \textcolor{keyword}{const};}
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_graph_abb9f88da52722ec72e3b9b1d11b38f6f}{addFlight}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_flight}{Flight}} \&flight);}
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_graph_a8781123f274d460cba1c7c91ee168ac0}{addAirport}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_airport}{Airport}} \&airport);}
+\DoxyCodeLine{43     std::vector<Airport> \mbox{\hyperlink{class_graph_a0990f239d4648abdcf3993c804f01c31}{getAirportsWithinDistance}}(\textcolor{keywordtype}{double} latitude, \textcolor{keywordtype}{double} longitude, \textcolor{keywordtype}{double} max\_distance) \textcolor{keyword}{const};}
+\DoxyCodeLine{49     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_graph_a4f2c44215cc4f0f272ff29f798b30e0f}{getNumFlightsFromAirport}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_airport}{Airport}} \&airport) \textcolor{keyword}{const};}
+\DoxyCodeLine{56     std::vector<std::vector<Flight>> \mbox{\hyperlink{class_graph_a5d6c754257d238091babe82863055a32}{findShortestRoutes}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_airport}{Airport}} \&departure, \textcolor{keyword}{const} \mbox{\hyperlink{class_airport}{Airport}} \&arrival) \textcolor{keyword}{const};}
+\DoxyCodeLine{63     std::vector<Flight> \mbox{\hyperlink{class_graph_a1508d800da2230ca5a22287000f04057}{findShortestRoute}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_airport}{Airport}} \&departure, \textcolor{keyword}{const} \mbox{\hyperlink{class_airport}{Airport}} \&arrival) \textcolor{keyword}{const};}
+\DoxyCodeLine{71     std::vector<std::vector<Flight>> \mbox{\hyperlink{class_graph_a260a2c05f7dc657f3e1c9db92ac173bf}{getPathsWithOneAirline}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_airport}{Airport}} \&departure, \textcolor{keyword}{const} \mbox{\hyperlink{class_airport}{Airport}} \&arrival, \textcolor{keyword}{const} std::string \&airline) \textcolor{keyword}{const};}
+\DoxyCodeLine{78     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_graph_a3895bf29d9b6455b6e6c7633dd108b86}{getDistance}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_airport}{Airport}} \&airport1, \textcolor{keyword}{const} \mbox{\hyperlink{class_airport}{Airport}} \&airport2) \textcolor{keyword}{const};}
 \DoxyCodeLine{79     \textcolor{keyword}{private}:}
 \DoxyCodeLine{83     std::unordered\_map<std::string, std::vector<Flight>> adjacency\_list;}
 \DoxyCodeLine{87     std::unordered\_map<std::string, Airport> airports;}

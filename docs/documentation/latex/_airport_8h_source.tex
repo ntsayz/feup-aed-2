@@ -1,6 +1,6 @@
-\doxysection{Airport.\+h}
+\hypertarget{_airport_8h_source}{}\doxysection{Airport.\+h}
 \label{_airport_8h_source}\index{src/Airport.h@{src/Airport.h}}
-\textbf{ Go to the documentation of this file.}
+\mbox{\hyperlink{_airport_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{comment}{//}}
 \DoxyCodeLine{2 \textcolor{comment}{// Created by ntsayz on 12/20/22.}}
@@ -13,7 +13,7 @@
 \DoxyCodeLine{9 \textcolor{preprocessor}{\#include <utility>}}
 \DoxyCodeLine{10 \textcolor{preprocessor}{\#include <vector>}}
 \DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{16 \textcolor{keyword}{class }Airport \{}
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{class_airport}{Airport}} \{}
 \DoxyCodeLine{17 \textcolor{keyword}{private}:}
 \DoxyCodeLine{18 \textcolor{keyword}{private}:}
 \DoxyCodeLine{22     std::string code;}
@@ -23,12 +23,12 @@
 \DoxyCodeLine{38     \textcolor{keywordtype}{double} latitude;}
 \DoxyCodeLine{42     \textcolor{keywordtype}{double} longitude;}
 \DoxyCodeLine{43 \textcolor{keyword}{public}:}
-\DoxyCodeLine{47     Airport();}
-\DoxyCodeLine{52     Airport(std::string IATA) : code(std::move(IATA)) \{\}}
-\DoxyCodeLine{62     Airport(std::string code, std::string name, std::string city, std::string country, \textcolor{keywordtype}{double} latitude, \textcolor{keywordtype}{double} longitude) :}
+\DoxyCodeLine{47     \mbox{\hyperlink{class_airport_a2fc0f2402c94225b9deaf76176bb887f}{Airport}}();}
+\DoxyCodeLine{52     \mbox{\hyperlink{class_airport_afdf7742dd2322e4530879f788cf8bb77}{Airport}}(std::string IATA) : code(std::move(IATA)) \{\}}
+\DoxyCodeLine{62     \mbox{\hyperlink{class_airport_ad832d1feec4889ca2950213bcad345a0}{Airport}}(std::string code, std::string name, std::string city, std::string country, \textcolor{keywordtype}{double} latitude, \textcolor{keywordtype}{double} longitude) :}
 \DoxyCodeLine{63             code(std::move(code)), name(std::move(name)), city(std::move(city)), country(std::move(country)), latitude(latitude), longitude(longitude) \{\}}
 \DoxyCodeLine{64 }
-\DoxyCodeLine{71     \textcolor{keyword}{static} Airport fromCSVLine(std::istringstream\& iss) \{}
+\DoxyCodeLine{71     \textcolor{keyword}{static} \mbox{\hyperlink{class_airport}{Airport}} \mbox{\hyperlink{class_airport_a8a518a9e9a4f2d8eb4c3c78b87d7e28d}{fromCSVLine}}(std::istringstream\& iss) \{}
 \DoxyCodeLine{72         std::string code, name, city, country;}
 \DoxyCodeLine{73         \textcolor{keywordtype}{double} latitude, longitude;}
 \DoxyCodeLine{74 }
@@ -44,23 +44,23 @@
 \DoxyCodeLine{84         std::stringstream(latitudeString) >> latitude;}
 \DoxyCodeLine{85         std::stringstream(longitudeString) >> longitude;}
 \DoxyCodeLine{86 }
-\DoxyCodeLine{87         \textcolor{keywordflow}{return} Airport(code, name, city, country,latitude,longitude);}
+\DoxyCodeLine{87         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_airport_a2fc0f2402c94225b9deaf76176bb887f}{Airport}}(code, name, city, country,latitude,longitude);}
 \DoxyCodeLine{88     \}}
 \DoxyCodeLine{89 }
-\DoxyCodeLine{94     \textcolor{keyword}{const} std::string \&getCountry() \textcolor{keyword}{const};}
-\DoxyCodeLine{99     \textcolor{keyword}{const} std::string \&getCode() \textcolor{keyword}{const};}
+\DoxyCodeLine{94     \textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_airport_aad0a9be7a85e90b7090be9007de855b8}{getCountry}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{99     \textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_airport_a78dcc4385c4ddfc18fb49b642fb04196}{getCode}}() \textcolor{keyword}{const};}
 \DoxyCodeLine{100 }
-\DoxyCodeLine{105     \textcolor{keyword}{const} std::string \&getName() \textcolor{keyword}{const};}
+\DoxyCodeLine{105     \textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_airport_aa5be38443c1de176e52c4f5f5252c956}{getName}}() \textcolor{keyword}{const};}
 \DoxyCodeLine{106 }
-\DoxyCodeLine{111     \textcolor{keyword}{const} std::string \&getCity() \textcolor{keyword}{const};}
+\DoxyCodeLine{111     \textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_airport_a1a4c025d8d747398108356bf42d74eee}{getCity}}() \textcolor{keyword}{const};}
 \DoxyCodeLine{112 }
-\DoxyCodeLine{117     \textcolor{keywordtype}{double} getLatitude() \textcolor{keyword}{const};}
+\DoxyCodeLine{117     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_airport_aed71ba4592b2a1401eb182931f2d3f06}{getLatitude}}() \textcolor{keyword}{const};}
 \DoxyCodeLine{118 }
-\DoxyCodeLine{123     \textcolor{keywordtype}{double} getLongitude() \textcolor{keyword}{const};}
+\DoxyCodeLine{123     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_airport_ad8cd931389b14d63e5933a1658b653a3}{getLongitude}}() \textcolor{keyword}{const};}
 \DoxyCodeLine{124 }
-\DoxyCodeLine{129     \textcolor{keywordtype}{void} setLatitude(\textcolor{keywordtype}{double} latitude);}
+\DoxyCodeLine{129     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_airport_aa6fa7f50efbc47c1013af7d7d3ce1a95}{setLatitude}}(\textcolor{keywordtype}{double} latitude);}
 \DoxyCodeLine{130 }
-\DoxyCodeLine{135     \textcolor{keywordtype}{void} setLongitude(\textcolor{keywordtype}{double} longitude);}
+\DoxyCodeLine{135     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_airport_a8595da4216165ea42ad2157480573548}{setLongitude}}(\textcolor{keywordtype}{double} longitude);}
 \DoxyCodeLine{136 \};}
 \DoxyCodeLine{137 }
 \DoxyCodeLine{138 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//FEUP\_AED2\_AIRPORT\_H}}

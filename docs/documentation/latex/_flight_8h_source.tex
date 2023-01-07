@@ -1,6 +1,6 @@
-\doxysection{Flight.\+h}
+\hypertarget{_flight_8h_source}{}\doxysection{Flight.\+h}
 \label{_flight_8h_source}\index{src/Flight.h@{src/Flight.h}}
-\textbf{ Go to the documentation of this file.}
+\mbox{\hyperlink{_flight_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{comment}{//}}
 \DoxyCodeLine{2 \textcolor{comment}{// Created by ntsayz on 12/20/22.}}
@@ -16,7 +16,7 @@
 \DoxyCodeLine{12 \textcolor{preprocessor}{\#include <vector>}}
 \DoxyCodeLine{13 \textcolor{preprocessor}{\#include <string>}}
 \DoxyCodeLine{14 }
-\DoxyCodeLine{20 \textcolor{keyword}{class }Flight \{}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{class_flight}{Flight}} \{}
 \DoxyCodeLine{21 \textcolor{keyword}{private}:}
 \DoxyCodeLine{25     std::string departure;}
 \DoxyCodeLine{29     std::string arrival;}
@@ -24,9 +24,9 @@
 \DoxyCodeLine{37     \textcolor{keywordtype}{double} distance;}
 \DoxyCodeLine{38 \textcolor{keyword}{public}:}
 \DoxyCodeLine{39 }
-\DoxyCodeLine{40     Flight(std::string source, std::string target, std::string airline) :}
+\DoxyCodeLine{40     \mbox{\hyperlink{class_flight_ae80089791cbb9fcc67c2d3f3345c9e30}{Flight}}(std::string source, std::string target, std::string airline) :}
 \DoxyCodeLine{41             departure(std::move(source)), arrival(std::move(target)), airline(std::move(airline)) \{\}}
-\DoxyCodeLine{47     \textcolor{keyword}{static} Flight fromCSVLine(std::istringstream\& iss) \{}
+\DoxyCodeLine{47     \textcolor{keyword}{static} \mbox{\hyperlink{class_flight}{Flight}} \mbox{\hyperlink{class_flight_a0b03986834dc2a4ebda19d3437b91b4d}{fromCSVLine}}(std::istringstream\& iss) \{}
 \DoxyCodeLine{48         std::string source, target, airline;}
 \DoxyCodeLine{49 }
 \DoxyCodeLine{50         std::getline(iss, source, \textcolor{charliteral}{','});}
@@ -35,16 +35,16 @@
 \DoxyCodeLine{53 }
 \DoxyCodeLine{54         \textcolor{keywordflow}{return} \{source, target, airline\};}
 \DoxyCodeLine{55     \}}
-\DoxyCodeLine{60     \textcolor{keywordtype}{void} setDistance(\textcolor{keywordtype}{double} distance);}
+\DoxyCodeLine{60     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_flight_a8f7a6d3cc04a2e6131a161e2d6b2062c}{setDistance}}(\textcolor{keywordtype}{double} distance);}
 \DoxyCodeLine{61 }
-\DoxyCodeLine{66     \textcolor{keyword}{const} std::string \&getDeparture() \textcolor{keyword}{const};}
+\DoxyCodeLine{66     \textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_flight_aa87243c5309a487f01f414de39e1e9a5}{getDeparture}}() \textcolor{keyword}{const};}
 \DoxyCodeLine{67 }
-\DoxyCodeLine{72     \textcolor{keyword}{const} std::string \&getArrival() \textcolor{keyword}{const};}
+\DoxyCodeLine{72     \textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_flight_a299cffc4908a2193c67f3cbd2715374f}{getArrival}}() \textcolor{keyword}{const};}
 \DoxyCodeLine{73 }
-\DoxyCodeLine{78     \textcolor{keyword}{const} std::string \&getAirline() \textcolor{keyword}{const};}
+\DoxyCodeLine{78     \textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_flight_add83f59d0f4039fbda078711e687c779}{getAirline}}() \textcolor{keyword}{const};}
 \DoxyCodeLine{79 }
-\DoxyCodeLine{80     \textcolor{keywordtype}{double} getDistance() \textcolor{keyword}{const};}
-\DoxyCodeLine{81     \textcolor{keywordtype}{bool} operator<(Flight f2)\{}
+\DoxyCodeLine{80     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_flight_acfaf4cb3fb5eca8bea71b09973cb3a52}{getDistance}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{81     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_flight_aeb4d32aa5108467c6a85d6fc19dbc0c3}{operator<}}(\mbox{\hyperlink{class_flight}{Flight}} f2)\{}
 \DoxyCodeLine{82         \textcolor{keywordflow}{return} this-\/>distance < f2.distance;}
 \DoxyCodeLine{83     \}}
 \DoxyCodeLine{84 \};}
