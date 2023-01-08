@@ -696,7 +696,7 @@ void Manager::show_nr_destinations(std::string code, const std::string &fname3) 
 }
 
 void Manager::show_info_Menu() {
-    int i;
+    int i,n;
     std::string s;
     Utility::clear_screen();
     Utility::header("SkyPlanner");
@@ -714,6 +714,10 @@ void Manager::show_info_Menu() {
             show_airports2(s);
             break;
         case 3:
+            std::cout << "-->";
+            std::cin >> n;
+             n = Utility::getInput(n,1,9999999);
+            show_highest(n,"../src/dataset/flights.csv");
             break;
         case 9:
             return;
@@ -740,7 +744,6 @@ void Manager::show_airports2(std::string country){
     std::cout << "|------------|-------------------------------|-------------------------------|-------------------------------------|\n";
     for(auto e:airports){
         if(e.second.getCountry() == country){
-            //std::cout << "|" <<std::setw(13) << i << " | ";
             std::cout << "|" <<std::setw(12) << e.second.getCode() << "|"
                       << std::setw(31)<< e.second.getName() <<"|"
                       <<std::setw(31) << e.second.getLatitude() << "|"
@@ -749,26 +752,42 @@ void Manager::show_airports2(std::string country){
     }
     Utility::footer();
 }
-//IH
 void Manager::possible_number(int n,std::string code,const std::string &fname3) {
     std::vector<Flight> flights = Utility::loadDataFromCSV<Flight>(fname3);
     auto v = flight_network.getReachableAirports(code,n);
     for(auto e:v){
         std::cout << e.getName() << std::endl;
     }
-
+    Utility::footer();
 }
-/*for(auto const& depAir: departures_airports){
-        for(auto const& arrAir: arrival_airports){
-            route = flight_network.findShortestRoutes(depAir, arrAir);
-            int i =1;
-            for (const auto& options : route) {
-                std::cout << "\nOption " << i << ":\n";
-                for(const auto& flight: options){
-                    std::cout << flight.getDeparture() << " -> " << flight.getArrival()<< " (" << flight.getAirline() << ") - " << airlines.at(flight.getAirline()).getName() << std::endl;
-                }
-                i++;
-            }
+void Manager::show_highest(int n,const std::string &fname3){
+    std::vector<Flight> flights = Utility::loadDataFromCSV<Flight>(fname3);
+    std::map<std::string, int> airport_count;
 
+    for(auto e:flights){
+        airport_count[e.getArrival()]++;
+    }
+
+    std::vector<std::string> busy = aux(n,airport_count);
+    for (auto e:busy){
+        std::cout << "Code:"<<  airports[e].getCode() << std::endl;
+        std::cout << "Name: "<<  airports[e].getName() <<std::endl;
+        std::cout << "Latidude: " <<  airports[e].getLatitude() << std::endl;
+        std::cout << "Longitude: " <<  airports[e].getLongitude()<< std::endl;
+        std::cout << "Number of flights: " <<airport_count[e] << std::endl;
+    }
+
+    Utility::footer();
+}
+
+std::vector<std::string> Manager::aux(int n,std::map<std::string, int> airport_count) {
+    std::vector<std::string> v;
+    for(const auto& item : airport_count) {
+        if (item.second == n) {
+            v.push_back(item.first);
         }
-    }*/
+    }
+    return v;
+}
+
+

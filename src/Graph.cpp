@@ -130,8 +130,6 @@ std::vector<Flight> Graph::findShortestRoute(const Airport &departure, const Air
     return std::vector<Flight>{};
 }
 
-
-
 double Graph::getDistance(const Airport &airport1, const Airport &airport2) const {
     static constexpr double EARTH_RADIUS_KM = 6371.0;
 
@@ -150,7 +148,6 @@ double Graph::getDistance(const Airport &airport1, const Airport &airport2) cons
 
     return EARTH_RADIUS_KM * c;
 }
-
 
 std::vector<std::vector<Flight>> Graph::getPathsWithOneAirline(const Airport &departure, const Airport &arrival, const std::string &airline) const {
     std::vector<std::vector<Flight>> paths;
@@ -201,6 +198,7 @@ std::vector<std::vector<Flight>> Graph::getPathsWithOneAirline(const Airport &de
 
     return paths;
 }
+
 
 std::vector<Airport> Graph::getReachableAirports(const std::string &start_airport_code, int num_flights) const {
     std::vector<Airport> reachable_airports;
