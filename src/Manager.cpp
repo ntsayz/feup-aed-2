@@ -791,17 +791,3 @@ std::vector<std::string> Manager::aux(int n,std::map<std::string, int> airport_c
 }
 
 
-/*for(auto const& depAir: departures_airports){
-        for(auto const& arrAir: arrival_airports){
-            route = flight_network.findShortestRoutes(depAir, arrAir);
-            int i =1;
-            for (const auto& options : route) {
-                std::cout << "\nOption " << i << ":\n";
-                for(const auto& flight: options){
-                    std::cout << flight.getDeparture() << " -> " << flight.getArrival()<< " (" << flight.getAirline() << ") - " << airlines.at(flight.getAirline()).getName() << std::endl;
-                }
-                i++;
-            }
-
-        }
-    }*/
