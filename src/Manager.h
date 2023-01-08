@@ -158,7 +158,9 @@ public:
     /// \param n valor a definir
     /// \param fname3 Path to 'flights.csv'
     void show_highest(int n ,const std::string &fname3);
-
+    /// auxiliar function for show_highest
+    /// \param n valor a definir
+    /// \param airport_count map with the city code and the count
     std::vector<std::string> aux(int n,std::map<std::string, int> airport_count);
 
 };
