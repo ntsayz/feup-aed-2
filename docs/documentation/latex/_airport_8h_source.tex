@@ -20,10 +20,10 @@
 \DoxyCodeLine{26     std::string name;}
 \DoxyCodeLine{30     std::string city;}
 \DoxyCodeLine{34     std::string country;}
-\DoxyCodeLine{38     \textcolor{keywordtype}{double} latitude;}
-\DoxyCodeLine{42     \textcolor{keywordtype}{double} longitude;}
+\DoxyCodeLine{38     \textcolor{keywordtype}{double} latitude\{\};}
+\DoxyCodeLine{42     \textcolor{keywordtype}{double} longitude\{\};}
 \DoxyCodeLine{43 \textcolor{keyword}{public}:}
-\DoxyCodeLine{47     \mbox{\hyperlink{class_airport_a2fc0f2402c94225b9deaf76176bb887f}{Airport}}();}
+\DoxyCodeLine{47     \mbox{\hyperlink{class_airport_a2fc0f2402c94225b9deaf76176bb887f}{Airport}}() : code(), name(), latitude(0), longitude(0) \{\}}
 \DoxyCodeLine{52     \mbox{\hyperlink{class_airport_afdf7742dd2322e4530879f788cf8bb77}{Airport}}(std::string IATA) : code(std::move(IATA)) \{\}}
 \DoxyCodeLine{62     \mbox{\hyperlink{class_airport_ad832d1feec4889ca2950213bcad345a0}{Airport}}(std::string code, std::string name, std::string city, std::string country, \textcolor{keywordtype}{double} latitude, \textcolor{keywordtype}{double} longitude) :}
 \DoxyCodeLine{63             code(std::move(code)), name(std::move(name)), city(std::move(city)), country(std::move(country)), latitude(latitude), longitude(longitude) \{\}}
@@ -61,8 +61,13 @@
 \DoxyCodeLine{129     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_airport_aa6fa7f50efbc47c1013af7d7d3ce1a95}{setLatitude}}(\textcolor{keywordtype}{double} latitude);}
 \DoxyCodeLine{130 }
 \DoxyCodeLine{135     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_airport_a8595da4216165ea42ad2157480573548}{setLongitude}}(\textcolor{keywordtype}{double} longitude);}
-\DoxyCodeLine{136 \};}
-\DoxyCodeLine{137 }
-\DoxyCodeLine{138 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//FEUP\_AED2\_AIRPORT\_H}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_airport_a2d93e2cadbdb3ed9114aff48aa0bac5c}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_airport}{Airport}} \&other)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{138         \textcolor{keywordflow}{return} code == other.code;}
+\DoxyCodeLine{139     \}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 \};}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//FEUP\_AED2\_AIRPORT\_H}}
 
 \end{DoxyCode}

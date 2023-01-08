@@ -45,8 +45,8 @@ public:
             code(std::move(code)), name(std::move(name)), callsign(std::move(callsign)), country(std::move(country)) {}
 
     /**
-    * @brief Creates an Airline object from a string in CSV (comma-separated values) format
-    * @param iss An std::istringstream object containing the CSV string
+    * @brief Creates an Airline object from a string in .csv format
+    * @param iss An std::istringstream object containing the .csv string
     * @return The constructed Airline object
     */
     static Airline fromCSVLine(std::istringstream& iss) {

@@ -69,13 +69,19 @@ public:
     * @return A vector of vector of flights representing all routes between the two airports that use only flights from the given airline
     */
     std::vector<std::vector<Flight>> getPathsWithOneAirline(const Airport &departure, const Airport &arrival, const std::string &airline) const;
-        /*
+    /**
     * @brief Gets the distance between two airorts using heaviside's formula
     * @param airport1 The first airpor
     * @param airport2 The second airport
     * @return The distance between the two airports
     */
-        double getDistance(const Airport &airport1, const Airport &airport2) const;
+    double getDistance(const Airport &airport1, const Airport &airport2) const;
+    /**
+   * @brief Gets a set of airports reachable within a certain number of flights from a given airport
+   * @param start_airport_code The code of the starting airport
+   * @param num_flights The maximum number of flights to take
+   * @return A vector of Airport objects for airports reachable within the specified number of flights
+   */
     std::vector<Airport> getReachableAirports(const std::string &start_airport_code, int num_flights) const;
 
     private:

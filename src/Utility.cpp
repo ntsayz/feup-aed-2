@@ -31,7 +31,7 @@ int  Utility::getInput(int choice, int min, int max)  {
 }
 
 void Utility::clear_screen() {
-    std::system("cls");
+    std::system("clear");
 }
 void Utility::header(const std::string& title){
     int n = (int)(title.size() + 59) / 2;

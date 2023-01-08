@@ -27,7 +27,9 @@ std\+::vector$<$ \mbox{\hyperlink{class_flight}{Flight}} $>$ \mbox{\hyperlink{cl
 std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_flight}{Flight}} $>$ $>$ \mbox{\hyperlink{class_graph_a260a2c05f7dc657f3e1c9db92ac173bf}{get\+Paths\+With\+One\+Airline}} (const \mbox{\hyperlink{class_airport}{Airport}} \&departure, const \mbox{\hyperlink{class_airport}{Airport}} \&arrival, const std\+::string \&airline) const
 \begin{DoxyCompactList}\small\item\em Finds all routes between two airports that use only flights from a given airline using BFS. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_graph_a3895bf29d9b6455b6e6c7633dd108b86}{get\+Distance}} (const \mbox{\hyperlink{class_airport}{Airport}} \&airport1, const \mbox{\hyperlink{class_airport}{Airport}} \&airport2) const
-\begin{DoxyCompactList}\small\item\em Gets the distance between two airports using heaviside\textquotesingle{}s formula. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets the distance between two airorts using heaviside\textquotesingle{}s formula. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ \mbox{\hyperlink{class_graph_a48c1f034fb95c43eb1db3f40fa3c3015}{get\+Reachable\+Airports}} (const std\+::string \&start\+\_\+airport\+\_\+code, int num\+\_\+flights) const
+\begin{DoxyCompactList}\small\item\em Gets a set of airports reachable within a certain number of flights from a given airport. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -134,11 +136,11 @@ A vector of airports within the specified distance of the reference point
 
 
 
-Gets the distance between two airports using heaviside\textquotesingle{}s formula. 
+Gets the distance between two airorts using heaviside\textquotesingle{}s formula. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em airport1} & The first airport \\
+{\em airport1} & The first airpor \\
 \hline
 {\em airport2} & The second airport \\
 \hline
@@ -185,6 +187,26 @@ Finds all routes between two airports that use only flights from a given airline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 A vector of vector of flights representing all routes between the two airports that use only flights from the given airline 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_a48c1f034fb95c43eb1db3f40fa3c3015}\label{class_graph_a48c1f034fb95c43eb1db3f40fa3c3015}} 
+\index{Graph@{Graph}!getReachableAirports@{getReachableAirports}}
+\index{getReachableAirports@{getReachableAirports}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getReachableAirports()}{getReachableAirports()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ Graph\+::get\+Reachable\+Airports (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{start\+\_\+airport\+\_\+code,  }\item[{int}]{num\+\_\+flights }\end{DoxyParamCaption}) const}
+
+
+
+Gets a set of airports reachable within a certain number of flights from a given airport. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+\_\+airport\+\_\+code} & The code of the starting airport \\
+\hline
+{\em num\+\_\+flights} & The maximum number of flights to take \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of \mbox{\hyperlink{class_airport}{Airport}} objects for airports reachable within the specified number of flights 
 \end{DoxyReturn}
 
 

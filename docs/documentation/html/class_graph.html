@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="feup-logo.jpeg"/></td>
   <td id="projectalign">
-   <div id="projectname">2º Projeto de AED - G77<span id="projectnumber">&#160;0.5</span>
+   <div id="projectname">2º Projeto de AED - G77<span id="projectnumber">&#160;1.0</span>
    </div>
    <div id="projectbrief">Flight search application developed in the Algoritmos e Estrutura de Dados (AED) curricular unit at FEUP</div>
   </td>
@@ -107,8 +107,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a260a2c05f7dc657f3e1c9db92ac173bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds all routes between two airports that use only flights from a given airline using BFS.  <a href="class_graph.html#a260a2c05f7dc657f3e1c9db92ac173bf">More...</a><br /></td></tr>
 <tr class="separator:a260a2c05f7dc657f3e1c9db92ac173bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3895bf29d9b6455b6e6c7633dd108b86"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a3895bf29d9b6455b6e6c7633dd108b86">getDistance</a> (const <a class="el" href="class_airport.html">Airport</a> &amp;airport1, const <a class="el" href="class_airport.html">Airport</a> &amp;airport2) const</td></tr>
-<tr class="memdesc:a3895bf29d9b6455b6e6c7633dd108b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the distance between two airports using heaviside's formula.  <a href="class_graph.html#a3895bf29d9b6455b6e6c7633dd108b86">More...</a><br /></td></tr>
+<tr class="memdesc:a3895bf29d9b6455b6e6c7633dd108b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the distance between two airorts using heaviside's formula.  <a href="class_graph.html#a3895bf29d9b6455b6e6c7633dd108b86">More...</a><br /></td></tr>
 <tr class="separator:a3895bf29d9b6455b6e6c7633dd108b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48c1f034fb95c43eb1db3f40fa3c3015"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_airport.html">Airport</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a48c1f034fb95c43eb1db3f40fa3c3015">getReachableAirports</a> (const std::string &amp;start_airport_code, int num_flights) const</td></tr>
+<tr class="memdesc:a48c1f034fb95c43eb1db3f40fa3c3015"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a set of airports reachable within a certain number of flights from a given airport.  <a href="class_graph.html#a48c1f034fb95c43eb1db3f40fa3c3015">More...</a><br /></td></tr>
+<tr class="separator:a48c1f034fb95c43eb1db3f40fa3c3015"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Represents a <a class="el" href="class_graph.html" title="Represents a Graph of airports and flights.">Graph</a> of airports and flights. </p>
@@ -312,10 +315,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Gets the distance between two airports using heaviside's formula. </p>
+<p>Gets the distance between two airorts using heaviside's formula. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">airport1</td><td>The first airport </td></tr>
+    <tr><td class="paramname">airport1</td><td>The first airpor </td></tr>
     <tr><td class="paramname">airport2</td><td>The second airport </td></tr>
   </table>
   </dd>
@@ -393,6 +396,44 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A vector of vector of flights representing all routes between the two airports that use only flights from the given airline </dd></dl>
+
+</div>
+</div>
+<a id="a48c1f034fb95c43eb1db3f40fa3c3015" name="a48c1f034fb95c43eb1db3f40fa3c3015"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48c1f034fb95c43eb1db3f40fa3c3015">&#9670;&#160;</a></span>getReachableAirports()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_airport.html">Airport</a> &gt; Graph::getReachableAirports </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>start_airport_code</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_flights</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets a set of airports reachable within a certain number of flights from a given airport. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start_airport_code</td><td>The code of the starting airport </td></tr>
+    <tr><td class="paramname">num_flights</td><td>The maximum number of flights to take </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector of <a class="el" href="class_airport.html" title="Represents an airport.">Airport</a> objects for airports reachable within the specified number of flights </dd></dl>
 
 </div>
 </div>

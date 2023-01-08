@@ -24,6 +24,8 @@ void \mbox{\hyperlink{class_manager_aa12b4fb7796df3df0a91382becd4585b}{main\+\_\
 \begin{DoxyCompactList}\small\item\em Displays the main menu. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_manager_aa41d7b86c289e4b6e2c47b7cf9360f12}{search\+\_\+flights\+\_\+menu}} (bool not\+ARecursive\+Call)
 \item 
+void \mbox{\hyperlink{class_manager_a94af137e1dfbd7bd7b08462e83fe9220}{show\+\_\+data\+\_\+menu}} (bool not\+ARecursivecall)
+\item 
 void \mbox{\hyperlink{class_manager_a0c1aa1d3b0a3ee68eb955ff705fd5b5f}{search\+\_\+flights}} (std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ departures\+\_\+airports, std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ arrival\+\_\+airports)
 \item 
 std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ \mbox{\hyperlink{class_manager_a7d10f5aba93b3d10967b379572c8c7c2}{get\+\_\+airports\+\_\+by\+\_\+city\+\_\+country}} ()
@@ -39,6 +41,24 @@ void \mbox{\hyperlink{class_manager_a38d9efb77a12d2b9e049df62e23bd06c}{search\+\
 void \mbox{\hyperlink{class_manager_a43b04d4e1056f048e3680836809c52dd}{show\+\_\+flight\+\_\+info}} (const std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ \&departures\+\_\+airports, const std\+::vector$<$ \mbox{\hyperlink{class_airport}{Airport}} $>$ \&arrival\+\_\+airports)
 \item 
 std\+::string \mbox{\hyperlink{class_manager_acbaaedb449f56cec89ffce4993de472d}{get\+\_\+airline\+\_\+code}} ()
+\item 
+void \mbox{\hyperlink{class_manager_ab8b26a43c773bee86f557d2bd62433a6}{show\+\_\+nr\+\_\+flights}} (std\+::string code, const std\+::string \&fname3)
+\item 
+void \mbox{\hyperlink{class_manager_a2e026f95a5b74eebdea63a8ee9b73b65}{show\+\_\+nr\+\_\+airlines}} (std\+::string code, const std\+::string \&fname3)
+\item 
+void \mbox{\hyperlink{class_manager_a6988519b803a4bdd1663fbe531944999}{show\+\_\+nr\+\_\+destinations}} (std\+::string code, const std\+::string \&fname3)
+\item 
+void \mbox{\hyperlink{class_manager_a68f708c2cbda75164c9037892a015231}{show\+\_\+info\+\_\+\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Shows information based on users decision. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_manager_a80821304e3d06edc5d0d40292b0ff464}{show\+\_\+airports}} (std\+::string city)
+\item 
+void \mbox{\hyperlink{class_manager_ae0e303017c05349c37ef29b4a3dd9724}{show\+\_\+airports2}} (std\+::string country)
+\item 
+void \mbox{\hyperlink{class_manager_a09f846438b8c90f300cdaa590b044a13}{possible\+\_\+number}} (int n, std\+::string code, const std\+::string \&fname3)
+\item 
+void \mbox{\hyperlink{class_manager_ae30c503075ad5acb4d96c1ddcbc29528}{show\+\_\+highest}} (int n, const std\+::string \&fname3)
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_manager_a620e0abb36ef11b8de732e7e61bbfc6c}{aux}} (int n, std\+::map$<$ std\+::string, int $>$ airport\+\_\+count)
 \end{DoxyCompactItemize}
 
 
@@ -59,6 +79,19 @@ Manages the application. Stores its most important data structures, manages the 
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_manager_a620e0abb36ef11b8de732e7e61bbfc6c}\label{class_manager_a620e0abb36ef11b8de732e7e61bbfc6c}} 
+\index{Manager@{Manager}!aux@{aux}}
+\index{aux@{aux}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{aux()}{aux()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Manager\+::aux (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{std\+::map$<$ std\+::string, int $>$}]{airport\+\_\+count }\end{DoxyParamCaption})}
+
+auxiliar function for show\+\_\+highest 
+\begin{DoxyParams}{Parameters}
+{\em n} & valor a definir \\
+\hline
+{\em airport\+\_\+count} & map with the city code and the count \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_manager_acbaaedb449f56cec89ffce4993de472d}\label{class_manager_acbaaedb449f56cec89ffce4993de472d}} 
 \index{Manager@{Manager}!get\_airline\_code@{get\_airline\_code}}
 \index{get\_airline\_code@{get\_airline\_code}!Manager@{Manager}}
@@ -123,6 +156,21 @@ It compares the size of the data structures that the data was loaded into, to de
 
 Displays the main menu. 
 
+\mbox{\Hypertarget{class_manager_a09f846438b8c90f300cdaa590b044a13}\label{class_manager_a09f846438b8c90f300cdaa590b044a13}} 
+\index{Manager@{Manager}!possible\_number@{possible\_number}}
+\index{possible\_number@{possible\_number}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{possible\_number()}{possible\_number()}}
+{\footnotesize\ttfamily void Manager\+::possible\+\_\+number (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{std\+::string}]{code,  }\item[{const std\+::string \&}]{fname3 }\end{DoxyParamCaption})}
+
+Shows Airports reachable using a certain number of flights 
+\begin{DoxyParams}{Parameters}
+{\em n} & certain number of flights \\
+\hline
+{\em code} & starting country\textquotesingle{}s code \\
+\hline
+{\em fname3} & Path to \textquotesingle{}flights.\+csv\textquotesingle{} \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_manager_af8c67c221068e4e3ccccf1d5f70ba8ee}\label{class_manager_af8c67c221068e4e3ccccf1d5f70ba8ee}} 
 \index{Manager@{Manager}!run@{run}}
 \index{run@{run}!Manager@{Manager}}
@@ -170,6 +218,39 @@ Searches for routes using only one requested airline
 {\em arrival\+\_\+airports} & list of arrival airports \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_manager_a80821304e3d06edc5d0d40292b0ff464}\label{class_manager_a80821304e3d06edc5d0d40292b0ff464}} 
+\index{Manager@{Manager}!show\_airports@{show\_airports}}
+\index{show\_airports@{show\_airports}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{show\_airports()}{show\_airports()}}
+{\footnotesize\ttfamily void Manager\+::show\+\_\+airports (\begin{DoxyParamCaption}\item[{std\+::string}]{city }\end{DoxyParamCaption})}
+
+Shows detailed information of the airport 
+\begin{DoxyParams}{Parameters}
+{\em city} & city name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_manager_ae0e303017c05349c37ef29b4a3dd9724}\label{class_manager_ae0e303017c05349c37ef29b4a3dd9724}} 
+\index{Manager@{Manager}!show\_airports2@{show\_airports2}}
+\index{show\_airports2@{show\_airports2}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{show\_airports2()}{show\_airports2()}}
+{\footnotesize\ttfamily void Manager\+::show\+\_\+airports2 (\begin{DoxyParamCaption}\item[{std\+::string}]{country }\end{DoxyParamCaption})}
+
+Shows detailed information of the airport 
+\begin{DoxyParams}{Parameters}
+{\em country} & country name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_manager_a94af137e1dfbd7bd7b08462e83fe9220}\label{class_manager_a94af137e1dfbd7bd7b08462e83fe9220}} 
+\index{Manager@{Manager}!show\_data\_menu@{show\_data\_menu}}
+\index{show\_data\_menu@{show\_data\_menu}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{show\_data\_menu()}{show\_data\_menu()}}
+{\footnotesize\ttfamily void Manager\+::show\+\_\+data\+\_\+menu (\begin{DoxyParamCaption}\item[{bool}]{not\+ARecursivecall }\end{DoxyParamCaption})}
+
+2st Option in the Main menu; Shows the \textquotesingle{}Show data\textquotesingle{} section 
+\begin{DoxyParams}{Parameters}
+{\em not\+ARecursive\+Call} & Since we need to use this function multiple times within the same call chain, it should be recursive. This was a way to handle recursion appropriately \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_manager_a43b04d4e1056f048e3680836809c52dd}\label{class_manager_a43b04d4e1056f048e3680836809c52dd}} 
 \index{Manager@{Manager}!show\_flight\_info@{show\_flight\_info}}
 \index{show\_flight\_info@{show\_flight\_info}!Manager@{Manager}}
@@ -183,6 +264,29 @@ Shows detailed route and flight information.
 {\em arrival\+\_\+airports} & list of arrival airports \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_manager_ae30c503075ad5acb4d96c1ddcbc29528}\label{class_manager_ae30c503075ad5acb4d96c1ddcbc29528}} 
+\index{Manager@{Manager}!show\_highest@{show\_highest}}
+\index{show\_highest@{show\_highest}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{show\_highest()}{show\_highest()}}
+{\footnotesize\ttfamily void Manager\+::show\+\_\+highest (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{const std\+::string \&}]{fname3 }\end{DoxyParamCaption})}
+
+Shows \mbox{\hyperlink{class_airport}{Airport}} with the highest number of flights por um valor a definir 
+\begin{DoxyParams}{Parameters}
+{\em n} & valor a definir \\
+\hline
+{\em fname3} & Path to \textquotesingle{}flights.\+csv\textquotesingle{} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_manager_a68f708c2cbda75164c9037892a015231}\label{class_manager_a68f708c2cbda75164c9037892a015231}} 
+\index{Manager@{Manager}!show\_info\_Menu@{show\_info\_Menu}}
+\index{show\_info\_Menu@{show\_info\_Menu}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{show\_info\_Menu()}{show\_info\_Menu()}}
+{\footnotesize\ttfamily void Manager\+::show\+\_\+info\+\_\+\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Shows information based on users decision. 
+
 \mbox{\Hypertarget{class_manager_ad9cfa1890c9d32bcb39c9f832f4b2296}\label{class_manager_ad9cfa1890c9d32bcb39c9f832f4b2296}} 
 \index{Manager@{Manager}!show\_multiple\_routes@{show\_multiple\_routes}}
 \index{show\_multiple\_routes@{show\_multiple\_routes}!Manager@{Manager}}
@@ -194,6 +298,45 @@ Shows multiple routes with same number of flights
 {\em departures\+\_\+airports} & list of departure airports \\
 \hline
 {\em arrival\+\_\+airports} & list of arrival airports \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_manager_a2e026f95a5b74eebdea63a8ee9b73b65}\label{class_manager_a2e026f95a5b74eebdea63a8ee9b73b65}} 
+\index{Manager@{Manager}!show\_nr\_airlines@{show\_nr\_airlines}}
+\index{show\_nr\_airlines@{show\_nr\_airlines}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{show\_nr\_airlines()}{show\_nr\_airlines()}}
+{\footnotesize\ttfamily void Manager\+::show\+\_\+nr\+\_\+airlines (\begin{DoxyParamCaption}\item[{std\+::string}]{code,  }\item[{const std\+::string \&}]{fname3 }\end{DoxyParamCaption})}
+
+Shows Number of airlines of a specific airport 
+\begin{DoxyParams}{Parameters}
+{\em code} & aiport IATA code \\
+\hline
+{\em fname3} & Path to \textquotesingle{}flights.\+csv\textquotesingle{} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_manager_a6988519b803a4bdd1663fbe531944999}\label{class_manager_a6988519b803a4bdd1663fbe531944999}} 
+\index{Manager@{Manager}!show\_nr\_destinations@{show\_nr\_destinations}}
+\index{show\_nr\_destinations@{show\_nr\_destinations}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{show\_nr\_destinations()}{show\_nr\_destinations()}}
+{\footnotesize\ttfamily void Manager\+::show\+\_\+nr\+\_\+destinations (\begin{DoxyParamCaption}\item[{std\+::string}]{code,  }\item[{const std\+::string \&}]{fname3 }\end{DoxyParamCaption})}
+
+Shows Number of possible destinations of a specific airport 
+\begin{DoxyParams}{Parameters}
+{\em code} & aiport IATA code \\
+\hline
+{\em fname3} & Path to \textquotesingle{}flights.\+csv\textquotesingle{} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_manager_ab8b26a43c773bee86f557d2bd62433a6}\label{class_manager_ab8b26a43c773bee86f557d2bd62433a6}} 
+\index{Manager@{Manager}!show\_nr\_flights@{show\_nr\_flights}}
+\index{show\_nr\_flights@{show\_nr\_flights}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{show\_nr\_flights()}{show\_nr\_flights()}}
+{\footnotesize\ttfamily void Manager\+::show\+\_\+nr\+\_\+flights (\begin{DoxyParamCaption}\item[{std\+::string}]{code,  }\item[{const std\+::string \&}]{fname3 }\end{DoxyParamCaption})}
+
+Shows Number of flights of a specific airport 
+\begin{DoxyParams}{Parameters}
+{\em code} & aiport IATA code \\
+\hline
+{\em fname3} & Path to \textquotesingle{}flights.\+csv\textquotesingle{} \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_manager_a3ce44a229c819433a1b88323f4654730}\label{class_manager_a3ce44a229c819433a1b88323f4654730}} 

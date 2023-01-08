@@ -30,16 +30,17 @@
 \DoxyCodeLine{63     std::vector<Flight> \mbox{\hyperlink{class_graph_a1508d800da2230ca5a22287000f04057}{findShortestRoute}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_airport}{Airport}} \&departure, \textcolor{keyword}{const} \mbox{\hyperlink{class_airport}{Airport}} \&arrival) \textcolor{keyword}{const};}
 \DoxyCodeLine{71     std::vector<std::vector<Flight>> \mbox{\hyperlink{class_graph_a260a2c05f7dc657f3e1c9db92ac173bf}{getPathsWithOneAirline}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_airport}{Airport}} \&departure, \textcolor{keyword}{const} \mbox{\hyperlink{class_airport}{Airport}} \&arrival, \textcolor{keyword}{const} std::string \&airline) \textcolor{keyword}{const};}
 \DoxyCodeLine{78     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_graph_a3895bf29d9b6455b6e6c7633dd108b86}{getDistance}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_airport}{Airport}} \&airport1, \textcolor{keyword}{const} \mbox{\hyperlink{class_airport}{Airport}} \&airport2) \textcolor{keyword}{const};}
-\DoxyCodeLine{79     \textcolor{keyword}{private}:}
-\DoxyCodeLine{83     std::unordered\_map<std::string, std::vector<Flight>> adjacency\_list;}
-\DoxyCodeLine{87     std::unordered\_map<std::string, Airport> airports;}
-\DoxyCodeLine{88 }
-\DoxyCodeLine{89 }
-\DoxyCodeLine{90 \};}
-\DoxyCodeLine{91 }
-\DoxyCodeLine{92 }
-\DoxyCodeLine{93 }
-\DoxyCodeLine{94 }
-\DoxyCodeLine{95 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//FEUP\_AED2\_GRAPH\_H}}
+\DoxyCodeLine{85     std::vector<Airport> \mbox{\hyperlink{class_graph_a48c1f034fb95c43eb1db3f40fa3c3015}{getReachableAirports}}(\textcolor{keyword}{const} std::string \&start\_airport\_code, \textcolor{keywordtype}{int} num\_flights) \textcolor{keyword}{const};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87     \textcolor{keyword}{private}:}
+\DoxyCodeLine{91     std::unordered\_map<std::string, std::vector<Flight>> adjacency\_list;}
+\DoxyCodeLine{95     std::unordered\_map<std::string, Airport> airports;}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//FEUP\_AED2\_GRAPH\_H}}
 
 \end{DoxyCode}

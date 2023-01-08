@@ -33,7 +33,9 @@ double \mbox{\hyperlink{class_airport_ad8cd931389b14d63e5933a1658b653a3}{get\+Lo
 void \mbox{\hyperlink{class_airport_aa6fa7f50efbc47c1013af7d7d3ce1a95}{set\+Latitude}} (double latitude)
 \begin{DoxyCompactList}\small\item\em Sets the latitude of the airport. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_airport_a8595da4216165ea42ad2157480573548}{set\+Longitude}} (double longitude)
-\begin{DoxyCompactList}\small\item\em Sets the longitude of the airport. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sets the longitude of the airport. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_airport_a2d93e2cadbdb3ed9114aff48aa0bac5c}{operator==}} (const \mbox{\hyperlink{class_airport}{Airport}} \&other) const
+\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -49,7 +51,7 @@ Represents an airport.
 \index{Airport@{Airport}!Airport@{Airport}}
 \index{Airport@{Airport}!Airport@{Airport}}
 \doxysubsubsection{\texorpdfstring{Airport()}{Airport()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Airport\+::\+Airport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Airport\+::\+Airport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -194,6 +196,12 @@ Gets the name of the airport.
 \begin{DoxyReturn}{Returns}
 The name of the airport 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_airport_a2d93e2cadbdb3ed9114aff48aa0bac5c}\label{class_airport_a2d93e2cadbdb3ed9114aff48aa0bac5c}} 
+\index{Airport@{Airport}!operator==@{operator==}}
+\index{operator==@{operator==}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Airport\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_airport}{Airport}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
 \mbox{\Hypertarget{class_airport_aa6fa7f50efbc47c1013af7d7d3ce1a95}\label{class_airport_aa6fa7f50efbc47c1013af7d7d3ce1a95}} 
 \index{Airport@{Airport}!setLatitude@{setLatitude}}
 \index{setLatitude@{setLatitude}!Airport@{Airport}}
