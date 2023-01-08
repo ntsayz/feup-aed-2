@@ -752,7 +752,7 @@ void Manager::show_airports2(std::string country){
 //IH
 void Manager::possible_number(int n,std::string code,const std::string &fname3) {
     std::vector<Flight> flights = Utility::loadDataFromCSV<Flight>(fname3);
-    auto v = flight_network.getReachableAirport(code,n);
+    auto v = flight_network.getReachableAirports(code,n);
     for(auto e:v){
         std::cout << e.getName() << std::endl;
     }

@@ -75,8 +75,9 @@ public:
     * @param airport2 The second airport
     * @return The distance between the two airports
     */
-    std::vector<Airport> getReachableAirport(const std::string &start_airport_code,int num_flights) const;
+
     double getDistance(const Airport &airport1, const Airport &airport2) const;
+    std::vector<Airport> getReachableAirports(const std::string &start_airport_code, int num_flights) const;
     private:
     /**
      * @brief Adjacency list representing all airports codes (key), as nodes and flights (values) as edges.
@@ -86,6 +87,7 @@ public:
      * @brief Hashtable with airports codes being mapped to their objects
      */
     std::unordered_map<std::string, Airport> airports;
+
 
 
 };

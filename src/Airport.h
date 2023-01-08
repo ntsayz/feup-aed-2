@@ -35,16 +35,16 @@ private:
     /**
     * @brief The latitude of the airport
     */
-    double latitude;
+    double latitude{};
     /**
     * @brief The longitude of the airport
     */
-    double longitude;
+    double longitude{};
 public:
     /**
     * @brief Constructs an Airport object with default values
     */
-    Airport();
+    Airport() : code(), name(), latitude(0), longitude(0) {}
     /**
     * @brief Constructs an Airport object with the given code
     * @param IATA The code of the airport
@@ -133,6 +133,10 @@ public:
         @param longitude The new longitude of the airport
     */
     void setLongitude(double longitude);
+
+    bool operator==(const Airport &other) const {
+        return code == other.code;
+    }
 
 };
 

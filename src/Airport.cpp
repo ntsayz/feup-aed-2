@@ -38,6 +38,3 @@ double Airport::getLongitude() const {
     return longitude;
 }
 
-Airport::Airport() {
-
-}
