@@ -95,7 +95,7 @@ void Manager::search_flights_menu(bool notARecursiveCall){
 void Manager::show_data_menu(bool notARecursivecall) {
     localSession = true;
     std::string s;
-    int n;
+    int n,choice;
     while(localSession){
         Utility::clear_screen();
         switch (Menu::show(notARecursivecall)) {
@@ -112,8 +112,13 @@ void Manager::show_data_menu(bool notARecursivecall) {
                 show_nr_destinations(s, "../src/dataset/flights.csv");
                 break;
             case 4:
-
+                std::cout << "Enter the number of Flights: " << std::endl;
+                std::cin >> choice;
+                n = Utility::getInput(choice,1,4);
                 possible_number(n,"../src/dataset/flights.csv");
+                break;
+            case 5:
+                show_info_Menu();
                 break;
             case 9:
                 localSession = false;
@@ -690,18 +695,89 @@ void Manager::show_nr_destinations(std::string code, const std::string &fname3) 
 
 }
 
+void Manager::show_info_Menu() {
+    int i;
+    std::string s;
+    Utility::clear_screen();
+    Utility::header("SkyPlanner");
+    Utility::body("Choose one of the options",{"1. Show aiports of a city","2. Show aiports of country","3. Airports with the highest number of flights"});
+    Utility::footer();
+    std::cout << "-->";
+    std::cin >> i;
+    switch (i) {
+        case 1:
+            s = Utility::getCity();
+            show_airports(s);
+            break;
+        case 2:
+            s = Utility::getCity();
+            show_airports2(s);
+            break;
+        case 3:
+            break;
+        case 9:
+            return;
+    }
+}
+void Manager::show_airports(std::string city){
+    std::cout << "|------------------------------------------------------------------------------------------------------------------|\n";
+    std::cout << "|    Code    |             Name              |        Latitude               |              Longitude              |\n";
+    std::cout << "|------------|-------------------------------|-------------------------------|-------------------------------------|\n";
+    for(auto e:airports){
+        if(e.second.getCity() == city){
+            //std::cout << "|" <<std::setw(13) << i << " | ";
+            std::cout << "|" <<std::setw(12) << e.second.getCode() << "|"
+            << std::setw(31)<< e.second.getName() <<"|"
+            <<std::setw(31) << e.second.getLatitude() << "|"
+            <<std::setw(37)<< e.second.getLongitude()<<"|"<<std::endl;
+        }
+    }
+    Utility::footer();
+}
+void Manager::show_airports2(std::string country){
+    std::cout << "|------------------------------------------------------------------------------------------------------------------|\n";
+    std::cout << "|    Code    |             Name              |        Latitude               |              Longitude              |\n";
+    std::cout << "|------------|-------------------------------|-------------------------------|-------------------------------------|\n";
+    for(auto e:airports){
+        if(e.second.getCountry() == country){
+            //std::cout << "|" <<std::setw(13) << i << " | ";
+            std::cout << "|" <<std::setw(12) << e.second.getCode() << "|"
+                      << std::setw(31)<< e.second.getName() <<"|"
+                      <<std::setw(31) << e.second.getLatitude() << "|"
+                      <<std::setw(37)<< e.second.getLongitude()<<"|"<<std::endl;
+        }
+    }
+    Utility::footer();
+}
+//IH
 void Manager::possible_number(int n,const std::string &fname3) {
-    std::vector<Flight> fl;
-    int count = 0;
     std::vector<Flight> flights = Utility::loadDataFromCSV<Flight>(fname3);
-
-    for(auto a:flights){
-
+    /*
+     *  std::vector<Airport> departures_airports;
+    std::vector<Airport> arrival_airports;
+    std::vector<std::vector<Flight>> route;
+     */
+    std::set<std::string> air = aux(n,flights);
+    for (auto x: air) {
+        std::cout << airports[x].getName() <<std::endl;
     }
+}
 
-    for(auto x:fl){
-        std::cout << count << std::endl;
+std::set<std::string> Manager::aux(int n,std::vector<Flight> flights) {
+    std::set<std::string> air;
+    std::vector<std::vector<Flight>> route;
+    for(auto e:flights){
+        route = flight_network.findShortestRoutes(airports[e.getDeparture()],airports[e.getArrival()]);
     }
+    for(auto f:flights){
+        if(n==0){
+            air.insert(f.getDeparture());
+        }
+        else{
+            air.insert(f.getArrival());
+        }
+    }
+    return air;
 }
 
 
