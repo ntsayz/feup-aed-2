@@ -75,6 +75,7 @@ public:
     * @param airport2 The second airport
     * @return The distance between the two airports
     */
+    std::vector<Airport> getReachableAirport(const std::string &start_airport_code,int num_flights) const;
     double getDistance(const Airport &airport1, const Airport &airport2) const;
     private:
     /**

@@ -149,8 +149,7 @@ public:
     /// \param country country name
     void show_airports2(std::string country);
 
-    void possible_number(int n,const std::string &fname3);
-    std::set<std::string>aux(int n,std::vector<Flight> flights);
+    void possible_number(int n,std::string code,const std::string &fname3);
 
 };
 

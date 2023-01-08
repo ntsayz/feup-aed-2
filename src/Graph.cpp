@@ -202,3 +202,32 @@ std::vector<std::vector<Flight>> Graph::getPathsWithOneAirline(const Airport &de
     return paths;
 }
 
+std::vector<Airport> Graph::getReachableAirport(const std::string &start_airport_code, int num_flights) const {
+    std::vector<Airport> reachable_airports;
+    std::queue<std::string> q;
+    std::unordered_map<std::string, int> num_flights_taken;
+
+    q.push(start_airport_code);
+    num_flights_taken[start_airport_code] = 0;
+    reachable_airports.push_back(airports.at(start_airport_code));
+
+    while (!q.empty()) {
+      std::string airport_code = q.front();
+      q.pop();
+
+      const std::vector<Flight> &outgoing_flights = adjacency_list.at(airport_code);
+      for (const Flight &flight : outgoing_flights) {
+        std::string destination_code = flight.getArrival();
+        int flights_taken = num_flights_taken[airport_code] + 1;
+        int count = std::count(reachable_airports.begin(), reachable_airports.end(),airports.at(destination_code));
+        if (flights_taken <= num_flights && !count) {
+          q.push(destination_code);
+          num_flights_taken[destination_code] = flights_taken;
+          reachable_airports.push_back(airports.at(destination_code));
+        }
+      }
+    }
+
+    return reachable_airports;
+  }
+

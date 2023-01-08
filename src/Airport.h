@@ -133,6 +133,7 @@ public:
         @param longitude The new longitude of the airport
     */
     void setLongitude(double longitude);
+
 };
 
 #endif //FEUP_AED2_AIRPORT_H

@@ -112,10 +112,10 @@ void Manager::show_data_menu(bool notARecursivecall) {
                 show_nr_destinations(s, "../src/dataset/flights.csv");
                 break;
             case 4:
-                std::cout << "Enter the number of Flights: " << std::endl;
+                s = Utility::getAirportCode();
+                std::cout << "Enter the number of Flights(max 4): " << std::endl;
                 std::cin >> choice;
-                n = Utility::getInput(choice,1,4);
-                possible_number(n,"../src/dataset/flights.csv");
+                possible_number(choice,s,"../src/dataset/flights.csv");
                 break;
             case 5:
                 show_info_Menu();
@@ -750,37 +750,14 @@ void Manager::show_airports2(std::string country){
     Utility::footer();
 }
 //IH
-void Manager::possible_number(int n,const std::string &fname3) {
+void Manager::possible_number(int n,std::string code,const std::string &fname3) {
     std::vector<Flight> flights = Utility::loadDataFromCSV<Flight>(fname3);
-    /*
-     *  std::vector<Airport> departures_airports;
-    std::vector<Airport> arrival_airports;
-    std::vector<std::vector<Flight>> route;
-     */
-    std::set<std::string> air = aux(n,flights);
-    for (auto x: air) {
-        std::cout << airports[x].getName() <<std::endl;
+    auto v = flight_network.getReachableAirport(code,n);
+    for(auto e:v){
+        std::cout << e.getName() << std::endl;
     }
+
 }
-
-std::set<std::string> Manager::aux(int n,std::vector<Flight> flights) {
-    std::set<std::string> air;
-    std::vector<std::vector<Flight>> route;
-    for(auto e:flights){
-        route = flight_network.findShortestRoutes(airports[e.getDeparture()],airports[e.getArrival()]);
-    }
-    for(auto f:flights){
-        if(n==0){
-            air.insert(f.getDeparture());
-        }
-        else{
-            air.insert(f.getArrival());
-        }
-    }
-    return air;
-}
-
-
 /*for(auto const& depAir: departures_airports){
         for(auto const& arrAir: arrival_airports){
             route = flight_network.findShortestRoutes(depAir, arrAir);
