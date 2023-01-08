@@ -42,3 +42,13 @@ int Menu::Search_CC(){
     Utility::clear_screen();
     return Utility::getInput(choice,1,2);
 }
+
+int Menu::show(bool show) {
+    int choice;
+    Utility::body("Choose",
+                  {"1. Number of flights of an airport ","2. Airlines of an airport","3. All possible destinations of an airport","4. Airports reachable using a certain number of flights","5. Show data"});
+    Utility::footer();
+    std::cin >> choice;
+    Utility::clear_screen();
+    return Utility::getInput(choice,1,5);
+}

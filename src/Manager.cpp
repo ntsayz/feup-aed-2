@@ -22,6 +22,9 @@ void Manager::main_menu(){
             case 1:
                 search_flights_menu(true);
                 break;
+            case 2:
+                show_data_menu(true);
+                break;
             case 9:
                 globalSession = false;
         }
@@ -89,6 +92,33 @@ void Manager::search_flights_menu(bool notARecursiveCall){
     }
 }
 
+void Manager::show_data_menu(bool notARecursivecall) {
+    localSession = true;
+    std::string s;
+    while(localSession){
+        Utility::clear_screen();
+        switch (Menu::show(notARecursivecall)) {
+            case 1:
+                s = Utility::getAirportCode();
+                show_nr_flights(s, "../src/dataset/flights.csv");
+                break;
+            case 2:
+                s = Utility::getAirportCode();
+                show_nr_airlines(s, "../src/dataset/flights.csv");
+                break;
+            case 3:
+                s = Utility::getAirportCode();
+                show_nr_destinations(s, "../src/dataset/flights.csv");
+                break;
+            case 9:
+                localSession = false;
+                break;
+        }
+
+    }
+}
+
+
 std::vector<Airport> Manager::get_airports_by_coordinates(){
     localSession = true;
     std::vector<Airport> nearby_airports;
@@ -128,7 +158,6 @@ std::vector<Airport> Manager::get_airports_by_coordinates(){
         return flight_network.getAirportsWithinDistance(latitude, longitude, max_distance);
     }
 }
-
 Airport Manager::get_airports_by_code(){
     localSession = true;
     std::string airportCode;
@@ -491,8 +520,6 @@ bool Manager::loadData(const std::string& fname1, const std::string& fname2, con
 
 }
 
-
-
 void Manager::testing() {
     Graph graph;
     std::unordered_map<std::string,Airport> airports;
@@ -600,6 +627,59 @@ void Manager::testing() {
 */
 }
 
+void Manager::show_nr_flights(std::string code, const std::string &fname3) {
+    unsigned int count = 0;
+    std::vector<Flight> flights = Utility::loadDataFromCSV<Flight>(fname3);
+    for(auto f:flights){
+        if(f.getDeparture() == code || f.getArrival() == code){
+            count++;
+        }
+    }
+    auto a = airports[code];
+    std::cout << "The number of flights of " << a.getName() <<" are: " << count << std::endl;
+}
+
+void Manager::show_nr_airlines(std::string code, const std::string &fname3) {
+    std::unordered_set<std::string> lines;
+    std::vector<Flight> flights = Utility::loadDataFromCSV<Flight>(fname3);
+    std::cout << "The airlines are: " << std::endl;
+
+    for(auto f:flights){
+        if(f.getDeparture() == code || f.getArrival() == code){
+            lines.insert(f.getAirline());
+        }
+    }
+
+    for (auto x : lines) {
+        for(auto a:airlines){
+            if(a.second.getCode() == x){
+                std::cout << a.second.getName() << std::endl;
+            }
+        }
+    }
+
+}
+
+void Manager::show_nr_destinations(std::string code, const std::string &fname3) {
+    std::string s;
+    std::unordered_set<std::string> target;
+    std::vector<Flight> flights = Utility::loadDataFromCSV<Flight>(fname3);
+
+    auto a = airports[code];
+    std::cout << "All possible destinations of " << a.getName() << " are: " << std::endl;
+
+    for(auto a:flights){
+        if(a.getDeparture() == code){
+            target.insert(a.getArrival());
+        }
+    }
+
+    for(auto x:target){
+        auto d = airports[x];
+        std::cout << d.getName() << std::endl;
+    }
+
+}
 
 
 /*for(auto const& depAir: departures_airports){

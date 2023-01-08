@@ -33,12 +33,8 @@ int  Utility::getInput(int choice, int min, int max)  {
 void Utility::clear_screen() {
 #ifdef WINDOWS
     std::system("cls");
-#else
-    // Assume POSIX
-    std::system("clear");
 #endif
 }
-
 void Utility::header(const std::string& title){
     int n = (int)(title.size() + 59) / 2;
     std::cout << "|" << std::setfill('-') <<std::setw(59) << "|\n"; // ---

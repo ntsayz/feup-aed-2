@@ -8,6 +8,7 @@
 */
 
 #include <iostream>
+#include <unordered_set>
 #include "Graph.h"
 #include "Airlines.h"
 #include "Menu.h"
@@ -96,6 +97,9 @@ public:
     /// 1st Option in the Main menu; Shows the 'Search Flights' section
     /// \param notARecursiveCall Since we need to use this function multiple times within the same call chain, it should be recursive. This was a way to handle recursion appropriately
     void search_flights_menu(bool notARecursiveCall);
+    /// 2st Option in the Main menu; Shows the 'Show data' section
+    /// \param notARecursiveCall Since we need to use this function multiple times within the same call chain, it should be recursive. This was a way to handle recursion appropriately
+    void show_data_menu(bool notARecursivecall);
     /// Looks for flights given
     /// \param departures_airports List of airports in the city of departure
     /// \param arrival_airports List of airports in the city of arrival
@@ -124,6 +128,20 @@ public:
     /// Helper function to get airline code
     /// \return IATA code of airline
     std::string  get_airline_code();
+    /// Shows Number of flights of a specific airport
+    /// \param code aiport IATA code
+    /// \param fname3 Path to 'flights.csv'
+    void show_nr_flights(std::string code, const std::string& fname3);
+    /// Shows Number of airlines of a specific airport
+    /// \param code aiport IATA code
+    /// \param fname3 Path to 'flights.csv'
+    void show_nr_airlines(std::string code, const std::string& fname3);
+    /// Shows Number of possible destinations of a specific airport
+    /// \param code aiport IATA code
+    /// \param fname3 Path to 'flights.csv'
+    void show_nr_destinations(std::string code, const std::string& fname3);
+
+    std::string get_air_code(std::string code);
 };
 
 

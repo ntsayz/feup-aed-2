@@ -17,6 +17,8 @@ public:
     static int Search(bool departure);
 
     static int Search_CC();
+
+    static int show(bool show);
 };
 
 
