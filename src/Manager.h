@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include <unordered_set>
+#include <vector>
 #include "Graph.h"
 #include "Airlines.h"
 #include "Menu.h"
@@ -148,8 +149,17 @@ public:
     /// Shows detailed information of the airport
     /// \param country country name
     void show_airports2(std::string country);
-
+    /// Shows Airports reachable using a certain number of flights
+    /// \param n certain number of flights
+    /// \param code starting country's code
+    /// \param fname3 Path to 'flights.csv'
     void possible_number(int n,std::string code,const std::string &fname3);
+    /// Shows Airport with the highest number of flights por um valor a definir
+    /// \param n valor a definir
+    /// \param fname3 Path to 'flights.csv'
+    void show_highest(int n ,const std::string &fname3);
+
+    std::vector<std::string> aux(int n,std::map<std::string, int> airport_count);
 
 };
 
