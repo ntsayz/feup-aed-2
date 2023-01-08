@@ -4,7 +4,6 @@
 
 #include "Manager.h"
 
-
 void Manager::run(){
     bool dataLoaded = loadData("../src/dataset/airlines.csv", "../src/dataset/airports.csv", "../src/dataset/flights.csv");
     if(!dataLoaded){
@@ -30,6 +29,7 @@ void Manager::main_menu(){
         }
     }
 }
+
 void Manager::search_flights_menu(bool notARecursiveCall){
     localSession = true;
     while(localSession){
@@ -95,6 +95,7 @@ void Manager::search_flights_menu(bool notARecursiveCall){
 void Manager::show_data_menu(bool notARecursivecall) {
     localSession = true;
     std::string s;
+    int n;
     while(localSession){
         Utility::clear_screen();
         switch (Menu::show(notARecursivecall)) {
@@ -110,6 +111,10 @@ void Manager::show_data_menu(bool notARecursivecall) {
                 s = Utility::getAirportCode();
                 show_nr_destinations(s, "../src/dataset/flights.csv");
                 break;
+            case 4:
+
+                possible_number(n,"../src/dataset/flights.csv");
+                break;
             case 9:
                 localSession = false;
                 break;
@@ -117,7 +122,6 @@ void Manager::show_data_menu(bool notARecursivecall) {
 
     }
 }
-
 
 std::vector<Airport> Manager::get_airports_by_coordinates(){
     localSession = true;
@@ -158,6 +162,7 @@ std::vector<Airport> Manager::get_airports_by_coordinates(){
         return flight_network.getAirportsWithinDistance(latitude, longitude, max_distance);
     }
 }
+
 Airport Manager::get_airports_by_code(){
     localSession = true;
     std::string airportCode;
@@ -176,6 +181,7 @@ Airport Manager::get_airports_by_code(){
 
     }
 }
+
 std::vector<Airport> Manager::get_airports_by_city_country(){
     localSession = true;
     std::string cityCountryInputStr;
@@ -265,6 +271,7 @@ void Manager::search_flights(std::vector<Airport> departures_airports, std::vect
             return;
     }
 }
+
 void Manager::show_multiple_routes(const std::vector<Airport>& departures_airports, const std::vector<Airport>& arrival_airports){
     Utility::clear_screen();
     std::vector<std::vector<Flight>> routes;
@@ -373,6 +380,7 @@ std::string Manager::get_airline_code(){
     }
 
 }
+
 void Manager::search_one_airline(const std::vector<Airport> &departures_airports,const std::vector<Airport> &arrival_airports) {
     localSession = true;
     std::string airlineCode;
@@ -431,6 +439,7 @@ void Manager::search_one_airline(const std::vector<Airport> &departures_airports
 
     }
 }
+
 void Manager::show_flight_info(const std::vector<Airport>& departures_airports, const std::vector<Airport>& arrival_airports) {
     Utility::clear_screen();
     std::vector<Flight> newroute;
@@ -679,6 +688,20 @@ void Manager::show_nr_destinations(std::string code, const std::string &fname3) 
         std::cout << d.getName() << std::endl;
     }
 
+}
+
+void Manager::possible_number(int n,const std::string &fname3) {
+    std::vector<Flight> fl;
+    int count = 0;
+    std::vector<Flight> flights = Utility::loadDataFromCSV<Flight>(fname3);
+
+    for(auto a:flights){
+
+    }
+
+    for(auto x:fl){
+        std::cout << count << std::endl;
+    }
 }
 
 

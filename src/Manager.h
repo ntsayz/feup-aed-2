@@ -140,8 +140,8 @@ public:
     /// \param code aiport IATA code
     /// \param fname3 Path to 'flights.csv'
     void show_nr_destinations(std::string code, const std::string& fname3);
+    void possible_number(int n, const std::string& fname3);
 
-    std::string get_air_code(std::string code);
 };
 
 
